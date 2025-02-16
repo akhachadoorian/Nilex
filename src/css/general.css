@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-lighter-40: #F7A27C;
+    --primary-lighter-20: #F48351;
+    --primary: #F16425;
+    --primary-darker-20: #C1501E;
+    --primary-darker-40: #913C16;
+
+    --secondary-lighter-90: #D9D9D9;
+    --secondary-lighter-40: #939092;
+    --secondary-lighter-20: #6F6B6D;
+    --secondary: #4B4649;
+    --secondary-darker-20: #3C383A;
+    --secondary-darker-40: #2D2A2C;
+
+    --light: #EDEDED;
+    --lightest: #FDF2F2;
+}
+
+
+p, a {
+    font-family: Montserrat;
+    /* FIXME: font size */
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+h6 {
+    font-family: Montserrat;
+    /* FIXME: font size */
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+h5 {
+
+}
+
+h4 {
+
+}
+
+h3 {
+
+}
+
+h2 {
+
+}
+
+h1 {
+    font-family: Montserrat;
+    /* FIXME: font size */
+    font-size: 76px; 
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; 
+}

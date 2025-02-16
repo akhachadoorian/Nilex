@@ -1,0 +1,26 @@
+
+
+/* Hero */
+section.hero {
+    .hero-inner {
+        /* FIXME: will need to account for nav bar later */
+        min-height: 100vh; 
+
+        padding: 0 60px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        .text {
+            text-align: center;
+            color: var(--light);
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}
