@@ -10,6 +10,7 @@ function LandingPage({}) {
             logo={hero.logo}
             logoAltText={hero.logoAltText}
             background={hero.backgroundImage}
+            mobileBackground={hero.mobileBackgroundImage}
         />
     );
 }

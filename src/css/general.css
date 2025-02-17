@@ -67,3 +67,34 @@ h1 {
     line-height: 120%; 
     letter-spacing: 5.32px;
 }
+
+@media all and (width <= 800px) {
+    p {}
+
+    h6 {
+        font-family: Montserrat;
+        /* FIXME: font size */
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; 
+    }
+
+    h5 {}
+
+    h4 {}
+
+    h3 {}
+
+    h2 {}
+
+    h1 {
+        font-family: Montserrat;
+        /* FIXME: font size */
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        letter-spacing: 0.42px;
+    }
+}
