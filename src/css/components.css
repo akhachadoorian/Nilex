@@ -1,7 +1,7 @@
 
 
 /* Hero */
-section.hero {
+.hero {
     .hero-inner {
         /* FIXME: will need to account for nav bar later */
         min-height: 100vh; 
@@ -36,5 +36,87 @@ section.hero {
                 }
             }
         }
+    }
+}
+
+/* ////// */
+
+/* Media with Copy */
+.media-with-copy {
+    .mwc-inner {
+        padding: 20px 0;
+        
+        display: flex;
+        align-items: center;
+        gap: 6.3vw;
+
+        @media all and (width <= 800px) {
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .text-side {
+            flex: 2 2 831px;
+
+            padding: 0 0 0 20px;
+
+            @media all and (width <= 800px) {
+                flex: 1;
+                padding: 120px 0 0 20px;
+            }
+
+            h2 {
+                color: var(--primary);
+                margin-bottom: 30px;
+            }
+        }
+
+        .img-side {
+            position: relative;
+            flex: 1 1 622px;
+            overflow: hidden;
+
+            @media all and (width <= 800px) {
+                flex: 1;
+
+                max-height: 391px;
+            }
+            
+            .overlay {
+                position: absolute;
+                top: 0;
+
+                opacity: 15%;
+                background-color: #F16425;
+
+                width: 100%;
+                height: 100%;
+            }
+
+            img {
+                object-fit: cover;
+                object-position: center;
+
+                /* aspect-ratio: 1 / 1; */
+                width: 100%;
+                height: 100%;
+
+                @media all and (width <= 800px) {
+                    /* max-height: 391px; */
+                }
+            }
+        }
+    }
+}
+
+/* ////// */
+
+/* Hexagon */
+
+.hexagon {
+    position: absolute;
+
+    img {
+        object-fit: cover;
     }
 }

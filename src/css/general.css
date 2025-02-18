@@ -55,7 +55,12 @@ h3 {
 }
 
 h2 {
-
+    font-family: Montserrat;
+    /* FIXME: font size */
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
 }
 
 h1 {
@@ -86,7 +91,14 @@ h1 {
 
     h3 {}
 
-    h2 {}
+    h2 {
+        font-family: Montserrat;
+        /* FIXME: font size */
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+    }
 
     h1 {
         font-family: Montserrat;
