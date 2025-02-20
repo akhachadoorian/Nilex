@@ -1,9 +1,10 @@
-import react, { useState, useEffect }  from "react";
+import React, { useState, useEffect }  from "react";
 
 import { hex } from "../data/text/landingpage.js"
-import GreyHex from "../data/images/LightGrayMobileHex.svg"
+import GreyHex from "../data/images/LightGrayHex.svg"
+import GreySpeckledHex from "../data/images/LightGrayHexSpeckled.svg"
 
-function Hexagon({ color, speckled, top, bottom, left, right }) {
+function Hexagon({ color, speckled = false, desktopPosition, mobilePosition }) {
     const [screenWidth, setWidth] = useState(window.innerWidth)
 
     useEffect(() => {
@@ -16,25 +17,47 @@ function Hexagon({ color, speckled, top, bottom, left, right }) {
     var hexImg;
 
     { color === 'grey' ?
-        hexImg = GreyHex
+         (speckled ? 
+            hexImg = GreySpeckledHex
+            :
+            hexImg = GreyHex
+         )
         :
         hexImg = GreyHex // FIXME: add orange color
     }
 
-    var style = {
-        top: top ? top : '',
-        bottom: bottom ? bottom : '',
-        left: left ? left : '',
-        right: right ? right : '' 
+    var desktopStyle = {
+        top: desktopPosition.top ? desktopPosition.top : '',
+        bottom: desktopPosition.bottom ? desktopPosition.bottom : '',
+        left: desktopPosition.left ? desktopPosition.left : '',
+        right: desktopPosition.right ? desktopPosition.right : '',
+        width: hex.width,
+        height: hex.height
+    };
+
+    var mobileStyle = {
+        width: hex.mobileWidth,
+        height: hex.mobileHeight
+    }
+
+    if (mobilePosition) {
+        mobileStyle = {
+            top: mobilePosition.top ? mobilePosition.top : '',
+            bottom: mobilePosition.bottom ? mobilePosition.bottom : '',
+            left: mobilePosition.left ? mobilePosition.left : '',
+            right: mobilePosition.right ? mobilePosition.right : '',
+            width: hex.mobileWidth,
+            height: hex.mobileHeight
+        };
     }
 
 
     return (
-        <div className="hexagon" style={style}>
+        <div className="hexagon" style={screenWidth < 800 && mobileStyle ? mobileStyle : desktopStyle }>
             {screenWidth < 800 ? 
-                <img src={hexImg} alt="Grey hexagon" width={hex.mobileWidth} height={hex.mobileHeight}/> 
+                <img src={hexImg} alt="Grey hexagon"/> 
             :
-                <img src={hexImg} alt="Grey hexagon" width={hex.width} height={hex.height}/> 
+                <img src={hexImg} alt="Grey hexagon"/> 
             }
             
         </div>

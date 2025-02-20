@@ -4,7 +4,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 
 import Hero from "../components/Hero";
 
-import { hero, about } from "../data/text/landingpage.js"
+import { hero, about, hexagons, product } from "../data/text/landingpage.js"
 import MediaWithCopy from '../components/MediaWithCopy.jsx';
 import Hexagon from '../components/Hexagon.jsx';
 
@@ -23,17 +23,23 @@ function LandingPage({}) {
             />
 
             <div style={{position: "relative", overflow: 'hidden'}}>
-                <Hexagon 
+                {/* <Hexagon 
                     color={"grey"}
-                    top={"-65px"}
-                    right={'0px'}
-                />
+                    desktopPosition={hexagons.g1.desktop}
+                    // mobilePosition={hexagons.g1.mobile}
+                    speckled={true}
+                /> */}
                 <MediaWithCopy 
                     header={about.header}
                     bodyText={about.bodyText}
                     media={about.media}
                     mediaAltText={about.mediaAltText}
                 />
+            </div>
+
+            <div style={{position: "relative", overflow: 'hidden'}}>
+                <h2>{product.header}</h2>
+                <p>{product.bodyText}</p>
             </div>
         </div>
     );
