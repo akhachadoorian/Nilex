@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import { hero, about, hexagons, product } from "../data/text/landingpage.js"
 import MediaWithCopy from '../components/MediaWithCopy.jsx';
 import Hexagon from '../components/Hexagon.jsx';
+import Card from '../components/Card.jsx';
 
 function LandingPage({}) {
     const scroll = new LocomotiveScroll();
@@ -37,9 +38,21 @@ function LandingPage({}) {
                 />
             </div>
 
-            <div style={{position: "relative", overflow: 'hidden'}}>
-                <h2>{product.header}</h2>
-                <p>{product.bodyText}</p>
+            <div style={{position: "relative", overflow: 'hidden'}} id='Products'>
+                <div className='header'>
+                    <h2>{product.header}</h2>
+                    <p>{product.bodyText}</p>
+                </div>
+                <div className='card-grid'>
+                    {product.products.map((p) =>
+                        <Card 
+                            key={p.id}
+                            icon={p.icon}
+                            title={p.title}
+                            bodyText={p.bodyText}
+                        />
+                    )}
+                </div>
             </div>
         </div>
     );
