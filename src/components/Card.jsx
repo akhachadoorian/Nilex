@@ -1,9 +1,8 @@
 import React from "react";
 import HexIcon from "./HexIcon";
 
-
-
 function Card({ icon, title, bodyText }) {
+
     return (
         <div className="card">
             <HexIcon 

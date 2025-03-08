@@ -16,12 +16,12 @@ function Hero({ header, bodyText, logo, logoAltText, background, mobileBackgroun
     const isMobile = window.innerWidth <= 800;
 
     return(
-        <section class="hero">
-            <div class="hero-inner" style={isMobile ? backgroundStyleMobile : backgroundStyleDesktop}>
-                <div class="logo-holder">
+        <section data-scroll-section className="hero">
+            <div className="hero-inner" style={isMobile ? backgroundStyleMobile : backgroundStyleDesktop}>
+                <div data-scroll className="logo-holder">
                     <img src={logo} alt={logoAltText} />
                 </div>
-                <div class="text">
+                <div data-scroll className="text">
                     <h1>{header}</h1>
                     <h6>{bodyText}</h6>
                 </div>

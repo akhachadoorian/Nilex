@@ -33,6 +33,11 @@ p, a {
     line-height: 120%;
 }
 
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
 h6 {
     font-family: Montserrat;
     /* FIXME: font size */
@@ -43,7 +48,12 @@ h6 {
 }
 
 h5 {
-
+    font-family: Montserrat;
+    /* FIXME: font size */
+    font-size: 31px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
 }
 
 h4 {
@@ -90,7 +100,14 @@ h1 {
         line-height: 120%; 
     }
 
-    h5 {}
+    h5 {
+        font-family: Montserrat;
+        /* FIXME: font size */
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+    }
 
     h4 {}
 
@@ -116,10 +133,26 @@ h1 {
     }
 }
 
+button {
+    border: none;
+
+    font-family: Montserrat;
+    /* FIXME: font size */
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
 /* Sections */
+#About {
+    padding: 0 0 50px 0px;
+}
+
+
 #Products {
     text-align: center;
-    padding: 150px 60px;
+    padding: 80px 60px;
 
     .header {
         margin-bottom: 80px;
@@ -134,5 +167,34 @@ h1 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 50.67px;
+    }
+}
+
+#Contact {
+    background-color: var(--secondary-darker-40);
+    padding: 80px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* FIXME: determine best gap */
+    gap: 7.3vw;
+
+    .header {
+        flex: 1 1 562px;
+        color: var(--light);
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+
+    .hex-btns {
+        flex: 0 0 680px;
+
+        display: grid;
+        grid-template-columns: [s] 380px [m] 340px [e];
+        grid-template-rows: repeat(4, 160px);
+        row-gap: 30px;
     }
 }

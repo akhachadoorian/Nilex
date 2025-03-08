@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+[data-scroll-container] {
+    min-height: 100vh;
+    overflow: hidden; /* Let Locomotive handle scrolling */
+    will-change: transform;
+}
+
+[data-scroll-section] {
+    position: relative;
+    will-change: transform;
+}

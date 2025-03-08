@@ -1,4 +1,99 @@
+/* Navigation */
 
+.navigation {
+    background-color: var(--light);
+    padding: 10px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-holder {
+        img {
+            width: 195.315px;
+            height: 90.071px;
+        }
+    }
+
+    nav {
+        display: flex;
+        gap: 50px;
+    }
+}
+
+/* ////// */
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #F2743B 76.5%, #C1501E 100%);
+
+    display: flex;
+
+    .left-side {
+        flex: 0 0 1035px; 
+        /* FIXME: make responsive */
+        padding: 60px;
+        overflow: hidden;
+        position: relative;
+
+        .bg-hex {
+            width: 1194px;
+            height: 1418px;
+            /* FIXME: make responsive */
+
+            clip-path: polygon(25% 0%, 68% 0%, 100% 50%, 68% 100%, 25% 100%, 0% 50%);
+            background-color: var(--light);
+
+            position: absolute;
+            top: -415px;
+            left: -140px;
+        }
+
+        .left-side-inner {
+            position: relative;
+            z-index: 2;
+
+            .logo-holder {
+                img {
+                    /* FIXME: make responsive */
+                    width: 477.061px;
+                    height: 220px;
+                }
+            }
+
+            .footer-links {
+                display: flex;
+                gap: 40px;
+
+                margin-top: 40px;
+
+                .link {
+                    padding-right: 40px;
+                    border-right: 2px solid var(--secondary-darker-40);
+
+                    &:last-of-type {
+                        margin-right: 0;
+                        border-right: none;
+                    }
+
+                    p {
+                        font-family: Montserrat;
+                        /* FIXME: fix font size */
+                        font-size: 15px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 120%;
+                    }
+                }
+
+                
+            }
+        }
+    }
+}
+
+
+/* ////// */
 
 /* Hero */
 .hero {
@@ -181,4 +276,107 @@
         width: 100%;
         height: 100%;
     }
+}
+
+/* ////// */
+
+/* Hexagon button*/
+.hexagon-btn {
+    .hex-btn-wrapper {
+        display: block;
+        /* FIXME: make responsive */
+        width: 400px;
+        overflow: hidden;
+        position: relative;
+
+        .arrow {
+            /* FIXME: make responsive */
+            width: 19px;
+            height: 19px;
+            position: absolute;
+            top: 20px;
+            right: calc(25% + 15px);
+            z-index: 3;
+
+            transform: scale(1);
+            transition: scale 0.3s ease-in-out, background-image 0.3s ease-in-out;
+        }
+
+        &:hover {
+            .arrow {
+                transform: scale(1.25);
+            }
+
+            .hover-state-wrapper {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        .hover-state-wrapper {
+            position: absolute;
+            top: 0;
+
+            display: flex;
+            align-items: flex-end;
+
+            clip-path: inset(calc(100% - 15px) 0 0 0);
+            transition: clip-path 0.3s ease-in-out;
+            will-change: transform;
+
+            .text {
+                h5 {
+                    color: #fff;
+                    /* color: var(--light);  */
+                }
+
+                p {
+                    /* color: var(--secondary-darker-40); */
+                    color: var(--light);
+                    font-family: Montserrat;
+                    /* FIXME: update font size */
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+
+            img {
+                position: absolute;
+                right: 8%;
+                top: 55%;
+            }
+        }
+
+        .hex-btn-inner {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            background-color: var(--lightest);
+    
+            /* FIXME: make responsive */
+            width: 380px;
+            height: 320px;
+
+            &.hover {
+                background-color: var(--primary-lighter-20);
+            }
+    
+            .text {
+                height: 100%;
+                padding: 0 56px;
+    
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 10px;
+    
+                img {
+                    width: 80px;
+                    height: 60px;
+                }
+                
+            }
+        }
+    }
+    
 }

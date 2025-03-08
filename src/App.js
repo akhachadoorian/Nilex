@@ -5,18 +5,20 @@ import './css/App.css';
 import './css/components.css';
 import './css/general.css';
 import LandingPage from './pages/Landingpage';
-
+import Navigation from './components/Navigation';
+import { LocomotiveScrollProvider } from './components/LocomotiveScrollProvider.js';
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
     <Router>
-      <div className='content-wrapper'>
-        {/* <Navigation /> */}
-        <Routes>
-          <Route path="/" element={<LandingPage />}  />
-        </Routes>
-        {/* <Footer /> */}
-      </div>
+      <LocomotiveScrollProvider>
+        <Navigation />
+          <Routes>
+              <Route path="/" element={<LandingPage />} />
+          </Routes>
+        <Footer />
+      </LocomotiveScrollProvider>
     </Router>
     // <div className="App">
     //   <header className="App-header">
