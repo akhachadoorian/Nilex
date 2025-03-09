@@ -19,15 +19,14 @@
     --secondary-darker-20: #3C383A;
     --secondary-darker-40: #2D2A2C;
 
-    --light: #EDEDED;
-    --lightest: #FDF2F2;
+    --light: #FFFFF2;
+    /* --lightest: #FDF2F2; */
 }
 
 
 p, a {
     font-family: Montserrat;
-    /* FIXME: font size */
-    font-size: 20px;
+    font-size: clamp(18px, 1.25vw, 22px);
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
@@ -40,8 +39,7 @@ a {
 
 h6 {
     font-family: Montserrat;
-    /* FIXME: font size */
-    font-size: 29px;
+    font-size: clamp(29px, 2.014vw, 34px);
     font-style: normal;
     font-weight: 500;
     line-height: 110%;
@@ -49,8 +47,7 @@ h6 {
 
 h5 {
     font-family: Montserrat;
-    /* FIXME: font size */
-    font-size: 31px;
+    font-size: clamp(31px, 2.153vw, 36px);
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
@@ -58,21 +55,23 @@ h5 {
 
 h4 {
     font-family: Montserrat;
-    /* FIXME: font size */
-    font-size: 39px;
+    font-size: clamp(39px, 2.708vw, 44px);
     font-style: normal;
     font-weight: 600;
     line-height: 120%;
 }
 
 h3 {
-
+    font-family: Montserrat;
+    font-size: clamp(49px, 3.403vw, 54px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
 }
 
 h2 {
     font-family: Montserrat;
-    /* FIXME: font size */
-    font-size: 61px;
+    font-size: clamp(61px, 4.236vw, 66px);
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
@@ -80,8 +79,7 @@ h2 {
 
 h1 {
     font-family: Montserrat;
-    /* FIXME: font size */
-    font-size: 76px; 
+    font-size: clamp(76px, 5.278vw, 81px); 
     font-style: normal;
     font-weight: 700;
     line-height: 120%; 
@@ -89,52 +87,43 @@ h1 {
 }
 
 @media all and (width <= 800px) {
-    p {}
+    p {
+        font-size: clamp(16px, 4.103vw, 20px);
+    }
 
     h6 {
-        font-family: Montserrat;
-        /* FIXME: font size */
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 120%; 
+        font-size: clamp(20px, 5.128vw, 25px);
     }
 
     h5 {
-        font-family: Montserrat;
-        /* FIXME: font size */
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%;
+        font-size: clamp(28px, 7.179vw, 33px);
     }
 
-    h4 {}
+    h4 {
+        font-size: clamp(32px, 8.205vw, 37px);
+    }
 
-    h3 {}
+    h3 {
+        font-size: clamp(36px, 9.231vw, 41px);
+    }
 
     h2 {
-        font-family: Montserrat;
-        /* FIXME: font size */
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%;
+        font-size: clamp(40px, 10.256vw, 45px);
     }
 
     h1 {
-        font-family: Montserrat;
-        /* FIXME: font size */
-        font-size: 42px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%;
+        font-size: clamp(42px, 10.769vw, 47px);
         letter-spacing: 0.42px;
     }
 }
 
+body {
+    background: var(--light);
+}
+
 button {
     border: none;
+    background-color: transparent;
 
     font-family: Montserrat;
     /* FIXME: font size */
@@ -147,6 +136,10 @@ button {
 /* Sections */
 #About {
     padding: 0 0 50px 0px;
+
+    @media all and (width <= 800px) {
+        padding: 0 0 80px 0;
+    }
 }
 
 
@@ -180,9 +173,20 @@ button {
     /* FIXME: determine best gap */
     gap: 7.3vw;
 
+    @media all and (width <= 800px) {
+        flex-direction: column;
+        gap: 48px;
+
+        padding: 60px 16px;
+    }
+
     .header {
         flex: 1 1 562px;
         color: var(--light);
+
+        @media all and (width <= 800px) {
+            flex: 1;
+        }
 
         h2 {
             margin-bottom: 20px;
@@ -191,11 +195,18 @@ button {
 
     .hex-btns {
         flex: 0 0 680px;
-
         display: grid;
         grid-template-columns: [s] 380px [m] 340px [e];
         /* FIXME: grid-template-rows: repeat(4, 160px); */
         grid-template-rows: repeat(3, 160px);
         row-gap: 30px;
+
+        @media all and (width <= 800px) {
+            flex: 1;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

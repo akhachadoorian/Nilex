@@ -26,10 +26,10 @@ export const navigation = {
             name: 'About',
             id: 'About'
         },
-        {
-            name: 'Products',
-            id: 'Products'
-        },
+        // {
+        //     name: 'Products',
+        //     id: 'Products'
+        // },
         {
             name: 'Contact',
             id: 'Contact'
@@ -95,9 +95,23 @@ export const hero = {
 
 export const about = {
     header: "About Nilex",
-    bodyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+    bodyText: "<p>Founded in 2012, Nilex Industrial and Safety Supplies is a proud woman-owned small business committed to providing top-quality industrial and safety products. As a family-run company, we prioritize reliability, exceptional service, and workplace safety, ensuring businesses have the essential supplies they need to protect their workforce.</p><p>At the heart of our company is Mark Khachadoorian, Owner and Vice-President of Sales, who leads our team with expertise and dedication to customer satisfaction.</p>",
     media: IndustrialPic,
-    mediaAltText: '',
+    mediaAltText: 'Guy using an electric saw or grinder on a piece of metal with sparks flying out',
+    subsections: [
+        {
+            subheader: 'Family-Driven Values',
+            subtext: 'Built on a foundation of Family-Driven Values, we believe in treating our customers, employees, and partners with trust, respect, and integrity.'
+        },
+        {
+            subheader: 'Community & Small Business Commitment',
+            subtext: 'We are deeply committed to supporting our local communities and fellow small businesses, fostering growth and collaboration in the industries we serve. '
+        },
+        {
+            subheader: 'Building Lasting Partnerships ',
+            subtext: 'At Nilex, building lasting partnerships is at the core of what we do. We go beyond transactions to cultivate strong, long-term relationships with our customers, offering personalized service, and unwavering reliability. '
+        },
+    ]
 }
 
 export const product = {
@@ -137,7 +151,7 @@ export const product = {
 
 export const contact = {
     header: 'Contact Us',
-    bodyText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+    bodyText: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.',
     methods: [
         {
             id: 1,

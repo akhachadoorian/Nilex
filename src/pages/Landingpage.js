@@ -35,10 +35,11 @@ function LandingPage({}) {
                     bodyText={about.bodyText}
                     media={about.media}
                     mediaAltText={about.mediaAltText}
+                    subsections={about.subsections}
                 />
             </section>
 
-            <section data-scroll-section style={{position: "relative", overflow: 'hidden'}} id='Products'>
+            {/* <section data-scroll-section style={{position: "relative", overflow: 'hidden'}} id='Products'>
                 <div data-scroll data-scroll-speed="1" className='header'>
                     <h2>{product.header}</h2>
                     <p>{product.bodyText}</p>
@@ -53,7 +54,7 @@ function LandingPage({}) {
                         />
                     )}
                 </div>
-            </section>
+            </section> */}
 
             <section data-scroll-section id="Contact">
                 <div data-scroll data-scroll-speed="1" className='header'>
@@ -76,7 +77,6 @@ function LandingPage({}) {
                             marginLeft={m.marginLeft}
                         />
                     )}
-
                 </div>
             </section>
         </>

@@ -1,4 +1,4 @@
-import React, {useState}   from "react";
+import React, { useState, useEffect }   from "react";
 
 import Arrow from "../data/images/Arrow.svg"
 import ArrowWhite from "../data/images/ArrowWhite.svg"
@@ -6,6 +6,15 @@ import ArrowWhite from "../data/images/ArrowWhite.svg"
 
 function HexagonButton ({ icon, iconAltText, hoverIcon, hoverIconAltText, title, bodyText, link, col, row, marginLeft }) {
     const [isHovered, setIsHovered] = useState(false);
+
+    const [screenWidth, setWidth] = useState(window.innerWidth)
+    
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
+
 
     const baseArrow = {
         backgroundImage: `url(${Arrow})`,
@@ -28,7 +37,7 @@ function HexagonButton ({ icon, iconAltText, hoverIcon, hoverIconAltText, title,
     return(
         <div className="hexagon-btn" style={gridSpan}>
             <a className="hex-btn-wrapper" href={link}  onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                { isHovered ?
+                { isHovered || screenWidth < 800 ?
                     <div className="arrow" style={hoverArrow}></div>
                 : 
                     <div className="arrow" style={baseArrow}></div>

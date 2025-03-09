@@ -28,7 +28,7 @@ function Footer({}) {
         </div>
       </div>
       <div className="right-side">
-        {footer.contactButtons.map((btn) =>
+        {/* {footer.contactButtons.map((btn) =>
             <HexIconButton
                 key={btn.text}
                 icon={btn.icon.svg}
@@ -37,7 +37,7 @@ function Footer({}) {
                 link={btn.link}
                 target={btn.target}
             />
-        )}
+        )} */}
       </div>
     </footer>
   );

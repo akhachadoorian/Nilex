@@ -1,6 +1,6 @@
 import react from "react";
 
-function MediaWithCopy({ header, bodyText, media, mediaAltText, mediaSide = "right" }) {
+function MediaWithCopy({ header, bodyText, subsections, media, mediaAltText, mediaSide = "right" }) {
     return (
         <div className="media-with-copy" >
             <div className="mwc-inner">
@@ -8,7 +8,15 @@ function MediaWithCopy({ header, bodyText, media, mediaAltText, mediaSide = "rig
                     <>
                         <div data-scroll data-scroll-speed="1" className="text-side">
                             <h2>{header}</h2>
-                            <p>{bodyText}</p>
+                            <div className="body" dangerouslySetInnerHTML={{ __html: bodyText }} />
+                            <div className="subsections">
+                                {subsections.map((s) => (
+                                    <div key={s.subheader} className="section">
+                                        <h6>{s.subheader}</h6>
+                                        <p>{s.subtext}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                         <div data-scroll data-scroll-speed="2" className="img-side">
                             <div className="overlay"></div>
