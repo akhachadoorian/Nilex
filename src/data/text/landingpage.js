@@ -17,6 +17,8 @@ import LightMail from "../images/LightMail.svg"
 import LightPhone from "../images/LightPhone.svg"
 import LightPen from "../images/LightPen.svg"
 
+import WhitePhone from "../images/WhitePhone.svg"
+
 export const navigation = {
     logo: Logo,
     links: [
@@ -52,7 +54,33 @@ export const footer = {
         },
     ],
     contactButtons: [
-
+        {
+            icon: {
+                svg: WhitePhone,
+                altText: 'Phone icon'
+            },
+            text: '(251) 458-9718',
+            link: '',
+            target: '',
+        },
+        // {
+        //     icon: {
+        //         svg: WhitePhone,
+        //         altText: 'Phone icon'
+        //     },
+        //     text: '',
+        //     link: '',
+            // target: '',
+        // },
+        // {
+        //     icon: {
+        //         svg: WhitePhone,
+        //         altText: 'Phone icon'
+        //     },
+        //     text: '',
+        //     link: '',
+        //     target: '',
+        // },
     ],
 }
 

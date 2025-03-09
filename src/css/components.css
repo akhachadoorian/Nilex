@@ -18,19 +18,51 @@
     nav {
         display: flex;
         gap: 50px;
+
+        button.main-nav {
+            color: var(--primary);
+            /* FIXME: fix font size */
+            font-size: 29px;
+            font-weight: 600;
+            line-height: 110%;
+            padding: 10px 0;
+
+            &::after {
+                content: '';
+                display: block;
+                position: relative;
+
+                height: 5px;
+                width: 0px;
+                transition: width 300ms ease-in-out;
+
+                margin-top: 10px;
+                background-color: var(--primary);
+            }
+
+            &:hover {
+                cursor: pointer;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
 
 /* ////// */
 
 /* Footer */
+
 footer {
     background: linear-gradient(90deg, #F2743B 76.5%, #C1501E 100%);
 
     display: flex;
+    align-items: center;
+    gap: 30px;
 
     .left-side {
-        flex: 0 0 1035px; 
+        flex: 0 0 1000px; 
         /* FIXME: make responsive */
         padding: 60px;
         overflow: hidden;
@@ -90,8 +122,98 @@ footer {
             }
         }
     }
+
+    .right-side {
+        flex: 1;
+        padding: 0 60px 0 0;
+    }
 }
 
+/* ////// */
+
+/* Hex Icon Buttons */
+
+.hex-icon-btn {
+    width: 100%;
+
+    .hex-icon-btn-wrapper {
+
+        &:hover {
+            .hex-icon-btn-inner {
+                
+            }
+
+            /* .hex-icon-btn-inner {
+                width: 100%;
+                clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+
+                &::before {
+                    width: calc(100% - 8px);
+                    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+                }
+
+                .hidden-text {
+ 
+                }
+
+                .img-holder {
+                    width: 42px;
+                }
+            }  */
+        }
+
+        
+        .hex-icon-btn-inner {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            background-color: var(--lightest);
+
+            /* FIXME: make responsive */
+            width: 90px;
+            height: 85px;
+            padding: 2px;
+            margin: auto;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            transition: all ease-in-out 300ms;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                transition: all ease-in-out 300ms;
+
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                background-color: var(--secondary-darker-40);
+
+                /* FIXME: make responsive */
+                width: 90px;
+                height: 85px;
+
+                /* top: 4px;
+                right: 4px; */
+            }
+
+            & > * {
+                z-index: 4;
+            }
+
+            .img-holder {
+                /* background */
+                img {
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+
+
+        }
+    }
+}
 
 /* ////// */
 
@@ -212,28 +334,35 @@ footer {
     width: 80px;
     height: 95px;
 
-    background-size: contain;
+    /* background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-    background-color: var(--lightest);
+    /* clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); */
+    /* background-color: var(--lightest); */
     /* border: 2px solid black; */
 
     .hex-icon-inner {
-        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-        background-color: var(--primary);
+        /* clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); */
+        /* background-color: var(--primary); */
 
         width: 76px;
         height: 91px;
 
-        display: flex;
+        img {
+            object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+        }
+
+        /* display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: center; */
     }
 }
 

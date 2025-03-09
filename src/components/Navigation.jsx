@@ -26,6 +26,7 @@ function Navigation ({}) {
     
 
     return (
+        // FIXME: HOVER STATE
         <section data-scroll-section className="navigation">
             <div className="logo-holder">
                 <img src={navigation.logo} alt="Nilex Logo" />
