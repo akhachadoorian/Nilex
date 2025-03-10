@@ -21,6 +21,11 @@
 
     --light: #FFFFF2;
     /* --lightest: #FDF2F2; */
+
+    --hex-size: 25.139vw; /* Adjust size */
+    --hex-gap: 60px; /* Gap between hexagons */
+    /* --hex-height: 298px; */
+    --hex-ratio: 0.9;
 }
 
 
@@ -171,17 +176,17 @@ button {
     justify-content: space-between;
     align-items: center;
     /* FIXME: determine best gap */
-    gap: 7.3vw;
+    gap: 4.3vw;
 
     @media all and (width <= 800px) {
         flex-direction: column;
         gap: 48px;
 
-        padding: 60px 16px;
+        padding: 80px 16px;
     }
 
     .header {
-        flex: 1 1 562px;
+        flex: 1 1.5 562px;
         color: var(--light);
 
         @media all and (width <= 800px) {
@@ -194,19 +199,28 @@ button {
     }
 
     .hex-btns {
-        flex: 0 0 680px;
+        /* flex: 0 0 680px;
         display: grid;
-        grid-template-columns: [s] 380px [m] 340px [e];
+        grid-template-columns: [s] 380px [m] 340px [e]; */
         /* FIXME: grid-template-rows: repeat(4, 160px); */
-        grid-template-rows: repeat(3, 160px);
-        row-gap: 30px;
+        /* grid-template-rows: repeat(3, 160px);
+        row-gap: 30px; */
 
-        @media all and (width <= 800px) {
-            flex: 1;
+        flex: 1 1 725px;
+        
+        & > div {
             width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            gap: var(--hex-gap);
+            justify-content: center;
+            align-items: center;
 
-            display: flex;
-            flex-direction: column;
+            @media all and (width <= 800px) {
+                grid-template-columns: [s] 1fr [e];
+            }
         }
+        
+
     }
 }

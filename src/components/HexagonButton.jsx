@@ -28,14 +28,14 @@ function HexagonButton ({ icon, iconAltText, hoverIcon, hoverIconAltText, title,
         backgroundRepeat: "no-repeat",
     }
 
-    const gridSpan = {
-        gridColumn: col,
-        gridRow: row,
-        marginLeft: marginLeft
-    }
+    // const gridSpan = {
+    //     gridColumn: col,
+    //     gridRow: row,
+    //     marginLeft: marginLeft
+    // }
 
     return(
-        <div className="hexagon-btn" style={gridSpan}>
+        <div className="hexagon-btn" >
             <a className="hex-btn-wrapper" href={link}  onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                 { isHovered || screenWidth < 800 ?
                     <div className="arrow" style={hoverArrow}></div>
@@ -60,7 +60,7 @@ function HexagonButton ({ icon, iconAltText, hoverIcon, hoverIconAltText, title,
                             <h5>{title}</h5>
                             <p>{bodyText}</p>
                         </div>
-                        <img src={hoverIcon} alt={hoverIconAltText} />
+                        <img className="hover-icon" src={hoverIcon} alt={hoverIconAltText} />
                     </div>
                 </div>
                 

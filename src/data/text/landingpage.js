@@ -164,7 +164,7 @@ export const contact = {
                 altText: 'Light gray envelope icon'
             },
             title: 'Send an Email',
-            bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
+            bodyText: 'For inquiries, quotes, or expert advice on our industrial and safety supplies, feel free to email us at mark@nilexindustrial.com.',
             link: 'mailto:mark@nilexindustrial.com',
             row: '1 / 2',
             col: '1 / 1',
@@ -185,25 +185,25 @@ export const contact = {
             link: 'tel:2514558595',
             row: '2 / 3',
             col: '2 / 2',
-            marginLeft: '-40px'
+            marginLeft: '0px'
         },
-        // {
-        //     id: 3,
-        //     icon: {
-        //         svg: OrangePen,
-        //         altText: 'Orange pen with a square icon'
-        //     },
-        //     iconHover: {
-        //         svg: LightPen,
-        //         altText: 'Light gray pen with a square icon'
-        //     },
-        //     title: 'Fill Out a Form',
-        //     bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
-        //     link: '',
-        //     row: '3 / 4',
-        //     col: '1 / 1',
-        //     marginLeft: '0px'
-        // },
+        {
+            id: 3,
+            icon: {
+                svg: OrangePen,
+                altText: 'Orange pen with a square icon'
+            },
+            iconHover: {
+                svg: LightPen,
+                altText: 'Light gray pen with a square icon'
+            },
+            title: 'Fill Out a Form',
+            bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
+            link: '',
+            row: '3 / 4',
+            col: '1 / 1',
+            marginLeft: '0px'
+        },
     ]
 }
 
