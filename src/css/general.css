@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 
 * {
     margin: 0;
@@ -61,11 +63,12 @@ h5 {
 }
 
 h4 {
-    font-family: Montserrat;
-    font-size: clamp(39px, 2.708vw, 44px);
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%;
+    font-family: "Bebas Neue";
+    /* font-size: clamp(39px, 2.708vw, 44px); */
+    font-size: clamp(52px, 3.611vw, 57px);
+    font-weight: 400;
+    line-height: 120%; /* 62.4px */
+    letter-spacing: 4.16px;
 }
 
 h3 {
@@ -85,12 +88,13 @@ h2 {
 }
 
 h1 {
-    font-family: Montserrat;
-    font-size: clamp(76px, 5.278vw, 81px); 
+    font-family: "Bebas Neue";
+    /* font-size: clamp(76px, 5.278vw, 81px);  */
+    font-size: clamp(90px, 6.25vw, 95px);
     font-style: normal;
-    font-weight: 700;
-    line-height: 120%; 
-    letter-spacing: 5.32px;
+    font-weight: 400;
+    line-height: 110%; /* 99px */
+    letter-spacing: 9px;
 }
 
 @media all and (width <= 800px) {
@@ -119,8 +123,9 @@ h1 {
     }
 
     h1 {
-        font-size: clamp(42px, 10.769vw, 47px);
-        letter-spacing: 0.42px;
+        /* font-size: clamp(42px, 10.769vw, 47px); */
+        font-size: clamp(48px, 12.8vw, 52px);
+        letter-spacing: 3px;
     }
 }
 
