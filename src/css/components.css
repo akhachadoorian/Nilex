@@ -478,6 +478,7 @@ footer {
 
     @media all and (width <= 800px) {
         margin: 0 !important;
+        max-height: 200px;
     }
 
     min-height: 298px;
@@ -584,6 +585,10 @@ footer {
                 
                 width: 11.458vw;
                 transform: rotate(40.46deg);
+
+                @media all and (width <= 800px) {
+                    width: unset;
+                }
             }
         }
 
@@ -631,7 +636,7 @@ footer {
                 }
 
                 h5 {
-                    font-size: 2.153vw;
+                    /* font-size: 2.153vw; */
                 }
                 
             }
