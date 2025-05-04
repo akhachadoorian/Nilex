@@ -467,26 +467,33 @@ footer {
 
 /* Hexagon button*/
 .hexagon-btn {
-
-    &:nth-child(even) {
+    aspect-ratio: 362 / 298;
+    /* &:nth-child(even) {
         transform: translateY(60%) translateX(-10%);
     }
 
     &:nth-child(odd) {
         transform: translateX(10%);
-    }
+    } */
 
     @media all and (width <= 800px) {
         margin: 0 !important;
     }
 
+    min-height: 298px;
+    height: 100%;
+
     .hex-btn-wrapper {
         position: relative;
         /* width: var(--hex-size); */
-        aspect-ratio: 1 / var(--hex-ratio);
+        /* aspect-ratio: 1 / var(--hex-ratio); */
+        /* max-height: 200px; */
 
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 
+        min-height: 298px;
+        height: 100%;
+        /* aspect-ratio: 362 / 298; */
 
 
         display: block;

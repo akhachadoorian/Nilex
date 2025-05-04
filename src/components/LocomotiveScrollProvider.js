@@ -22,7 +22,7 @@ export function LocomotiveScrollProvider({ children }) {
                 el: scrollRef.current,
                 smooth: true,
                 lerp: 0.1, // Adjust smoothness
-                multiplier: 1, // Adjust speed
+                multiplier: 1.5, // Adjust speed
                 smartphone: { smooth: true },
                 tablet: { smooth: true }
             });

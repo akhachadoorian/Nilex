@@ -62,7 +62,6 @@ function LandingPage({}) {
                     <p>{contact.bodyText}</p>
                 </div>
                 <div data-scroll data-scroll-speed="3" className="hex-btns">
-                    <div className="">
                     {contact.methods.map((m) =>
                         <HexagonButton 
                             key={m.id}
@@ -78,7 +77,6 @@ function LandingPage({}) {
                             marginLeft={m.marginLeft}
                         />
                     )}
-                    </div>
                     
                 </div>
             </section>

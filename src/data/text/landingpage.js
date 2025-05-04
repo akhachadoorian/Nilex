@@ -187,23 +187,23 @@ export const contact = {
             col: '2 / 2',
             marginLeft: '0px'
         },
-        {
-            id: 3,
-            icon: {
-                svg: OrangePen,
-                altText: 'Orange pen with a square icon'
-            },
-            iconHover: {
-                svg: LightPen,
-                altText: 'Light gray pen with a square icon'
-            },
-            title: 'Fill Out a Form',
-            bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
-            link: '',
-            row: '3 / 4',
-            col: '1 / 1',
-            marginLeft: '0px'
-        },
+        // {
+        //     id: 3,
+        //     icon: {
+        //         svg: OrangePen,
+        //         altText: 'Orange pen with a square icon'
+        //     },
+        //     iconHover: {
+        //         svg: LightPen,
+        //         altText: 'Light gray pen with a square icon'
+        //     },
+        //     title: 'Fill Out a Form',
+        //     bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
+        //     link: '',
+        //     row: '3 / 4',
+        //     col: '1 / 1',
+        //     marginLeft: '0px'
+        // },
     ]
 }
 

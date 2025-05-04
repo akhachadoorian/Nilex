@@ -170,7 +170,8 @@ button {
 
 #Contact {
     background-color: var(--secondary-darker-40);
-    padding: 80px 60px;
+    /* padding: 80px 60px; */
+    padding: 120px 60px;
 
     display: flex;
     justify-content: space-between;
@@ -185,12 +186,22 @@ button {
         padding: 80px 16px;
     }
 
+    @media all and (800px < width < 1300px) {
+        /* flex-direction: column; */
+        /* align-items: flex-start; */
+    }
+
     .header {
-        flex: 1 1.5 562px;
+        /* flex: 1 1.5 562px; */
+        flex: 1 1 529px;
         color: var(--light);
 
         @media all and (width <= 800px) {
             flex: 1;
+        }
+
+        @media all and (800px < width < 1300px) {
+            /* flex: 1; */
         }
 
         h2 {
@@ -206,20 +217,34 @@ button {
         /* grid-template-rows: repeat(3, 160px);
         row-gap: 30px; */
 
-        flex: 1 1 725px;
-        
-        & > div {
+        /* flex: 1 1 725px; */
+        flex: 1 0 900px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+
+        @media all and (800px < width < 1300px) {
+            /* flex: 1; */
+            /* min-height: 300px; */
+            flex: 1 0 200px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* & > div {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(2, 50%);
-            gap: var(--hex-gap);
+            /* grid-template-columns: repeat(2, 50%); 
+            /* gap: var(--hex-gap); 
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             justify-content: center;
             align-items: center;
 
             @media all and (width <= 800px) {
                 grid-template-columns: [s] 1fr [e];
             }
-        }
+        } */
         
 
     }
