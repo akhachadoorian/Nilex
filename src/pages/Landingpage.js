@@ -66,6 +66,7 @@ function LandingPage({}) {
                             icon={p.icon}
                             title={p.title}
                             bodyText={p.bodyText}
+                            style={p.style}
                         />
                     )}
                 </div>
@@ -74,6 +75,7 @@ function LandingPage({}) {
             <section data-scroll-section id="Contact">
                 {/* <div data-scroll data-scroll-speed="1" className='header'> */}
                 <div className='header'>
+                    <Eyebrow text={contact.eyebrow} color={"var(--primary)"}/>
                     <h2>{contact.header}</h2>
                     <p>{contact.bodyText}</p>
                 </div>

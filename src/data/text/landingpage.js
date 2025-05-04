@@ -28,10 +28,10 @@ export const navigation = {
             name: 'About',
             id: 'About'
         },
-        // {
-        //     name: 'Products',
-        //     id: 'Products'
-        // },
+        {
+            name: 'Products',
+            id: 'Products'
+        },
         {
             name: 'Contact',
             id: 'Contact'
@@ -122,38 +122,36 @@ export const about = {
 export const product = {
     eyebrow: "Products",
     header: 'Your Source for Industrial Essentials',
-    bodyText: "Nilex Industrial is your trusted source for high-quality industrial and safety supplies, offering more than just gloves, lighting, and protective gear. From personal protective equipment (PPE) and job site lighting to facility maintenance products, signage, spill control, and more, Nilex provides reliable solutions that help businesses maintain safe, efficient operations. Whether you're equipping a crew or stocking a facility, our team is here to help you find the right products for your needs.",
+    bodyText: "Nilex Industrial is your trusted source for high-quality industrial and safety supplies, offering more than just gloves, lighting, and protective gear. From personal protective equipment (PPE) and job site lighting to facility maintenance products, signage, spill control, and more, Nilex provides reliable solutions that help businesses maintain safe, efficient operations. Whether you're equipping a crew or stocking a facility, our team is here to help you find the right products for your needs. Below are three of our most popular product categories, trusted by customers across industries.",
     products: [
         {
             id: 1,
             icon: 'bulb',
             title: "Lighting",
             bodyText: "<p>Nilex Industrial provides durable lighting solutions built to perform in demanding work environments. Their lineup includes LED work lights, portable floodlights, and rechargeable lanterns ideal for job sites, warehouses, and emergency situations.</p> <p><em>If you need guidance on choosing the right lighting solution, we’re here to help.</em></p>",
+            style: 'light'
         },
-        // {
-        //     id: 2,
-        //     icon: {
-        //         svg: HelmetWhite,
-        //         altText: "Icon of a hard hat",
-        //     },
-        //     title: "Safety",
-        //     bodyText: "Nilex Industrial carries a comprehensive range of safety equipment to support workplace protection and compliance. Their offerings include high-visibility apparel, eye and ear protection, respiratory gear, and fall protection products. Each item is selected to meet the safety demands of industrial and commercial settings. If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we’re ready to assist."
-        // },
-        // {
-        //     id: 3,
-        //     icon: {
-        //         svg: GloveWhite,
-        //         altText: "Icon of a glove",
-        //     },
-        //     title: "Gloves",
-        //     bodyText: "Nilex Industrial offers a wide range of gloves to protect hands across various work environments. Their selection includes disposable nitrile gloves, cut-resistant styles, coated work gloves, and options for heat or chemical resistance. Designed for use in construction, maintenance, food service, and general industry, these gloves deliver reliable protection and meet key safety standards. If you’re looking for a specific glove or need help finding the right fit, we’re here to help—just reach out."
-        // },
+        {
+            id: 2,
+            icon: 'helmet',
+            title: "Safety",
+            bodyText: "<p>Nilex Industrial carries a comprehensive range of safety equipment to support workplace protection and compliance. Their offerings include high-visibility apparel, eye and ear protection, respiratory gear, and fall protection products.</p> <p><em>If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we’re ready to assist.</em></p>",
+            style: 'primary'
+        },
+        {
+            id: 3,
+            icon: 'glove',
+            title: "Gloves",
+            bodyText: "<p>Nilex Industrial offers a wide range of gloves to protect hands across various work environments. Their selection includes disposable nitrile gloves, cut-resistant styles, coated work gloves, and options for heat or chemical resistance. </p> <p><em>If you’re looking for a specific glove or need help finding the right fit, we’re here to help—just reach out.</em></p>",
+            style: 'dark'
+        },
     ]
 }
 
 
 export const contact = {
-    header: 'Contact Us',
+    eyebrow: 'Contact Us',
+    header: 'Need Industrial Gear? Let’s Talk.',
     bodyText: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.',
     methods: [
         {

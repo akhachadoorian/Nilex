@@ -800,27 +800,68 @@ footer {
 /* Cards_V2 */
 
 .card_v2 {
+    height: 100%;
+    display: block;
+    overflow: hidden;
+
     .card_v2-inner {
-        /* background: rgba(147, 144, 146, 0.10); */
-        background: rgba(247, 162, 124, 0.25);
+        display: block;
+        height: 100%;
+
         padding: 40px 25px;
+        background: rgba(147, 144, 146, 0.10);
 
         .icon {
             font-size: 174px;
-            color: var(--primary-lighter-20);
-
             margin-bottom: 60px;
+            color: var(--secondary-lighter-40);
         }
 
         h4 {
             text-align: left;
-            margin-bottom: 16px;
-            color: var(--primary-darker-10)
+            margin-bottom: 24px;
+            color: var(--secondary)
         }
 
         p {
             text-align: left;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        &.dark {
+            background: rgba(145, 60, 22, 0.25);
+
+            .icon {
+                color: var(--primary-darker-40);
+            }
+
+            h4 {
+                color: var(--primary-darker-40);
+            }
+        }
+
+        &.primary {
+            background: rgba(241, 100, 37, 0.25);
+
+            .icon {
+                color: var(--primary);
+            }
+
+            h4 {
+                color: var(--primary);
+            }
+        }
+
+        &.light {
+            background: rgba(247, 162, 124, 0.25);
+
+            .icon {
+                color: var(--primary-lighter-20);
+            }
+
+            h4 {
+                color: var(--primary-darker-10);
+            }
         }
     }
 }
