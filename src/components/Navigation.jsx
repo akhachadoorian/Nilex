@@ -23,6 +23,12 @@ function Navigation ({}) {
     //         }, 200); // Small delay to ensure the section is detected
     //     }
     // };
+    const handleScroll = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     
 
     return (
@@ -36,7 +42,7 @@ function Navigation ({}) {
                     <button 
                         key={l.id} 
                         className="main-nav"
-                        // onClick={() => handleScroll(l.id)}
+                        onClick={() => handleScroll(l.id)}
                     >
                         {l.name}
                     </button>

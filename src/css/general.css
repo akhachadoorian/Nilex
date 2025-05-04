@@ -31,6 +31,7 @@
 
 p, a {
     font-family: Montserrat;
+    color: var(--secondary-darker-40);
     font-size: clamp(18px, 1.25vw, 22px);
     font-style: normal;
     font-weight: 500;
@@ -176,7 +177,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     /* FIXME: determine best gap */
     /* gap: 4.3vw; */
     gap: 48px;
@@ -197,9 +198,11 @@ button {
         /* flex: 1 1.5 562px; */
         /* flex: 1 1 529px; */
         color: var(--light);
+        max-width: 80vw;
 
         @media all and (width <= 800px) {
             flex: 1;
+            max-width: none;
         }
 
         @media all and (800px < width < 1300px) {
@@ -208,6 +211,9 @@ button {
 
         h2 {
             margin-bottom: 20px;
+        }
+        p {
+            color: var(--light); 
         }
     }
 

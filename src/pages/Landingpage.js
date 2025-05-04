@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 import { hero, about, hexagons, product, contact } from "../data/text/landingpage.js"
 import MediaWithCopy from '../components/MediaWithCopy.jsx';
 import Buttons from "../components/Buttons.jsx";
-// import Hexagon from '../components/Hexagon.jsx';
+import Hexagon from '../components/Hexagon.jsx';
 import Card from '../components/Card.jsx';
 import HexagonButton from "../components/HexagonButton.jsx";
 // import Layout from "../components/Layout";
@@ -40,12 +40,14 @@ function LandingPage({}) {
                 />
             </section>
 
-            {/* <section data-scroll-section style={{position: "relative", overflow: 'hidden'}} id='Products'>
-                <div data-scroll data-scroll-speed="1" className='header'>
+            {/* <section data-scroll-section style={{position: "relative", overflow: 'hidden'}} id='Products'> */}
+                {/* <div data-scroll data-scroll-speed="1" className='header'> */}
+                {/* <div className='header'>
                     <h2>{product.header}</h2>
                     <p>{product.bodyText}</p>
-                </div>
-                <div data-scroll data-scroll-speed="3" className='card-grid'>
+                </div> */}
+                {/* <div data-scroll data-scroll-speed="3" className='card-grid'> */}
+                {/* <div  className='card-grid'>
                     {product.products.map((p) =>
                         <Card 
                             key={p.id}
