@@ -6,7 +6,8 @@ function MediaWithCopy({ header, bodyText, subsections, media, mediaAltText, med
             <div className="mwc-inner">
                 { mediaSide == "right" ?
                     <>
-                        <div data-scroll data-scroll-speed="1" className="text-side">
+                        {/* <div data-scroll data-scroll-speed="1" className="text-side"> */}
+                        <div className="text-side">
                             <h2>{header}</h2>
                             <div className="body" dangerouslySetInnerHTML={{ __html: bodyText }} />
                             <div className="subsections">
@@ -18,18 +19,21 @@ function MediaWithCopy({ header, bodyText, subsections, media, mediaAltText, med
                                 ))}
                             </div>
                         </div>
-                        <div data-scroll data-scroll-speed="2" className="img-side">
+                        {/* <div data-scroll data-scroll-speed="2" className="img-side"> */}
+                        <div className="img-side">
                             <div className="overlay"></div>
                             <img src={media} alt={mediaAltText} />
                         </div>
                     </>
                 :
                     <>
-                        <div data-scroll data-scroll-speed="2" className="img-side">
+                        {/* <div data-scroll data-scroll-speed="2" className="img-side"> */}
+                        <div className="img-side">
                             <div className="overlay"></div>
                             <img src={media} alt={mediaAltText} />
                         </div>
-                        <div data-scroll data-scroll-speed="1" className="text-side">
+                        {/* <div data-scroll data-scroll-speed="1" className="text-side"> */}
+                        <div className="text-side">
                             <h2>{header}</h2>
                             <p>{bodyText}</p>
                         </div>

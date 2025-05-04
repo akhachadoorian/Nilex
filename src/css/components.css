@@ -261,6 +261,7 @@ footer {
 
         @media all and (width <= 800px) {
             padding: 0 20px;
+            min-height: 80vh;
         }
 
         display: flex;
