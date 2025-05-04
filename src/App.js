@@ -12,13 +12,13 @@ import Footer from './components/Footer.jsx';
 function App() {
   return (
     <Router>
-      <LocomotiveScrollProvider>
+      {/* <LocomotiveScrollProvider> */}
         <Navigation />
           <Routes>
               <Route path="/" element={<LandingPage />} />
           </Routes>
         <Footer />
-      </LocomotiveScrollProvider>
+      {/* </LocomotiveScrollProvider> */}
     </Router>
     // <div className="App">
     //   <header className="App-header">
