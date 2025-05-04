@@ -4,6 +4,7 @@ import './css/App.css';
 
 import './css/components.css';
 import './css/general.css';
+import './css/buttons.css';
 import LandingPage from './pages/Landingpage';
 import Navigation from './components/Navigation';
 import { LocomotiveScrollProvider } from './components/LocomotiveScrollProvider.js';

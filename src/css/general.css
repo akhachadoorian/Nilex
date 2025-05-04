@@ -174,10 +174,12 @@ button {
     padding: 120px 60px;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     /* FIXME: determine best gap */
-    gap: 4.3vw;
+    /* gap: 4.3vw; */
+    gap: 48px;
 
     @media all and (width <= 800px) {
         flex-direction: column;
@@ -193,7 +195,7 @@ button {
 
     .header {
         /* flex: 1 1.5 562px; */
-        flex: 1 1 529px;
+        /* flex: 1 1 529px; */
         color: var(--light);
 
         @media all and (width <= 800px) {
@@ -252,5 +254,13 @@ button {
         } */
         
 
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+
+        width: 100%;
     }
 }

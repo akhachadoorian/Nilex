@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 
 import { hero, about, hexagons, product, contact } from "../data/text/landingpage.js"
 import MediaWithCopy from '../components/MediaWithCopy.jsx';
+import Buttons from "../components/Buttons.jsx";
 // import Hexagon from '../components/Hexagon.jsx';
 import Card from '../components/Card.jsx';
 import HexagonButton from "../components/HexagonButton.jsx";
@@ -62,8 +63,21 @@ function LandingPage({}) {
                     <h2>{contact.header}</h2>
                     <p>{contact.bodyText}</p>
                 </div>
+                <div className="buttons">
+
+                    {contact.methods.map((m) =>
+                        <Buttons 
+                            key={m.id}
+                            icon={m.icon.svg}
+                            iconAltText={m.icon.altText}
+                            btn_text={m.title}
+                            link={m.link}
+                            style={'main'}
+                        />
+                    )}
+                </div>
                 {/* <div data-scroll data-scroll-speed="3" className="hex-btns"> */}
-                <div className="hex-btns">
+                {/* <div className="hex-btns">
                     {contact.methods.map((m) =>
                         <HexagonButton 
                             key={m.id}
@@ -80,7 +94,7 @@ function LandingPage({}) {
                         />
                     )}
                     
-                </div>
+                </div> */}
             </section>
         </>
     );

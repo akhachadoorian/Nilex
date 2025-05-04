@@ -1,0 +1,31 @@
+/* Buttons */
+
+.btn {
+    padding: 12px 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* ////// */
+
+/* Main */
+
+.btn.main {
+    /* background-color: var(--primary); */
+    background: linear-gradient(to right, var(--primary-lighter-40) 0%, var(--primary-lighter-40) 49%,  var(--primary) 50%, var(--primary) 100%);
+    background-size: 201%;
+    background-position: right;
+    transition: all ease-in-out 300ms;
+
+
+    .btn_text {
+        color: var(--light);
+    }
+
+    &:hover {
+        background-position: left;
+    }
+}

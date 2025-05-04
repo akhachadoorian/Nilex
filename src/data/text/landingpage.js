@@ -17,7 +17,8 @@ import LightMail from "../images/LightMail.svg"
 import LightPhone from "../images/LightPhone.svg"
 import LightPen from "../images/LightPen.svg"
 
-import WhitePhone from "../images/WhitePhone.svg"
+import WhitePhone from "../images/Phone-White.svg"
+import WhiteEmail from "../images/Email-White.svg"
 
 export const navigation = {
     logo: Logo,
@@ -156,8 +157,8 @@ export const contact = {
         {
             id: 1,
             icon: {
-                svg: OrangeMail,
-                altText: 'Orange envelope icon'
+                svg: WhiteEmail,
+                altText: 'White envelope icon'
             },
             iconHover: {
                 svg: LightMail,
@@ -173,8 +174,8 @@ export const contact = {
         {
             id: 2,
             icon: {
-                svg: OrangePhone,
-                altText: 'Orange phone icon'
+                svg: WhitePhone,
+                altText: 'White phone icon'
             },
             iconHover: {
                 svg: LightPhone,
