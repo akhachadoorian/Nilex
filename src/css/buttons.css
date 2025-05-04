@@ -28,4 +28,9 @@
     &:hover {
         background-position: left;
     }
+
+    .icon {
+        color: var(--light);
+        font-size: 20px;
+    }
 }

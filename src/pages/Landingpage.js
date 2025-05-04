@@ -8,7 +8,9 @@ import MediaWithCopy from '../components/MediaWithCopy.jsx';
 import Buttons from "../components/Buttons.jsx";
 import Hexagon from '../components/Hexagon.jsx';
 import Card from '../components/Card.jsx';
+import Card_V2 from '../components/Card_V2.jsx';
 import HexagonButton from "../components/HexagonButton.jsx";
+import Eyebrow from "../components/Eyebrow.jsx";
 // import Layout from "../components/Layout";
 
 function LandingPage({}) {
@@ -32,6 +34,7 @@ function LandingPage({}) {
                     speckled={true}
                 /> */}
                 <MediaWithCopy 
+                    eyebrow={about.eyebrow}
                     header={about.header}
                     bodyText={about.bodyText}
                     media={about.media}
@@ -40,16 +43,25 @@ function LandingPage({}) {
                 />
             </section>
 
-            {/* <section data-scroll-section style={{position: "relative", overflow: 'hidden'}} id='Products'> */}
+            <section data-scroll-section style={{position: "relative", overflow: 'hidden'}} id='Products'>
                 {/* <div data-scroll data-scroll-speed="1" className='header'> */}
-                {/* <div className='header'>
+                <div className='header'>
+                    <Eyebrow text={product.eyebrow} center={true}/>
                     <h2>{product.header}</h2>
                     <p>{product.bodyText}</p>
-                </div> */}
+                </div>
                 {/* <div data-scroll data-scroll-speed="3" className='card-grid'> */}
-                {/* <div  className='card-grid'>
-                    {product.products.map((p) =>
+                <div  className='card-grid'>
+                    {/* {product.products.map((p) =>
                         <Card 
+                            key={p.id}
+                            icon={p.icon}
+                            title={p.title}
+                            bodyText={p.bodyText}
+                        />
+                    )} */}
+                    {product.products.map((p) =>
+                        <Card_V2
                             key={p.id}
                             icon={p.icon}
                             title={p.title}
@@ -57,7 +69,7 @@ function LandingPage({}) {
                         />
                     )}
                 </div>
-            </section> */}
+            </section>
 
             <section data-scroll-section id="Contact">
                 {/* <div data-scroll data-scroll-speed="1" className='header'> */}

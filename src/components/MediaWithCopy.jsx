@@ -1,6 +1,8 @@
 import react from "react";
+import Eyebrow from "./Eyebrow";
+import Accordion from "./Accordion";
 
-function MediaWithCopy({ header, bodyText, subsections, media, mediaAltText, mediaSide = "right" }) {
+function MediaWithCopy({ eyebrow, header, bodyText, subsections, media, mediaAltText, mediaSide = "right" }) {
     return (
         <div className="media-with-copy" >
             <div className="mwc-inner">
@@ -8,14 +10,16 @@ function MediaWithCopy({ header, bodyText, subsections, media, mediaAltText, med
                     <>
                         {/* <div data-scroll data-scroll-speed="1" className="text-side"> */}
                         <div className="text-side">
+                            { eyebrow ? <Eyebrow text={eyebrow} color={"var(--primary-darker-40"} />: '' }
                             <h2>{header}</h2>
                             <div className="body" dangerouslySetInnerHTML={{ __html: bodyText }} />
                             <div className="subsections">
                                 {subsections.map((s) => (
-                                    <div key={s.subheader} className="section">
-                                        <h6>{s.subheader}</h6>
-                                        <p>{s.subtext}</p>
-                                    </div>
+                                    <Accordion 
+                                        key={s.subheader} 
+                                        header={s.subheader}
+                                        body={s.subtext}
+                                    />
                                 ))}
                             </div>
                         </div>
@@ -34,6 +38,7 @@ function MediaWithCopy({ header, bodyText, subsections, media, mediaAltText, med
                         </div>
                         {/* <div data-scroll data-scroll-speed="1" className="text-side"> */}
                         <div className="text-side">
+                            { eyebrow ? <Eyebrow text={eyebrow} color={"var(--primary-darker-40"} />: '' }
                             <h2>{header}</h2>
                             <p>{bodyText}</p>
                         </div>

@@ -61,6 +61,7 @@ export const footer = {
                 svg: WhitePhone,
                 altText: 'Phone icon'
             },
+            fa_icon: "phone",
             text: '(251) 458-9718',
             link: 'tel:2514589718',
             target: '',
@@ -70,6 +71,7 @@ export const footer = {
                 svg: WhiteEmail,
                 altText: 'Email icon'
             },
+            fa_icon: "envelope",
             text: '',
             link: 'mailto:mark@nilexindustrical.com',
             target: '',
@@ -96,7 +98,8 @@ export const hero = {
 }
 
 export const about = {
-    header: "About Nilex",
+    eyebrow: 'About Nilex',
+    header: "Trusted Safety and Industrial Solutions Since 2012",
     bodyText: "<p>Founded in 2012, Nilex Industrial and Safety Supplies is a proud woman-owned small business committed to providing top-quality industrial and safety products. As a family-run company, we prioritize reliability, exceptional service, and workplace safety, ensuring businesses have the essential supplies they need to protect their workforce.</p><p>At the heart of our company is Mark Khachadoorian, Owner and Vice-President of Sales, who leads our team with expertise and dedication to customer satisfaction.</p>",
     media: IndustrialPic,
     mediaAltText: 'Guy using an electric saw or grinder on a piece of metal with sparks flying out',
@@ -117,36 +120,34 @@ export const about = {
 }
 
 export const product = {
-    header: 'Products',
+    eyebrow: "Products",
+    header: 'Your Source for Industrial Essentials',
     bodyText: "Nilex Industrial is your trusted source for high-quality industrial and safety supplies, offering more than just gloves, lighting, and protective gear. From personal protective equipment (PPE) and job site lighting to facility maintenance products, signage, spill control, and more, Nilex provides reliable solutions that help businesses maintain safe, efficient operations. Whether you're equipping a crew or stocking a facility, our team is here to help you find the right products for your needs.",
     products: [
         {
             id: 1,
-            icon: {
-                svg: LightbulbWhite,
-                altText: "Icon of a lightbulb",
-            },
+            icon: 'bulb',
             title: "Lighting",
-            bodyText: "Nilex Industrial offers durable lighting solutions built for demanding environments, including LED work lights, portable floodlights, and rechargeable lanterns ideal for job sites, warehouses, and emergencies. Designed for efficiency and long-lasting use, these products ensure visibility and safety wherever work gets done—reach out if you need help choosing the right fit.",
+            bodyText: "<p>Nilex Industrial provides durable lighting solutions built to perform in demanding work environments. Their lineup includes LED work lights, portable floodlights, and rechargeable lanterns ideal for job sites, warehouses, and emergency situations.</p> <p><em>If you need guidance on choosing the right lighting solution, we’re here to help.</em></p>",
         },
-        {
-            id: 2,
-            icon: {
-                svg: HelmetWhite,
-                altText: "Icon of a hard hat",
-            },
-            title: "Safety",
-            bodyText: "Nilex Industrial carries a comprehensive range of safety equipment to support workplace protection and compliance. Their offerings include high-visibility apparel, eye and ear protection, respiratory gear, and fall protection products. Each item is selected to meet the safety demands of industrial and commercial settings. If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we’re ready to assist."
-        },
-        {
-            id: 3,
-            icon: {
-                svg: GloveWhite,
-                altText: "Icon of a glove",
-            },
-            title: "Gloves",
-            bodyText: "Nilex Industrial offers a wide range of gloves to protect hands across various work environments. Their selection includes disposable nitrile gloves, cut-resistant styles, coated work gloves, and options for heat or chemical resistance. Designed for use in construction, maintenance, food service, and general industry, these gloves deliver reliable protection and meet key safety standards. If you’re looking for a specific glove or need help finding the right fit, we’re here to help—just reach out."
-        },
+        // {
+        //     id: 2,
+        //     icon: {
+        //         svg: HelmetWhite,
+        //         altText: "Icon of a hard hat",
+        //     },
+        //     title: "Safety",
+        //     bodyText: "Nilex Industrial carries a comprehensive range of safety equipment to support workplace protection and compliance. Their offerings include high-visibility apparel, eye and ear protection, respiratory gear, and fall protection products. Each item is selected to meet the safety demands of industrial and commercial settings. If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we’re ready to assist."
+        // },
+        // {
+        //     id: 3,
+        //     icon: {
+        //         svg: GloveWhite,
+        //         altText: "Icon of a glove",
+        //     },
+        //     title: "Gloves",
+        //     bodyText: "Nilex Industrial offers a wide range of gloves to protect hands across various work environments. Their selection includes disposable nitrile gloves, cut-resistant styles, coated work gloves, and options for heat or chemical resistance. Designed for use in construction, maintenance, food service, and general industry, these gloves deliver reliable protection and meet key safety standards. If you’re looking for a specific glove or need help finding the right fit, we’re here to help—just reach out."
+        // },
     ]
 }
 
@@ -158,7 +159,7 @@ export const contact = {
         {
             id: 1,
             icon: {
-                svg: WhiteEmail,
+                svg: "envelope",
                 altText: 'White envelope icon'
             },
             iconHover: {
@@ -175,7 +176,7 @@ export const contact = {
         {
             id: 2,
             icon: {
-                svg: WhitePhone,
+                svg: "phone",
                 altText: 'White phone icon'
             },
             iconHover: {
@@ -233,10 +234,10 @@ export const hexagons = {
         //     right: ''
         // },
         desktop: {
-            top: '-50px',
-            // bottom: '0',
+            // top: '-50px',
+            bottom: '50px',
             // left: '',
-            right: '0'
+            right: '-100px'
         } 
     }
 }

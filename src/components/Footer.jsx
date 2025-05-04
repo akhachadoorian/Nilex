@@ -31,7 +31,7 @@ function Footer({}) {
         {footer.contactButtons.map((btn) =>
             <HexIconButton
                 key={btn.text}
-                icon={btn.icon.svg}
+                icon={btn.fa_icon}
                 iconAltText={btn.icon.altText}
                 text={btn.text}
                 link={btn.link}

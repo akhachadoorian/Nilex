@@ -9,6 +9,7 @@
     --primary-lighter-40: #F7A27C;
     --primary-lighter-20: #F48351;
     --primary: #F16425;
+    --primary-darker-10: #D95A21;
     --primary-darker-20: #C1501E;
     --primary-darker-40: #913C16;
 
@@ -77,7 +78,7 @@ h3 {
 
 h2 {
     font-family: Montserrat;
-    font-size: clamp(61px, 4.236vw, 66px);
+    font-size: clamp(60px, 4.236vw, 66px);
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
