@@ -159,6 +159,10 @@ button {
     text-align: center;
     padding: 80px 60px;
 
+    @media all and (width <= 800px) {
+        padding: 80px 16px;
+    }
+
     .header {
         margin-bottom: 60px;
         h2 {
@@ -170,7 +174,7 @@ button {
 
     .card-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(419px, 1fr ));
         gap: 50.67px;
     }
 }
