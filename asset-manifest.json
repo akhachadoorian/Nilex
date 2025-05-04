@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b76df70e.css",
-    "main.js": "/static/js/main.d3e9d9fe.js",
+    "main.css": "/static/css/main.23a9f649.css",
+    "main.js": "/static/js/main.43dea3c4.js",
     "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
     "static/media/HeroBg.png": "/static/media/HeroBg.b47bb9d6e3e576572cf8.png",
     "static/media/Industrial.png": "/static/media/Industrial.19b08bbe65e46e52260c.png",
@@ -15,18 +15,19 @@
     "static/media/Glove-White.svg": "/static/media/Glove-White.89628a469f22ad36db81b98524e96e41.svg",
     "static/media/LightMail.svg": "/static/media/LightMail.fc9f6c47a7c4a57d39958f7925c88bea.svg",
     "static/media/LightPhone.svg": "/static/media/LightPhone.b610414f0d7e87c10b7195205e9195be.svg",
+    "static/media/Phone-White.svg": "/static/media/Phone-White.3eac917c73fa1713bccaedda4f3efb2e.svg",
     "index.html": "/index.html",
-    "static/media/WhitePhone.svg": "/static/media/WhitePhone.e639955cc3284b840632e50ee0bdaa9f.svg",
     "static/media/OrangePhone.svg": "/static/media/OrangePhone.7efb5683564f89470644cd543a33d56c.svg",
+    "static/media/Email-White.svg": "/static/media/Email-White.3f1a421b60bfb63f7ab586c4b61d542e.svg",
     "static/media/OrangeEmail.svg": "/static/media/OrangeEmail.5e6d458854c5eeebc0a1b57972c724df.svg",
     "static/media/Arrow.svg": "/static/media/Arrow.c1c13892a01d918f4dc43dd5495672d3.svg",
     "static/media/ArrowWhite.svg": "/static/media/ArrowWhite.106c3af952fbca91d34748f1b94f43bf.svg",
-    "main.b76df70e.css.map": "/static/css/main.b76df70e.css.map",
-    "main.d3e9d9fe.js.map": "/static/js/main.d3e9d9fe.js.map",
+    "main.23a9f649.css.map": "/static/css/main.23a9f649.css.map",
+    "main.43dea3c4.js.map": "/static/js/main.43dea3c4.js.map",
     "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b76df70e.css",
-    "static/js/main.d3e9d9fe.js"
+    "static/css/main.23a9f649.css",
+    "static/js/main.43dea3c4.js"
   ]
 }
