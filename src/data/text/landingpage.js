@@ -183,7 +183,7 @@ export const contact = {
             },
             title: 'Give Us a Call',
             bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
-            link: 'tel:2514558595',
+            link: 'tel:2514598718',
             row: '2 / 3',
             col: '2 / 2',
             marginLeft: '0px'

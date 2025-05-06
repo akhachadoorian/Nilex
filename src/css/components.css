@@ -814,6 +814,7 @@ footer {
     height: 100%;
     display: block;
     overflow: hidden;
+    box-shadow: 5px 4px 6.9px 0px rgba(0, 0, 0, 0.10);
 
     .card_v2-inner {
         display: block;
