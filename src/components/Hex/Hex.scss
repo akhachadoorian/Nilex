@@ -1,0 +1,23 @@
+@use "../../styles/variables" as *;
+
+.hex {
+    aspect-ratio: 59/70;
+
+    display: flex;
+    align-items: center;
+
+    width: var(--hex-mobile-size);
+    // height: var(--hex-mobile-size);
+    flex: 0 0 var(--hex-mobile-size);
+
+    @include big {
+        width: var(--hex-size);
+        // height: var(--hex-size);
+        flex: 0 0 var(--hex-size);
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;;
+    }
+}

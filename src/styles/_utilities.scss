@@ -1,0 +1,56 @@
+@use "./variables" as *;
+
+// ── Image Classes ───────────────────────
+.img {
+    &-wrapper {
+        position: relative;
+        z-index: 2;
+
+        .img-holder {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-holder {
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// ── Btns ───────────────────────
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-400);
+}
+
+
+// ── Breakpoint wrapper ───────────────────────
+
+.mobile_only {
+    @include small {
+        display: none;
+    }
+
+    @include big {
+        display: none;
+    }
+}
+
+.tablet_only {
+    @include big {
+        display: none;
+    }
+}
+
+.desktop_only {
+    @include small {
+        display: none;
+    }
+}

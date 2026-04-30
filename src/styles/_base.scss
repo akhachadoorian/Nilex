@@ -1,0 +1,63 @@
+// ── Google Fonts ───────────────────────────────────
+// Barlow
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Barlow Condensed
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Inter
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+// Space Mono
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// Geist Mono
+// @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+
+// ── CSS custom properties (primitives) ───────────────────────
+:root {
+    // Orange scale (primary brand)
+    --orange-100: #FEF0E8;
+    --orange-200: #FDD9C4;
+    --orange-300: #FBC09E;
+    --orange-400: #F8A476;
+    --orange-500: #F16425;
+    --orange-600: #C94E18;
+    --orange-700: #A03C12;
+    --orange-800: #7A2D0D;
+    --orange-850: #612308;
+    --orange-900: #4A1A05;
+    --orange-1000: #2E0F02;
+
+    // Oxblood scale (secondary brand)
+    --oxblood-100: #F5E8E8;
+    --oxblood-200: #E8CECE;
+    --oxblood-300: #D4A0A0;
+    --oxblood-400: #B96B6B;
+    --oxblood-500: #8C2C2C;
+    --oxblood-600: #6B1F1F;
+    --oxblood-650: #5E1B1B;
+    --oxblood-700: #4F1616;
+    --oxblood-800: #3D0F0F;
+    --oxblood-850: #300C0C;
+    --oxblood-900: #230808;
+    --oxblood-1000: #160404;
+
+    // Stone scale (neutrals)
+    --stone-000: #fefefe;
+    --stone-100: #F7F3F0;
+    --stone-200: #EDE8E3;
+    --stone-300: #DDD6CE;
+    --stone-400: #C8BDB4;
+    --stone-500: #AFA49A;
+    --stone-600: #8F8279;
+    --stone-700: #6E625A;
+    --stone-800: #524740;
+    --stone-850: #3E342E;
+    --stone-900: #2C231E;
+    --stone-1000: #1A1310;
+
+
+    --max-width: 1600px;
+}

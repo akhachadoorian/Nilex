@@ -1,0 +1,40 @@
+export type OrangeScale =
+  | "--orange-100"
+  | "--orange-200"
+  | "--orange-300"
+  | "--orange-400"
+  | "--orange-500"
+  | "--orange-600"
+  | "--orange-700"
+  | "--orange-800"
+  | "--orange-850"
+  | "--orange-900"
+  | "--orange-1000"
+
+export type OxbloodScale =
+  | "--oxblood-100"
+  | "--oxblood-200"
+  | "--oxblood-300"
+  | "--oxblood-400"
+  | "--oxblood-500"
+  | "--oxblood-600"
+  | "--oxblood-700"
+  | "--oxblood-800"
+  | "--oxblood-850"
+  | "--oxblood-900"
+  | "--oxblood-1000"
+
+export type StoneScale =
+  | "--stone-100"
+  | "--stone-200"
+  | "--stone-300"
+  | "--stone-400"
+  | "--stone-500"
+  | "--stone-600"
+  | "--stone-700"
+  | "--stone-800"
+  | "--stone-850"
+  | "--stone-900"
+  | "--stone-1000"
+
+export type ColorVariables = OrangeScale | OxbloodScale | StoneScale

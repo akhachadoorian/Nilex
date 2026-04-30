@@ -1,0 +1,18 @@
+@use "../../styles/variables" as *;
+
+div.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-100);
+
+    margin-bottom: var(--space-200);
+
+    .hex {
+        flex: 0 0 20px;
+    }
+
+    &-center {
+        text-align: center;
+        justify-content: center;
+    }
+}

@@ -8,7 +8,7 @@
 }
 
 :root {
-    --primary-lighter-40: #F7A27C;
+    /* --primary-lighter-40: #F7A27C;
     --primary-lighter-20: #F48351;
     --primary: #F16425;
     --primary-darker-10: #D95A21;
@@ -20,9 +20,9 @@
     --secondary-lighter-20: #6F6B6D;
     --secondary: #4B4649;
     --secondary-darker-20: #3C383A;
-    --secondary-darker-40: #2D2A2C;
+    --secondary-darker-40: #2D2A2C; */
 
-    --light: #FFFFF2;
+    /* --light: #FFFFF2; */
     /* --lightest: #FDF2F2; */
 
     --hex-size: 25.139vw; /* Adjust size */
@@ -31,22 +31,7 @@
     --hex-ratio: 0.9;
 }
 
-
-p, a {
-    font-family: Montserrat;
-    color: var(--secondary-darker-40);
-    font-size: clamp(18px, 1.25vw, 22px);
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
-}
-
-a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-h6 {
+/* h6 {
     font-family: Montserrat;
     font-size: clamp(29px, 2.014vw, 34px);
     font-style: normal;
@@ -63,75 +48,45 @@ h5 {
 }
 
 h4 {
-    font-family: "Bebas Neue";
+    font-family: "Bebas Neue"; */
     /* font-size: clamp(39px, 2.708vw, 44px); */
-    font-size: clamp(52px, 3.611vw, 57px);
+    /* font-size: clamp(52px, 3.611vw, 57px);
     font-weight: 400;
-    line-height: 120%; /* 62.4px */
-    letter-spacing: 4.16px;
-}
+    line-height: 120%; 62.4px */
+    /* letter-spacing: 4.16px;
+} */
 
-h3 {
+/* h3 {
     font-family: Montserrat;
     font-size: clamp(49px, 3.403vw, 54px);
     font-style: normal;
     font-weight: 600;
     line-height: 120%;
-}
+} */
 
-h2 {
+/* h2 {
     font-family: Montserrat;
     font-size: clamp(60px, 4.236vw, 66px);
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
-}
+} */
 
-h1 {
+/* h1 {
     font-family: "Bebas Neue";
-    /* font-size: clamp(76px, 5.278vw, 81px);  */
+    font-size: clamp(76px, 5.278vw, 81px); 
     font-size: clamp(90px, 6.25vw, 95px);
     font-style: normal;
     font-weight: 400;
-    line-height: 110%; /* 99px */
+    line-height: 110%;
     letter-spacing: 9px;
-}
+} */
 
-@media all and (width <= 800px) {
-    p {
-        font-size: clamp(16px, 4.103vw, 20px);
-    }
 
-    h6 {
-        font-size: clamp(20px, 5.128vw, 25px);
-    }
 
-    h5 {
-        font-size: clamp(28px, 7.179vw, 33px);
-    }
-
-    h4 {
-        font-size: clamp(32px, 8.205vw, 37px);
-    }
-
-    h3 {
-        font-size: clamp(36px, 9.231vw, 41px);
-    }
-
-    h2 {
-        font-size: clamp(40px, 10.256vw, 45px);
-    }
-
-    h1 {
-        /* font-size: clamp(42px, 10.769vw, 47px); */
-        font-size: clamp(48px, 12.8vw, 52px);
-        letter-spacing: 3px;
-    }
-}
-
-body {
+/* body {
     background: var(--light);
-}
+} */
 
 button {
     border: none;
@@ -146,13 +101,13 @@ button {
 }
 
 /* Sections */
-#About {
+/* #About {
     padding: 0 0 50px 0px;
 
     @media all and (width <= 800px) {
         padding: 0 0 80px 0;
     }
-}
+} */
 
 
 #Products {

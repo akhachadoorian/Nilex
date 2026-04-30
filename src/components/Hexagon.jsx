@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from "react";
 
-import { hex } from "../data/text/landingpage.js"
+// import { hex } from "../data/text/landingpage.js"
 import GreyHex from "../data/images/LightGrayHex.svg"
 import GreySpeckledHex from "../data/images/LightGrayHexSpeckled.svg"
 

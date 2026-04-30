@@ -1,6 +1,6 @@
 /* Navigation */
 
-.navigation {
+/* .navigation {
     background-color: var(--light);
     padding: 10px 60px;
 
@@ -26,7 +26,7 @@
         button.main-nav {
             color: var(--primary);
             /* FIXME: fix font size */
-            font-size: 29px;
+            /* font-size: 29px;
             font-weight: 600;
             line-height: 110%;
             padding: 10px 0;
@@ -52,7 +52,7 @@
             }
         }
     }
-}
+} */ 
 
 /* ////// */
 
@@ -296,52 +296,6 @@ footer {
 }
 
 /* ////// */
-
-/* Hero */
-.hero {
-    .hero-inner {
-        /* FIXME: will need to account for nav bar later */
-        min-height: 100vh; 
-
-        padding: 0 60px;
-
-        @media all and (width <= 800px) {
-            padding: 0 20px;
-            min-height: 80vh;
-        }
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-
-        .text {
-            text-align: center;
-            color: var(--light);
-
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            max-width: 80vw;
-
-            @media all and (width <= 800px) {
-                max-width: unset;
-            }
-        }
-
-        .logo-holder {
-            /* flex: 1 1 605px; */
-
-            img {
-                @media (width <= 800px) {
-                    max-width: 350px;
-                }
-            }
-        }
-    }
-}
 
 /* ////// */
 

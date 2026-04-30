@@ -1,0 +1,54 @@
+import { MaxThree, MaxTwo } from "./utility";
+
+/** Text content, destination, and link behavior for a single button */
+export type ButtonSettingProps = {
+    /** Label displayed inside the button */
+    btnText: string,
+    /** React Router path or URL the button links to */
+    link: string,
+    /** Whether the link opens in a new tab @default '_self' */
+    target?: '_blank' | '_self'
+};
+
+/**
+ * 
+ */
+// type BtnArrowSettings = {
+//     arrowSide?: 'left' | 'right';
+//     arrowDirection: ARROW_DIRECTIONS;
+// }
+
+export type BtnStyles = 'solid' | 'outline' | 'arrow';
+export type BtnThemes = 'white';
+
+export type ButtonProps = {
+    /** Extra CSS class added to the outer wrapper div */
+    className?: string
+
+    /** Text content and link destination */
+    btnSettings: ButtonSettingProps
+
+    /** Visual style variant @default 'solid' */
+    style?: BtnStyles;
+    /** Color theme applied to the button @default 'white' */
+    theme?: BtnThemes;
+};
+
+
+export type TwoButtonsArray = MaxTwo<ButtonSettingProps>;
+
+export type TwoButtonsProps = {
+    buttons: TwoButtonsArray;
+    className?: string;
+}
+
+/**
+ * Type to have a three button array
+ */
+export type ThreeButtonsArray = MaxThree<ButtonSettingProps>;
+
+
+export type ThreeButtonsProps = {
+    buttons: ThreeButtonsArray;
+    className?: string;
+}

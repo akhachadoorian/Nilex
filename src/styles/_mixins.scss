@@ -1,0 +1,40 @@
+@use "./tokens/breakpoints" as *;
+
+
+// ── Mixins  ───────────────────────────────────
+
+@mixin desktopOnly($breakpoint: $bp-desktop) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin big($breakpoint: $bp-tablet) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin medium($min: $bp-mobile, $max: $bp-tablet) {
+    @media all and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin small($breakpoint: $bp-tablet) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin mini($breakpoint: $bp-mobile) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin breakpx($min, $max) {
+    @media all and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}

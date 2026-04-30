@@ -1,0 +1,33 @@
+
+@use '../mixins' as *;
+
+:root {
+  // Mobile first (default)
+  --layout-column-margin:    16px;
+  --layout-column-gutter:    16px;
+  --layout-section-padding:  80px;
+
+  --layout-content-width: calc(var(--max-width) - (var(--layout-column-margin) * 2));
+  --layout-container-max-width: var(--max-width);
+  --layout-column-width: calc(
+    (var(--max-width) - (var(--layout-column-margin) * 2) - (var(--layout-column-gutter) * 11)) / 12
+  );
+}
+
+@include big {
+  :root {
+    // Desktop overrides
+    --layout-column-margin:   32px;
+    --layout-column-gutter:   24px;
+    --layout-section-padding: 80px;
+  }
+}
+
+@include desktopOnly{
+  :root {
+    // Desktop overrides
+    --layout-column-margin:   60px;
+    --layout-column-gutter:   30px;
+    --layout-section-padding: 120px;
+  }
+}

@@ -1,108 +1,102 @@
 
-import WhiteLogo from "../WhiteLogo.svg"
-import Logo from "../images/Logo.png"
+// import WhiteLogo from "../WhiteLogo.svg"
+// import Logo from "../images/Logo.png"
 
-import HeroBackground from "../images/HeroBg.png"
-import HeroBackgroundMobile from "../images/HeroMobile.png"
+import { TwoButtonsArray } from "../../types/buttons"
 
-import IndustrialPic from "../images/Industrial.png"
-import LightbulbWhite from "../images/Lightbulb-White.svg"
-import HelmetWhite from "../images/Helmet-White.svg"
-import GloveWhite from "../images/Glove-White.svg"
+// import HeroBackground from "../images/HeroBg.png"
+// import HeroBackgroundMobile from "../images/HeroMobile.png"
 
-import OrangeMail from "../images/OrangeEmail.svg"
-import OrangePhone from "../images/OrangePhone.svg"
-import OrangePen from "../images/OrangePen.svg"
-import LightMail from "../images/LightMail.svg"
-import LightPhone from "../images/LightPhone.svg"
-import LightPen from "../images/LightPen.svg"
+// import IndustrialPic from "../images/Industrial.png"
+// import LightbulbWhite from "../images/Lightbulb-White.svg"
+// import HelmetWhite from "../images/Helmet-White.svg"
+// import GloveWhite from "../images/Glove-White.svg"
 
-import WhitePhone from "../images/Phone-White.svg"
-import WhiteEmail from "../images/Email-White.svg"
-import WhitePen from "../images/WhitePen.svg"
+// import OrangeMail from "../images/OrangeEmail.svg"
+// import OrangePhone from "../images/OrangePhone.svg"
+// import OrangePen from "../images/OrangePen.svg"
+// import LightMail from "../images/LightMail.svg"
+// import LightPhone from "../images/LightPhone.svg"
+// import LightPen from "../images/LightPen.svg"
 
-export const navigation = {
-    logo: Logo,
-    links: [
-        {
-            name: 'About',
-            id: 'About'
-        },
-        {
-            name: 'Products',
-            id: 'Products'
-        },
-        {
-            name: 'Contact',
-            id: 'Contact'
-        },
-    ]
-}
+// import WhitePhone from "../images/Phone-White.svg"
+// import WhiteEmail from "../images/Email-White.svg"
+// import WhitePen from "../images/WhitePen.svg"
 
-export const footer = {
-    logo: Logo,
-    footerText: [
-        {
-            text: 'Copyright 2025 by Nilex Industrial',
-            link: ' ',
-        },
-        {
-            text: 'Privacy Statement',
-            link: ' ',
-        },
-        {
-            text: 'Designed & Developed By Alex Khachadoorian',
-            link: ' ',
-        },
-    ],
-    contactButtons: [
-        {
-            icon: {
-                svg: WhitePhone,
-                altText: 'Phone icon'
-            },
-            fa_icon: "phone",
-            text: '(251) 458-9718',
-            link: 'tel:2514589718',
-            target: '',
-        },
-        {
-            icon: {
-                svg: WhiteEmail,
-                altText: 'Email icon'
-            },
-            fa_icon: "envelope",
-            text: '',
-            link: 'mailto:mark@nilexindustrical.com',
-            target: '',
-        },
-        // {
-        //     icon: {
-        //         svg: WhitePen,
-        //         altText: 'Phone icon'
-        //     },
-        //     text: '',
-        //     link: '',
-        //     target: '',
-        // },
-    ],
-}
+// export const footer = {
+//     logo: Logo,
+//     footerText: [
+//         {
+//             text: 'Copyright 2025 by Nilex Industrial',
+//             link: ' ',
+//         },
+//         {
+//             text: 'Privacy Statement',
+//             link: ' ',
+//         },
+//         {
+//             text: 'Designed & Developed By Alex Khachadoorian',
+//             link: ' ',
+//         },
+//     ],
+//     contactButtons: [
+//         {
+//             icon: {
+//                 svg: WhitePhone,
+//                 altText: 'Phone icon'
+//             },
+//             fa_icon: "phone",
+//             text: '(251) 458-9718',
+//             link: 'tel:2514589718',
+//             target: '',
+//         },
+//         {
+//             icon: {
+//                 svg: WhiteEmail,
+//                 altText: 'Email icon'
+//             },
+//             fa_icon: "envelope",
+//             text: '',
+//             link: 'mailto:mark@nilexindustrical.com',
+//             target: '',
+//         },
+//         // {
+//         //     icon: {
+//         //         svg: WhitePen,
+//         //         altText: 'Phone icon'
+//         //     },
+//         //     text: '',
+//         //     link: '',
+//         //     target: '',
+//         // },
+//     ],
+// }
 
-export const hero = {
-    header: 'Small Business, Big Safety',
-    bodyText: 'As a family-run business, we take pride in keeping your workplace safe with reliable, high-quality safety and industrial supplies.',
-    logo: WhiteLogo,
-    logoAltText: 'Nilex Logo in white',
-    backgroundImage: HeroBackground,
-    mobileBackgroundImage: HeroBackgroundMobile
+export const heroContent = {
+    eyebrow: "Small Business, Big Safety",
+    header: 'Nilex',
+    subtitle: "Industrial & Safety Supplies",
+    body: 'As a family-run business, we take pride in keeping your workplace safe with reliable, high-quality safety and industrial supplies.',
+    btns: [
+        {
+            btnText: 'Get in Touch',
+            link: '/#contact'
+        },
+        {
+            btnText: 'Get in Touch',
+            link: '/#contact'
+        }
+    ] satisfies TwoButtonsArray
 }
 
 export const about = {
     eyebrow: 'About Nilex',
     header: "Trusted Safety and Industrial Solutions Since 2012",
     bodyText: "<p>Founded in 2012, Nilex Industrial and Safety Supplies is a proud woman-owned small business committed to providing top-quality industrial and safety products. As a family-run company, we prioritize reliability, exceptional service, and workplace safety, ensuring businesses have the essential supplies they need to protect their workforce.</p><p>At the heart of our company is Mark Khachadoorian, Owner and Vice-President of Sales, who leads our team with expertise and dedication to customer satisfaction.</p>",
-    media: IndustrialPic,
-    mediaAltText: 'Guy using an electric saw or grinder on a piece of metal with sparks flying out',
+    img: {
+        src: '/assets/Industrial.png',
+        alt: 'Guy using an electric saw or grinder on a piece of metal with sparks flying out',
+    },
     subsections: [
         {
             subheader: 'Family-Driven Values',
@@ -161,7 +155,7 @@ export const contact = {
                 altText: 'White envelope icon'
             },
             iconHover: {
-                svg: LightMail,
+                // svg: LightMail,
                 altText: 'Light gray envelope icon'
             },
             title: 'Send an Email',
@@ -178,7 +172,7 @@ export const contact = {
                 altText: 'White phone icon'
             },
             iconHover: {
-                svg: LightPhone,
+                // svg: LightPhone,
                 altText: 'Light gray phone icon'
             },
             title: 'Give Us a Call',

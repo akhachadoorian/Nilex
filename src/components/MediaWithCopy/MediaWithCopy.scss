@@ -1,0 +1,36 @@
+@use "../../styles/variables" as *;
+
+.media_with_copy {
+    display: flex;
+    flex-direction: column;
+
+    @include big {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-700);
+    }
+
+    &-text {
+        @include big {
+            flex: 1 1 532px;
+        }
+    }
+
+    &-img {
+        @include big {
+            flex: 1 1 645px;
+        }
+    }
+
+    &-left {
+        @include big {
+            &-text {
+                order: 2;
+            }
+
+            &-img {
+                order: 1;
+            }
+        }
+    }
+}

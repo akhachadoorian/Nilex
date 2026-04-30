@@ -1,0 +1,45 @@
+@use "./variables" as *;
+
+html {
+    font-size: 16px;// REM BASE
+}
+
+body {
+    max-width: 100dvw;
+    // overflow-x: clip;
+    background-color: var(--stone-000);
+    margin: 0;
+}
+
+main {
+    @include big {
+        margin: auto;
+    }
+}
+
+section.base_section {
+    padding: var(--layout-section-padding) var(--layout-column-margin);
+    margin: var(--layout-section-padding) auto;
+
+    @include big {
+        max-width: var(--max-width);
+    }
+}
+
+section.full-width {
+    & > .section-inner {
+        padding: var(--layout-section-padding) var(--layout-column-margin);
+        // margin: var(--layout-section-padding) auto;
+
+        // @include big {
+        //     max-width: var(--max-width);
+        // }
+
+        & > * {
+            @include big {
+                max-width: var(--max-width);
+                margin: auto;
+            }
+        }
+    }
+}
