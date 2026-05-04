@@ -14,7 +14,8 @@
     &-section {
         position: relative;
         min-height: 100vh;
-        background-color: $orange-600;
+        // background-color: $stone-500;
+        background-color: $orange-650;
         overflow: hidden;
 
         display: flex;
@@ -62,7 +63,9 @@
     }
 
     &-title {
-        color: $stone-100;
+        color: $stone-000;
+        // color: $orange-500;
+        font-weight: 500;
         text-transform: uppercase;
         line-height: 100%;
 
@@ -72,15 +75,17 @@
     }
 
     &-subtitle {
-        text-transform: uppercase;
-        // color: $oxblood-800;
-        color: $stone-100;
+        // text-transform: uppercase;
+        color: $orange-100;
+        // color: $stone-300;
+        // color: $orange-700;
 
         // margin-top: var(--space-300);
     }
 
     &-body {
-        color: $stone-100;
+        // color: $stone-300;
+        color: $orange-100;
         margin-top: var(--space-300);
     }
 
@@ -95,35 +100,18 @@
         margin-top: var(--space-500);
     }
 
-//     .btn-primary {
-//         background-color: $oxblood;
-//         color: $stone-100;
-//         padding: 14px 32px;
-//         font-family: $font-sans;
-//         font-size: clamp(14px, 0.972vw, 16px);
-//         font-weight: 600;
-//         text-decoration: none;
-//         transition: $transition;
+    &-center {
+        .hero-content {
+            margin: 0 auto;
+            text-align: center;
 
-//         &:hover {
-//             background-color: $oxblood-700;
-//             color: $stone-100;
-//         }
-//     }
+            .eyebrow {
+                justify-content: center;
+            }
 
-//     .btn-outline {
-//         border: 2px solid rgba(247, 243, 240, 0.45); // $stone-100 at 45% opacity
-//         color: $stone-100;
-//         padding: 12px 30px;
-//         font-family: $font-sans;
-//         font-size: clamp(14px, 0.972vw, 16px);
-//         font-weight: 600;
-//         text-decoration: none;
-//         transition: $transition;
-
-//         &:hover {
-//             border-color: $stone-100;
-//             color: $stone-100;
-//         }
-//     }
+            .btns {
+                justify-content: center;
+            }
+        }
+    }
 }

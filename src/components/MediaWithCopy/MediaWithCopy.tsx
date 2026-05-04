@@ -3,6 +3,7 @@ import Eyebrow from "../Eyebrow/Eyebrow";
 import Accordion from "../Accordion";
 import "./MediaWithCopy.scss";
 import { ImageProps } from "../../types/images";
+import IconNote from "../IconNote/IconNote";
 
 type MediaWithCopyProps = {
     className?: string;
@@ -32,33 +33,41 @@ function MediaWithCopy({
 
     return (
         <div className={`media_with_copy ${mediaClass}`}>
-            
-
             <div className="media_with_copy-text">
-                {eyebrow && <Eyebrow text={eyebrow} />}
+                {eyebrow && <Eyebrow text={eyebrow} color="--orange-600" />}
 
                 <h2>{header}</h2>
                 {body && (
                     <div
-                        className="body"
+                        className="body-l media_with_copy-body"
                         dangerouslySetInnerHTML={{ __html: body }}
                     />
+                )}
+
+                {subsections && (
+                    <div className="media_with_copy-subsections">
+                        {" "}
+                        {subsections.map((s) => (
+                            <IconNote
+                                key={s.subheader}
+                                icon={s.icon}
+                                title={s.subheader}
+                                body={s.subtext}
+                            />
+                        ))}
+                    </div>
                 )}
             </div>
 
             <div className="media_with_copy-img">
-                <div className="overlay"></div>
-                <img src={img.src} alt={img.alt} />
+                {/* <div className="overlay"></div> */}
+                <div className="img-holder">
+                    <img src={img.src} alt={img.alt} />
+                </div>
             </div>
 
             {/* <div className="subsections"> */}
-            {/* {subsections.map((s) => (
-                                    <Accordion 
-                                        key={s.subheader} 
-                                        header={s.subheader}
-                                        body={s.subtext}
-                                    />
-                                ))} */}
+
             {/* </div> */}
         </div>
     );

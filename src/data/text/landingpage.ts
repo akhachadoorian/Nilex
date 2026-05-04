@@ -100,15 +100,18 @@ export const about = {
     subsections: [
         {
             subheader: 'Family-Driven Values',
-            subtext: 'Built on a foundation of Family-Driven Values, we believe in treating our customers, employees, and partners with trust, respect, and integrity.'
+            subtext: 'Built on a foundation of Family-Driven Values, we believe in treating our customers, employees, and partners with trust, respect, and integrity.',
+            icon: "users-three"
         },
         {
             subheader: 'Community & Small Business Commitment',
-            subtext: 'We are deeply committed to supporting our local communities and fellow small businesses, fostering growth and collaboration in the industries we serve. '
+            subtext: 'We are deeply committed to supporting our local communities and fellow small businesses, fostering growth and collaboration in the industries we serve. ',
+            icon: "city"
         },
         {
             subheader: 'Building Lasting Partnerships ',
-            subtext: 'At Nilex, building lasting partnerships is at the core of what we do. We go beyond transactions to cultivate strong, long-term relationships with our customers, offering personalized service, and unwavering reliability. '
+            subtext: 'At Nilex, building lasting partnerships is at the core of what we do. We go beyond transactions to cultivate strong, long-term relationships with our customers, offering personalized service, and unwavering reliability. ',
+            icon: "plant"
         },
     ]
 }

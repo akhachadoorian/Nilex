@@ -19,7 +19,7 @@ export type ButtonSettingProps = {
 // }
 
 export type BtnStyles = 'solid' | 'outline' | 'arrow';
-export type BtnThemes = 'white';
+export type BtnThemes = 'white' | 'pale-orange';
 
 export type ButtonProps = {
     /** Extra CSS class added to the outer wrapper div */

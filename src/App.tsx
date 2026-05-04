@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import './css/buttons.css';
 import LandingPage from './pages/Landingpage';
 import Navigation from './components/Navigation/Navigation';
-import { LenisProvider } from './components/LenisProvider.js';
+import { LenisProvider } from './components/LenisProvider';
 import Footer from './components/Footer.jsx';
 
 function App() {

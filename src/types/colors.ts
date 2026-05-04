@@ -3,6 +3,7 @@ export type OrangeScale =
   | "--orange-200"
   | "--orange-300"
   | "--orange-400"
+  | "--orange-450"
   | "--orange-500"
   | "--orange-600"
   | "--orange-700"
@@ -25,6 +26,7 @@ export type OxbloodScale =
   | "--oxblood-1000"
 
 export type StoneScale =
+  | "--stone-000"
   | "--stone-100"
   | "--stone-200"
   | "--stone-300"

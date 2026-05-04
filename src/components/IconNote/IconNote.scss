@@ -1,0 +1,32 @@
+@use "../../styles/variables" as *;
+
+.icon_note {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-300);
+
+    &-text {
+ 
+    }
+
+    &-body {
+        margin-top: var(--space-100);
+    }
+
+    &-hex_icon {
+        background-color: var(--orange-200);
+
+        flex: 0 0 clamp(32px, 2.361vw, 36px);
+        width: clamp(32px, 2.361vw, 36px);
+        height: clamp(32px, 2.361vw, 36px);
+        aspect-ratio: 1;
+
+        // clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}

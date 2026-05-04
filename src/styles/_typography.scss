@@ -4,7 +4,7 @@
 
 p {
   margin: 0;
-  font-family: $font-body;
+  font-family: $font-sans;
   font-size: var(--text-base); 
   font-style: normal;
   font-weight: 400;
@@ -14,9 +14,6 @@ p {
 a {
   margin: 0;
   font-family: $font-sans;
-  color: var(--cream-500);
-
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,22 +24,21 @@ h1, h2, h3, h4, h5, h6 {
 // ── Placeholders ──────────────────────────────────────
 
 %body-base {
-  font-family: $font-body;
+  // font-family: $font-body;
+  font-family: $font-sans;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
 }
 
 %heading-base {
-  font-family: $font-display;
-  font-weight: 700;
-  line-height: 110%;
-  text-transform: uppercase;
+  font-family: $font-sans;
+  line-height: 120%;
 }
 
 %subheading-base {
-  font-family: $font-sans;
-  font-weight: 600;
+  font-family: $font-mono;
+  font-weight: 500;
   line-height: 125%;
 }
 
@@ -52,33 +48,35 @@ h1,
 .heading-xxl {
   @extend %heading-base;
   font-size: var(--text-5xl);
+  font-weight: 700;
 }
 
 h2,
 .heading-xl {
   @extend %heading-base;
   font-size: var(--text-4xl);
-  letter-spacing: 2px;
+    font-weight: 700;
 }
 
 h3,
 .heading-l {
-  @extend %subheading-base;
+  @extend %heading-base;
   font-size: var(--text-3xl);
-  text-transform: uppercase;
+  font-weight: 600;
 }
 
 h4,
 .heading-m {
-  @extend %subheading-base;
+  @extend %heading-base;
   font-size: var(--text-2xl);
-  text-transform: uppercase;
+  font-weight: 600;
 }
 
 h5,
 .heading-s {
-  @extend %subheading-base;
+  @extend %heading-base;
   font-size: var(--text-xl);
+  font-weight: 500;
 }
 
 h6,
@@ -94,18 +92,18 @@ h6,
   font-size: var(--text-base); 
 }
 
-.body-l  { 
+.body-l, .body-l > p  { 
   @extend %body-base;
   font-size: var(--text-md);
-  font-weight: 500; 
+  font-weight: 400; 
 }
 
-.body-s  { 
+.body-s, .body-s > p   { 
   @extend %body-base;
   font-size: var(--text-s); 
 }
 
-.body-xs  { 
+.body-xs, .body-xs > p   { 
   @extend %body-base;
   font-size: var(--text-xs); 
 }
@@ -115,7 +113,7 @@ h6,
 p.eyebrow {
   font-family: $font-mono;
   font-size: var(--text-md);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 110%;
   letter-spacing: 1px;
   text-transform: uppercase;

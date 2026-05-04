@@ -2,6 +2,8 @@ import React from "react";
 import './Buttons.scss';
 import { BtnStyles, BtnThemes, ButtonProps, ThreeButtonsProps, TwoButtonsProps } from "../../types/buttons";
 import { Link } from "react-router-dom";
+import { ArrowRightIcon } from "@phosphor-icons/react";
+import { ColorVariables } from "../../types/colors";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,12 +15,18 @@ export default function Buttons({className, btnSettings, style = 'solid', theme 
         btnClass += ` ${className}`;
     }
 
+    const arrowThemeMap: Record<string, ColorVariables> = {
+        white: "--stone-000"
+    }
+
+    const arrowTheme = (arrowThemeMap[theme] ?? "--stone-000") as ColorVariables;
+
     return (
         <Link className={`btn ${btnClass}`} to={btnSettings.link} target={btnSettings.target ?? '_self'}>
             <p className="btn-text">{btnSettings.btnText}</p>
 
-            {/* {style === 'arrow' && <FontAwesomeIcon icon={faArrowRightLong} />} */}
-            <ArrowRight />
+            {style === 'arrow' && <ArrowRightIcon color={`var(${arrowTheme})`} size={"var(--text-s)"}/> }
+            
         </Link>
     )
 }
@@ -48,7 +56,7 @@ export function TwoButtons({ buttons, className }: TwoButtonsProps) {
     ];
 
     const themeMap: Array<BtnThemes> = [
-        "white", "white" // FIXME: 
+        "pale-orange", "white" // FIXME: 
     ];
 
     return (

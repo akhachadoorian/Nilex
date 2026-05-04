@@ -13,6 +13,14 @@ type HeroProps = {
     buttons?: TwoButtonsArray;
 };
 
+const COLORS = {
+    "orange-300": "251, 192, 158",
+    "orange-400": "248, 164, 118",
+    "orange-500": "241, 100, 37",
+    "orange-900": "74, 26, 5",
+    "oxblood-800": "67, 17, 17",
+}
+
 export default function Hero({
     eyebrow,
     header,
@@ -41,13 +49,16 @@ export default function Hero({
         }
 
         const styles = [
-            { fill: "rgba(61, 15, 15, 0.55)", stroke: "none" }, // oxblood-800 — deep filled
-            { fill: "rgba(107, 31, 31, 0.30)", stroke: "none" }, // oxblood-600 — mid filled
-            { fill: "rgba(251, 192, 158, 0.22)", stroke: "none" }, // orange-300  — light blush filled
-            { fill: "rgba(247, 243, 240, 0.12)", stroke: "none" }, // stone-100   — white translucent filled
-            { fill: "none", stroke: "rgba(247, 243, 240, 0.25)", sw: 2 }, // stone-100   — light outline
-            { fill: "none", stroke: "rgba(61, 15, 15, 0.50)", sw: 2.5 }, // oxblood-800 — dark outline
-            { fill: "rgba(160, 60, 18, 0.40)", stroke: "none" }, // orange-700  — rust filled
+            { fill: `rgba(${COLORS['orange-400']}, 1.0)`, stroke: "none"},
+            { fill: `rgba(${COLORS['orange-900']}, 1.0)`, stroke: "none" }, 
+            { fill: `rgba(${COLORS['orange-900']}, .20)`, stroke: "none" }, 
+            { fill: `rgba(${COLORS['orange-400']}, 1.0)`, stroke: "none" }, 
+            { fill: "none", stroke: `rgba(${COLORS['orange-400']}, 1.0)`, sw: 2 }, 
+            { fill: "none", stroke: `rgba(${COLORS['orange-900']}, .20)`, sw: 2.5 }, 
+            { fill: `rgba(${COLORS['oxblood-800']}, 0.50)`, stroke: "none" }, 
+            { fill: "none", stroke: `rgba(${COLORS['oxblood-800']}, 0.50)`, sw: 2.5 },
+            { fill: `rgba(${COLORS['orange-900']}, .40)`, stroke: "none" }, 
+            
         ];
 
         const hexDefs = [
@@ -196,7 +207,7 @@ export default function Hero({
     }, []);
 
     return (
-        <section className="hero-section">
+        <section className="hero-section hero-center">
             <svg
                 ref={svgRef}
                 xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +219,7 @@ export default function Hero({
                         <Eyebrow
                             text={eyebrow}
                             className={"hero-eyebrow"}
-                            color="--orange-200"
+                            color="--stone-300"
                         />
                     )}
 
