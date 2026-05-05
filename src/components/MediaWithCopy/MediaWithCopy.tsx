@@ -4,6 +4,7 @@ import Accordion from "../Accordion";
 import "./MediaWithCopy.scss";
 import { ImageProps } from "../../types/images";
 import IconNote from "../IconNote/IconNote";
+import { useFadeInChildren } from "../../hooks/useFadeIn";
 
 type MediaWithCopyProps = {
     className?: string;
@@ -31,21 +32,24 @@ function MediaWithCopy({
         mediaClass += ` ${className}`;
     }
 
-    return (
-        <div className={`media_with_copy ${mediaClass}`}>
-            <div className="media_with_copy-text">
-                {eyebrow && <Eyebrow text={eyebrow} color="--orange-600" />}
+    const ref = useFadeInChildren<HTMLDivElement>(".mwc-animate", { stagger: 0.15, y: 24 });
 
-                <h2>{header}</h2>
+
+    return (
+        <div ref={ref} className={`media_with_copy ${mediaClass}`}>
+            <div className="media_with_copy-text">
+                {eyebrow && <Eyebrow text={eyebrow} color="--orange-600" className={"mwc-animate"}/>}
+
+                <h2 className="mwc-animate">{header}</h2>
                 {body && (
                     <div
-                        className="body-l media_with_copy-body"
+                        className="body-l media_with_copy-body mwc-animate"
                         dangerouslySetInnerHTML={{ __html: body }}
                     />
                 )}
 
                 {subsections && (
-                    <div className="media_with_copy-subsections">
+                    <div className="media_with_copy-subsections mwc-animate">
                         {" "}
                         {subsections.map((s) => (
                             <IconNote
@@ -59,16 +63,12 @@ function MediaWithCopy({
                 )}
             </div>
 
-            <div className="media_with_copy-img">
+            <div className="media_with_copy-img mwc-animate">
                 {/* <div className="overlay"></div> */}
                 <div className="img-holder">
                     <img src={img.src} alt={img.alt} />
                 </div>
             </div>
-
-            {/* <div className="subsections"> */}
-
-            {/* </div> */}
         </div>
     );
 }

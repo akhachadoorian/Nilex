@@ -1,14 +1,24 @@
 import React from "react";
-import './Buttons.scss';
-import { BtnStyles, BtnThemes, ButtonProps, ThreeButtonsProps, TwoButtonsProps } from "../../types/buttons";
+import "./Buttons.scss";
+import {
+    BtnStyles,
+    BtnThemes,
+    ButtonProps,
+    ThreeButtonsProps,
+    TwoButtonsProps,
+} from "../../types/buttons";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { ColorVariables } from "../../types/colors";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
-
-export default function Buttons({className, btnSettings, style = 'solid', theme = 'white'}: ButtonProps) {
+export default function Buttons({
+    className,
+    btnSettings,
+    style = "solid",
+    theme = "white",
+}: ButtonProps) {
     let btnClass = `btn-style-${style} btn-theme-${theme}`;
 
     if (className) {
@@ -16,21 +26,29 @@ export default function Buttons({className, btnSettings, style = 'solid', theme 
     }
 
     const arrowThemeMap: Record<string, ColorVariables> = {
-        white: "--stone-000"
-    }
+        white: "--stone-000",
+    };
 
-    const arrowTheme = (arrowThemeMap[theme] ?? "--stone-000") as ColorVariables;
+    const arrowTheme = (arrowThemeMap[theme] ??
+        "--stone-000") as ColorVariables;
 
     return (
-        <Link className={`btn ${btnClass}`} to={btnSettings.link} target={btnSettings.target ?? '_self'}>
+        <Link
+            className={`btn ${btnClass}`}
+            to={btnSettings.link}
+            target={btnSettings.target ?? "_self"}
+        >
             <p className="btn-text">{btnSettings.btnText}</p>
 
-            {style === 'arrow' && <ArrowRightIcon color={`var(${arrowTheme})`} size={"var(--text-s)"}/> }
-            
+            {style === "arrow" && (
+                <ArrowRightIcon
+                    color={`var(${arrowTheme})`}
+                    size={"var(--text-s)"}
+                />
+            )}
         </Link>
-    )
+    );
 }
-
 
 // function ButtonsWithIcon({className, btnSettings, style, theme}: ButtonProps) {
 //     const btn_style = "btn " + style
@@ -52,11 +70,13 @@ export function TwoButtons({ buttons, className }: TwoButtonsProps) {
     if (buttons === undefined || buttons?.length == 0) return;
 
     const styleMap: Array<BtnStyles> = [
-        'solid', 'arrow' // FIXME: 
+        "solid",
+        "arrow", // FIXME:
     ];
 
     const themeMap: Array<BtnThemes> = [
-        "pale-orange", "white" // FIXME: 
+        "pale-orange",
+        "white", // FIXME:
     ];
 
     return (
@@ -64,6 +84,7 @@ export function TwoButtons({ buttons, className }: TwoButtonsProps) {
             {buttons?.map((btn, idx) => {
                 return (
                     <Buttons
+                        key={idx}
                         className=""
                         style={styleMap[idx]}
                         theme={themeMap[idx]}
@@ -83,11 +104,15 @@ export function ThreeButtons({ buttons, className }: ThreeButtonsProps) {
     if (buttons === undefined || buttons?.length == 0) return;
 
     const styleMap: Array<BtnStyles> = [
-        'solid', 'outline', 'arrow' // FIXME: 
+        "solid",
+        "outline",
+        "arrow", // FIXME:
     ];
 
     const themeMap: Array<BtnThemes> = [
-        "white", "white", "white" // FIXME: 
+        "white",
+        "white",
+        "white", // FIXME:
     ];
 
     return (

@@ -26,33 +26,55 @@ header.navigation {
         .logo-holder {
             img {
                 // flex: 0 0 120px;
-                width: 100px;
+                width: 123px;
             }
         }
 
         nav {
             display: flex;
-            gap: var(--space-500);
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-300);
+
+            @include small {
+                display: none;
+            }
 
             .nav-link {
-                text-decoration: underline transparent;
-                    text-decoration-thickness: 2px;
-    text-underline-offset: 5px;
-                transition: $transition;
+                text-decoration: none;
+                // text-decoration: underline transparent;
+                // text-decoration-thickness: 2px;
+                // text-underline-offset: 5px;
+                
 
                 .nav-text {
-                    color: $stone-300;
-                    font-family: $font-sans;
-                    font-weight: 500;
-                    letter-spacing: 0.08em;
+                    color: $orange-200;
+                    font-family: $font-mono;
+                    font-size: var(--text-md);
+                    font-weight: 700;
+                    line-height: 110%;
+                    letter-spacing: 1px;
                     text-transform: uppercase;
                     transition: $transition;
                 }
 
                 &:hover {
-                    text-decoration-color: $stone-100;
+                    // text-decoration-color: $stone-000;
                     .nav-text {
-                        color: $stone-100;
+                        color: $stone-000;
+                    }
+                }
+            }
+
+            .nav-button {
+                padding: var(--space-075, 6px) var(--space-150, 12px);
+                background-color: var(--orange-650);
+                transition: $transition;
+
+                &:hover {
+                    background-color: $orange-600;
+                    .nav-text {
+                        color: $stone-000;
                     }
                 }
             }

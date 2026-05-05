@@ -10,7 +10,7 @@ import type { NavItem } from "../types/navigation"
  * @see {@link NavItem} for the full type definition
  */
 export const NAV_ITEMS = [
-  { kind: "link" as const, text: "about", link: "/#about" },
-  { kind: "link" as const, text: "products", link: "/#products" },
-  { kind: "link" as const, text: "contact", link: "/#contact" },
+  { kind: "link" as const, style: "default", text: "about", link: "/#about" },
+  { kind: "link" as const, style: "default", text: "products", link: "/#products" },
+  { kind: "link" as const, style: "button", text: "contact", link: "/#contact" },
 ] satisfies NavItem[]

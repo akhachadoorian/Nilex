@@ -5,25 +5,29 @@ import HexIconButton from "../HexIconButton";
 import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { EnvelopeIcon, LinkIcon, PhoneIcon } from "@phosphor-icons/react";
+import { useFadeIn, useFadeInChildren } from "../../hooks/useFadeIn";
 
 function Footer({}) {
     const copyrightYear = new Date().getFullYear();
+    // const ref = useFadeIn<HTMLDivElement>();
+
+    const ref = useFadeInChildren<HTMLDivElement>(".mwc-animate", { stagger: 0.15, y: 24 });
 
     return (
-        <footer>
+        <footer ref={ref}>
             <div className="footer-wrapper">
-                <div className="footer_left">
+                <div className="footer_left mwc-animate">
                     <div className="logo-holder img-holder">
                         <img src={"/assets/WhiteLogo.svg"} alt="Nilex Logo" />
                     </div>
                 </div>
 
                 <div className="footer_right">
-                    <div className="footer_right-upper">
+                    <div className="footer_right-upper mwc-animate">
                         <p className="footer_right-contact_text heading-xs">
                             Get in Touch
                         </p>
-                        <div className="footer_right-contact_links">
+                        <div className="footer_right-contact_links mwc-animate">
                             {contactItems.map((c, idx) => {
                                 let pre =
                                     c.kind === "phone"
@@ -60,7 +64,7 @@ function Footer({}) {
                         </div>
                     </div>
 
-                    <div className="footer_right-lower">
+                    <div className="footer_right-lower mwc-animate">
                         <p className="body-s">
                             Copyright {copyrightYear} by Nilex Industrial
                         </p>

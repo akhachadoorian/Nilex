@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "./Hero.scss";
 import Eyebrow from "../Eyebrow/Eyebrow";
@@ -29,6 +29,12 @@ export default function Hero({
     buttons,
 }: HeroProps) {
     const svgRef = useRef<SVGSVGElement>(null);
+
+    // Handles the number of hexagons 
+    const mobileScreenSize = 750;
+    const [screenWidth, setWidth] = useState(window.innerWidth < mobileScreenSize);
+
+
 
     useEffect(() => {
         const svg = svgRef.current;
@@ -65,22 +71,22 @@ export default function Hero({
             { x: 0.03, y: 0.02, r: 110, style: 0 },
             { x: 0.0, y: 0.25, r: 160, style: 4, sw: 2 },
             { x: 0.42, y: -0.04, r: 140, style: 4 },
-            { x: 0.78, y: -0.06, r: 90, style: 2 },
-            { x: 0.88, y: 0.06, r: 170, style: 2 },
-            { x: 0.97, y: -0.02, r: 80, style: 4 },
+            { x: 0.78, y: -0.06, r: 90, style: 2, mobile: false },
+            { x: 0.88, y: 0.06, r: 170, style: 2, mobile: false },
+            { x: 0.97, y: -0.02, r: 80, style: 4, mobile: false },
             { x: -0.04, y: 0.52, r: 90, style: 4, sw: 2 },
-            { x: 0.82, y: 0.48, r: 130, style: 6 },
-            { x: 0.94, y: 0.38, r: 70, style: 3 },
+            { x: 0.82, y: 0.48, r: 130, style: 6, mobile: false },
+            { x: 0.94, y: 0.38, r: 70, style: 3, mobile: false },
             { x: 0.1, y: 0.72, r: 150, style: 2 },
             { x: 0.16, y: 0.95, r: 80, style: 3 },
             { x: 0.58, y: 0.8, r: 100, style: 6 },
-            { x: 0.72, y: 0.7, r: 55, style: 3 },
-            { x: 0.9, y: 0.75, r: 90, style: 5, sw: 2.5 },
-            { x: 1.0, y: 0.85, r: 130, style: 5, sw: 2.5 },
+            { x: 0.72, y: 0.7, r: 55, style: 3, mobile: false },
+            { x: 0.9, y: 0.75, r: 90, style: 5, sw: 2.5, mobile: false },
+            { x: 1.0, y: 0.85, r: 130, style: 5, sw: 2.5, mobile: false },
             { x: 0.28, y: 0.35, r: 40, style: 3 },
-            { x: 0.65, y: 0.15, r: 35, style: 4 },
+            { x: 0.65, y: 0.15, r: 35, style: 4, mobile: false },
             { x: 0.5, y: 0.6, r: 45, style: 5, sw: 1.5 },
-        ];
+        ].filter(def => !screenWidth || def.mobile !== false);
 
         const hexEls = hexDefs.map((def) => {
             const s = styles[def.style];
@@ -110,7 +116,12 @@ export default function Hero({
                 );
             });
         }
-        window.addEventListener("resize", repositionHexes);
+        window.addEventListener("resize", repositionHexes, );
+
+        window.addEventListener('resize', (event) => {
+            repositionHexes;
+            setWidth(window.innerWidth < mobileScreenSize);
+        });
 
         // Staggered entrance for hexagons
         gsap.set(hexEls, {
@@ -204,7 +215,7 @@ export default function Hero({
             tl.kill();
             hexEls.forEach((el) => el.remove());
         };
-    }, []);
+    }, [screenWidth]);
 
     return (
         <section className="hero-section hero-center">

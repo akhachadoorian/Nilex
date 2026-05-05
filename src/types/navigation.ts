@@ -3,6 +3,7 @@
  */
 export type NavLink = {
   kind: "link"
+  style: "default" | "button"
   /** Display text shown in the nav */
   text: string
   /** Text to display if dropdown element */

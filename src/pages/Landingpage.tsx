@@ -5,9 +5,11 @@ import MediaWithCopy from '../components/MediaWithCopy/MediaWithCopy';
 import Buttons from "../components/Buttons/Buttons.jsx";
 import Card_V2 from '../components/Card_V2.jsx';
 import Eyebrow from "../components/Eyebrow/Eyebrow.jsx";
+import { useFadeIn } from "../hooks/useFadeIn.js";
 
 function LandingPage({}) {
-    
+    const aboutRef = useFadeIn<HTMLDivElement>();
+
     return (
         <>
             <Hero
@@ -18,7 +20,7 @@ function LandingPage({}) {
                 buttons={heroContent.btns ?? []}
             />
 
-            <section className="base_section about-section" id="about">
+            <section ref={aboutRef} className="base_section about-section" id="about">
                 <MediaWithCopy
                     eyebrow={about.eyebrow}
                     header={about.header}
@@ -29,7 +31,7 @@ function LandingPage({}) {
                 />
             </section>
 
-            {/* <section data-scroll-section style={{position: "relative", overflow: 'hidden'}} id='Products'> */}
+            <section id='products'>
                 {/* <div data-scroll data-scroll-speed="1" className='header'> */}
                 {/* <div className='header'>
                     <Eyebrow text={product.eyebrow} center={true}/>
@@ -55,8 +57,8 @@ function LandingPage({}) {
                             style={p.style}
                         />
                     )}
-                </div>
-            </section> */}
+                </div>*/}
+            </section> 
 
             {/* <section id="Contact"> */}
                 {/* <div data-scroll data-scroll-speed="1" className='header'> */}
