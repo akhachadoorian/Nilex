@@ -1,14 +1,15 @@
 import Hero from "../components/Hero/Hero";
 
-import { about, heroContent, } from "../data/text/landingpage"
+import { aboutContent, contactCopyOnly, heroContent, productCardsContent, productCopyOnlyContent } from "../data/text/landingpage"
 import MediaWithCopy from '../components/MediaWithCopy/MediaWithCopy';
-import Buttons from "../components/Buttons/Buttons.jsx";
-import Card_V2 from '../components/Card_V2.jsx';
-import Eyebrow from "../components/Eyebrow/Eyebrow.jsx";
 import { useFadeIn } from "../hooks/useFadeIn.js";
+import CopyOnly from "../components/CopyOnly/CopyOnly.js";
+import ProductCards from "../components/ProductCards/ProductCards.js";
 
 function LandingPage({}) {
     const aboutRef = useFadeIn<HTMLDivElement>();
+    const productRef = useFadeIn<HTMLDivElement>();
+    const contactRef = useFadeIn<HTMLDivElement>();
 
     return (
         <>
@@ -22,45 +23,36 @@ function LandingPage({}) {
 
             <section ref={aboutRef} className="base_section about-section" id="about">
                 <MediaWithCopy
-                    eyebrow={about.eyebrow}
-                    header={about.header}
-                    body={about.bodyText}
-                    img={about.img}
-                    subsections={about.subsections}
+                    eyebrow={aboutContent.eyebrow}
+                    header={aboutContent.header}
+                    body={aboutContent.bodyText}
+                    img={aboutContent.img}
+                    subsections={aboutContent.subsections}
                     mediaSide="left"
                 />
             </section>
 
-            <section id='products'>
-                {/* <div data-scroll data-scroll-speed="1" className='header'> */}
-                {/* <div className='header'>
-                    <Eyebrow text={product.eyebrow} center={true}/>
-                    <h2>{product.header}</h2>
-                    <p>{product.bodyText}</p>
-                </div> */}
-                {/* <div data-scroll data-scroll-speed="3" className='card-grid'> */}
-                {/* <div  className='card-grid'> */}
-                    {/* {product.products.map((p) =>
-                        <Card 
-                            key={p.id}
-                            icon={p.icon}
-                            title={p.title}
-                            bodyText={p.bodyText}
-                        />
-                    )} */}
-                    {/* {product.products.map((p) =>
-                        <Card_V2
-                            key={p.id}
-                            icon={p.icon}
-                            title={p.title}
-                            bodyText={p.bodyText}
-                            style={p.style}
-                        />
-                    )}
-                </div>*/}
+            <section ref={productRef} id='products'  className="base_section product-section">
+                <CopyOnly 
+                    eyebrow={productCopyOnlyContent.eyebrow}
+                    header={productCopyOnlyContent.header}
+                    headingSize="h2"
+                    body={productCopyOnlyContent.body}
+                    variation="center"
+                />
+
+                <ProductCards productCards={productCardsContent}/>
             </section> 
 
-            {/* <section id="Contact"> */}
+            <section ref={contactRef} id='contact'  className="base_section contact-section">
+                <CopyOnly 
+                    eyebrow={contactCopyOnly.eyebrow}
+                    header={contactCopyOnly.header}
+                    headingSize="h2"
+                    body={contactCopyOnly.body}
+                    variation="left"
+                />
+
                 {/* <div data-scroll data-scroll-speed="1" className='header'> */}
                 {/* <div className='header'>
                     <Eyebrow text={contact.eyebrow} color={"var(--primary)"}/>
@@ -99,7 +91,7 @@ function LandingPage({}) {
                     )}
                     
                 </div> */}
-            {/* </section> */}
+            </section>
         </>
     );
 }

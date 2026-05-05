@@ -6,6 +6,7 @@ export type OrangeScale =
   | "--orange-450"
   | "--orange-500"
   | "--orange-600"
+  | "--orange-650"
   | "--orange-700"
   | "--orange-800"
   | "--orange-850"

@@ -1,0 +1,129 @@
+@use "../../styles/variables" as *;
+
+$pc-shadow-gray: rgb(163, 149, 127);
+$pc-shadow-orange: rgb(122, 45, 13);
+$pc-shadow-dark-orange: rgb(46, 15, 2);
+$pc-shadow-bright-orange:rgb(160, 60, 18);
+$pc-shadow-dark-oxblood: rgb(67, 17, 17);
+
+@mixin hex-shadow($color) {
+    filter:
+        drop-shadow(43px 21px 13px rgba($color, 0.01))
+        drop-shadow(27px 13px 12px rgba($color, 0.07))
+        drop-shadow(15px 8px 10px  rgba($color, 0.25))
+        drop-shadow(7px 3px 8px    rgba($color, 0.43))
+        drop-shadow(2px 1px 4px    rgba($color, 0.49));
+}
+
+.product_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-700);
+
+    padding: var(--space-300);
+
+    @include big {
+        padding: var(--space-500);
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-200);
+    }
+
+    &-icon {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+
+        .pc-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .pc-cta {
+        font-style: italic;
+    }
+
+    .hex-icon {
+        flex-basis: clamp(95px, 6.944vw, 105px);
+        width: clamp(95px, 6.944vw, 105px);
+    }
+
+    // ---- All Themes -------------------------------------------
+
+    &-gray {
+        background-color: var(--stone-400);
+        color: var(--stone-1000);
+
+        .pc-cta {
+            color: var(--stone-900);
+        }
+
+        .pc-hex { @include hex-shadow($pc-shadow-gray); }
+    }
+
+    &-orange {
+        background-color: var(--orange-650);
+        color: var(--orange-100);
+
+        .pc-cta {
+            color: var(--orange-200);
+        }
+
+        .pc-hex { @include hex-shadow($pc-shadow-orange); }
+    }
+
+    &-dark-orange {
+        background-color: var(--orange-850);
+        color: var(--stone-000);
+
+        .pc-cta {
+            color: var(--stone-300);
+        }
+
+        .pc-hex { @include hex-shadow($pc-shadow-dark-orange); }
+    }
+
+    &-bright-orange {
+        background-color: var(--orange-500);
+        color: var(--orange-900);
+
+        .pc-cta {
+            color: var(--orange-850);
+        }
+
+        .pc-hex { @include hex-shadow($pc-shadow-bright-orange); }
+    }
+
+    &-dark-oxblood {
+        background-color: var(--oxblood-600);
+        color: var(--stone-000);
+
+        .pc-cta {
+            color: var(--stone-300);
+        }
+
+        .pc-hex { @include hex-shadow($pc-shadow-dark-oxblood); }
+    }
+}
+
+.product_cards {
+    // display: flex;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: var(--layout-column-gutter, 30px);
+
+    @include big {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpx(650px, 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

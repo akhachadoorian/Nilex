@@ -1,5 +1,4 @@
-import ReactMarkdown from "react-markdown";
-
+import { useFadeInChildren } from "../../hooks/useFadeIn";
 import { ThreeButtonsArray } from "../../types/buttons";
 import { ThreeButtons } from "../Buttons/Buttons";
 import Eyebrow from "../Eyebrow/Eyebrow";
@@ -18,32 +17,30 @@ export type CopyOnlyProps = {
 };
 
 export default function CopyOnly({ eyebrow, header, subtitle, body, buttons, headingSize = "h2", variation = "left" }: CopyOnlyProps) {
-    const eyebrowVariation = variation === "center" ? "centered" : "left";
+    // const eyebrowVariation = variation === "center" ? "centered" : "left";
+    const ref = useFadeInChildren<HTMLDivElement>(".mwc-animate", { stagger: 0.15, y: 24 });
 
     const Heading = headingSize;
 
     if (variation === "columns") {
         return (
-            <div className={`copy-wrapper`}>
+            <div ref={ref} className={`copy-wrapper`}>
                 <div className={`copy-inner ${variation}`}>
                     <div className="copy-left">
-                        {eyebrow && <Eyebrow text={eyebrow} variation={eyebrowVariation} />}
+                        {eyebrow && <Eyebrow text={eyebrow} className={"mwc-animate"} />}
 
-                        <ReactMarkdown
-                            components={{
-                                p: ({ children }) => <Heading className="copy-header heading-md">{children}</Heading>,
-                            }}
-                        >
-                            {header}
-                        </ReactMarkdown>
+                        <Heading className="copy-header heading-md mwc-animate">{header}</Heading>
                     </div>
 
                     <div className="copy-right">
-                        {subtitle && <h5 className="subtitle">{subtitle}</h5>}
+                        {subtitle && <h5 className="subtitle mwc-animate">{subtitle}</h5>}
 
-                        {body && <ReactMarkdown components={{ p: ({ children }) => <p className={`body-md ${headingSize === "h2" ? "body-l" : "body"}`}>{children}</p> }}>{body}</ReactMarkdown>}
 
-                        {buttons && buttons?.length != 0 && <ThreeButtons className="copy-btns" buttons={buttons ?? []} />}
+
+                         <p className={`mwc-animate ${headingSize === "h2" ? "body-l" : "body"}`}>{body}</p>
+
+
+                        {buttons && buttons?.length != 0 && <ThreeButtons className="copy-btns mwc-animate" buttons={buttons ?? []} />}
                     </div>
                 </div>
             </div>
@@ -51,27 +48,21 @@ export default function CopyOnly({ eyebrow, header, subtitle, body, buttons, hea
     }
 
     return (
-        <div className={`copy-wrapper `}>
+        <div ref={ref} className={`copy-wrapper `}>
             <div className={`copy-inner ${variation}`}>
                 <div className="copy-text">
                     <div className="copy-upper">
-                        {eyebrow && <Eyebrow text={eyebrow} variation={eyebrowVariation} />}
+                        {eyebrow && <Eyebrow text={eyebrow} className={"mwc-animate"} />}
 
-                        <ReactMarkdown
-                            components={{
-                                p: ({ children }) => <Heading className="copy-header">{children}</Heading>,
-                            }}
-                        >
-                            {header}
-                        </ReactMarkdown>
+                        <Heading className="copy-header heading-md mwc-animate">{header}</Heading>
                     </div>
 
-                    {subtitle && <h5 className="subtitle">{subtitle}</h5>}
+                    {subtitle && <h5 className="subtitle mwc-animate">{subtitle}</h5>}
 
-                    {body && <ReactMarkdown components={{ p: ({ children }) => <p className={headingSize === "h2" ? "body-l" : "body"}>{children}</p> }}>{body}</ReactMarkdown>}
+                    <p className={`mwc-animate ${headingSize === "h2" ? "body-l" : "body"}`}>{body}</p>
                 </div>
 
-                {buttons && buttons?.length != 0 && <ThreeButtons className="copy-btns" buttons={buttons ?? []} />}
+                {buttons && buttons?.length != 0 && <ThreeButtons className="copy-btns mwc-animate" buttons={buttons ?? []} />}
             </div>
         </div>
     );

@@ -1,76 +1,6 @@
-
-// import WhiteLogo from "../WhiteLogo.svg"
-// import Logo from "../images/Logo.png"
-
+import { ProductCardProps } from "../../components/ProductCards/ProductCards";
 import { TwoButtonsArray } from "../../types/buttons"
-
-// import HeroBackground from "../images/HeroBg.png"
-// import HeroBackgroundMobile from "../images/HeroMobile.png"
-
-// import IndustrialPic from "../images/Industrial.png"
-// import LightbulbWhite from "../images/Lightbulb-White.svg"
-// import HelmetWhite from "../images/Helmet-White.svg"
-// import GloveWhite from "../images/Glove-White.svg"
-
-// import OrangeMail from "../images/OrangeEmail.svg"
-// import OrangePhone from "../images/OrangePhone.svg"
-// import OrangePen from "../images/OrangePen.svg"
-// import LightMail from "../images/LightMail.svg"
-// import LightPhone from "../images/LightPhone.svg"
-// import LightPen from "../images/LightPen.svg"
-
-// import WhitePhone from "../images/Phone-White.svg"
-// import WhiteEmail from "../images/Email-White.svg"
-// import WhitePen from "../images/WhitePen.svg"
-
-export const footer = {
-    logo: "/assets/OrangeLogo.svg",
-    footerText: [
-        {
-            text: 'Copyright 2025 by Nilex Industrial',
-            link: ' ',
-        },
-        {
-            text: 'Privacy Statement',
-            link: ' ',
-        },
-        {
-            text: 'Designed & Developed By Alex Khachadoorian',
-            link: ' ',
-        },
-    ],
-    contactButtons: [
-        {
-            icon: {
-                // svg: WhitePhone,
-                altText: 'Phone icon'
-            },
-            fa_icon: "phone",
-            text: '(251) 458-9718',
-            link: 'tel:2514589718',
-            target: '',
-        },
-        {
-            icon: {
-                // svg: WhiteEmail,
-                altText: 'Email icon'
-            },
-            fa_icon: "envelope",
-            text: '',
-            link: 'mailto:mark@nilexindustrical.com',
-            target: '',
-        },
-        // {
-        //     icon: {
-        //         svg: WhitePen,
-        //         altText: 'Phone icon'
-        //     },
-        //     text: '',
-        //     link: '',
-        //     target: '',
-        // },
-    ],
-}
+import { NonEmptyArray } from "../../types/utility";
 
 export const heroContent = {
     eyebrow: "Small Business, Big Safety",
@@ -89,7 +19,7 @@ export const heroContent = {
     ] satisfies TwoButtonsArray
 }
 
-export const about = {
+export const aboutContent = {
     eyebrow: 'About Nilex',
     header: "Trusted Safety and Industrial Solutions Since 2012",
     bodyText: "<p>Founded in 2012, Nilex Industrial and Safety Supplies is a proud woman-owned small business committed to providing top-quality industrial and safety products. As a family-run company, we prioritize reliability, exceptional service, and workplace safety, ensuring businesses have the essential supplies they need to protect their workforce.</p><p>At the heart of our company is Mark Khachadoorian, Owner and Vice-President of Sales, who leads our team with expertise and dedication to customer satisfaction.</p>",
@@ -116,34 +46,35 @@ export const about = {
     ]
 }
 
-export const product = {
+export const productCopyOnlyContent = {
     eyebrow: "Products",
     header: 'Your Source for Industrial Essentials',
-    bodyText: "Nilex Industrial is your trusted source for high-quality industrial and safety supplies, offering more than just gloves, lighting, and protective gear. From personal protective equipment (PPE) and job site lighting to facility maintenance products, signage, spill control, and more, Nilex provides reliable solutions that help businesses maintain safe, efficient operations. Whether you're equipping a crew or stocking a facility, our team is here to help you find the right products for your needs. Below are three of our most popular product categories, trusted by customers across industries.",
-    products: [
-        {
-            id: 1,
-            icon: 'bulb',
-            title: "Lighting",
-            bodyText: "<p>Nilex Industrial provides durable lighting solutions built to perform in demanding work environments. Their lineup includes LED work lights, portable floodlights, and rechargeable lanterns ideal for job sites, warehouses, and emergency situations.</p> <p><em>If you need guidance on choosing the right lighting solution, we’re here to help.</em></p>",
-            style: 'light'
-        },
-        {
-            id: 2,
-            icon: 'helmet',
-            title: "Safety",
-            bodyText: "<p>Nilex Industrial carries a comprehensive range of safety equipment to support workplace protection and compliance. Their offerings include high-visibility apparel, eye and ear protection, respiratory gear, and fall protection products.</p> <p><em>If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we’re ready to assist.</em></p>",
-            style: 'primary'
-        },
-        {
-            id: 3,
-            icon: 'glove',
-            title: "Gloves",
-            bodyText: "<p>Nilex Industrial offers a wide range of gloves to protect hands across various work environments. Their selection includes disposable nitrile gloves, cut-resistant styles, coated work gloves, and options for heat or chemical resistance. </p> <p><em>If you’re looking for a specific glove or need help finding the right fit, we’re here to help—just reach out.</em></p>",
-            style: 'dark'
-        },
-    ]
+    body: "Nilex Industrial is your trusted source for high-quality industrial and safety supplies, offering more than just gloves, lighting, and protective gear. From personal protective equipment (PPE) and job site lighting to facility maintenance products, signage, spill control, and more, Nilex provides reliable solutions that help businesses maintain safe, efficient operations. Whether you're equipping a crew or stocking a facility, our team is here to help you find the right products for your needs. Below are three of our most popular product categories, trusted by customers across industries.",
 }
+
+export const productCardsContent = [
+    {
+        theme: 'gray',
+        icon: "lightbulb",
+        title: "Lighting",
+        body: "Nilex Industrial provides durable lighting solutions built to perform in demanding work environments. Their lineup includes LED work lights, portable floodlights, and rechargeable lanterns ideal for job sites, warehouses, and emergency situations.",
+        cta: "If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we're ready to assist."
+    },
+    {
+        theme: 'dark-oxblood',
+        icon: "hard-hat",
+        title: "Safety",
+        body: "Nilex Industrial carries a comprehensive range of safety equipment to support workplace protection and compliance. Their offerings include high-visibility apparel, eye and ear protection, respiratory gear, and fall protection products.",
+        cta: "If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we're ready to assist."
+    },
+    {
+        theme: 'orange',
+        icon: "hand",
+        title: "Gloves",
+        body: "Nilex Industrial offers a wide range of gloves to protect hands across various work environments. Their selection includes disposable nitrile gloves, cut-resistant styles, coated work gloves, and options for heat or chemical resistance.",
+        cta: "If you're looking for a specific glove or need help finding the right fit, we're here to help—just reach out."
+    },
+] as NonEmptyArray<ProductCardProps>;
 
 
 export const contact = {
@@ -205,7 +136,11 @@ export const contact = {
     ]
 }
 
-
+export const contactCopyOnly = {
+   eyebrow: 'Contact Us',
+    header: 'Need Industrial Gear? Let’s Talk.',
+    body: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.', 
+}
 
 
 

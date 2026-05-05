@@ -30,6 +30,23 @@
     gap: var(--space-400);
 }
 
+// ── Hex Icon ───────────────────────
+.hex-icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: clamp(32px, 2.361vw, 36px);
+
+    width: clamp(32px, 2.361vw, 36px);
+    // height: clamp(32px, 2.361vw, 36px);
+    height: auto;
+    aspect-ratio: 59/70;
+
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 // ── Breakpoint wrapper ───────────────────────
 
