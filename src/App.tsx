@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/Landingpage';
 import Navigation from './components/Navigation/Navigation';
 import { LenisProvider } from './components/LenisProvider';
-import Footer from './components/Footer.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Routes>
               <Route path="/" element={<LandingPage />} />
           </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </LenisProvider>
     </Router>
   );

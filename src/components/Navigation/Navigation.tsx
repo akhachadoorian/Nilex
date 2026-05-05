@@ -9,7 +9,7 @@ function Navigation({}) {
         <header className="navigation">
             <div className="navigation-inner">
                 <div className="logo-holder">
-                    <img src={"/assets/WhiteLogo.svg"} alt="Nilex Logo" />
+                    <img src={"/assets/NilexOnlyWhite.svg"} alt="Nilex Logo" />
                 </div>
                 <nav>
                     {NAV_ITEMS.map((item, idx) => (

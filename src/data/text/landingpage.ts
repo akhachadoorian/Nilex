@@ -23,54 +23,54 @@ import { TwoButtonsArray } from "../../types/buttons"
 // import WhiteEmail from "../images/Email-White.svg"
 // import WhitePen from "../images/WhitePen.svg"
 
-// export const footer = {
-//     logo: Logo,
-//     footerText: [
-//         {
-//             text: 'Copyright 2025 by Nilex Industrial',
-//             link: ' ',
-//         },
-//         {
-//             text: 'Privacy Statement',
-//             link: ' ',
-//         },
-//         {
-//             text: 'Designed & Developed By Alex Khachadoorian',
-//             link: ' ',
-//         },
-//     ],
-//     contactButtons: [
-//         {
-//             icon: {
-//                 svg: WhitePhone,
-//                 altText: 'Phone icon'
-//             },
-//             fa_icon: "phone",
-//             text: '(251) 458-9718',
-//             link: 'tel:2514589718',
-//             target: '',
-//         },
-//         {
-//             icon: {
-//                 svg: WhiteEmail,
-//                 altText: 'Email icon'
-//             },
-//             fa_icon: "envelope",
-//             text: '',
-//             link: 'mailto:mark@nilexindustrical.com',
-//             target: '',
-//         },
-//         // {
-//         //     icon: {
-//         //         svg: WhitePen,
-//         //         altText: 'Phone icon'
-//         //     },
-//         //     text: '',
-//         //     link: '',
-//         //     target: '',
-//         // },
-//     ],
-// }
+export const footer = {
+    logo: "/assets/OrangeLogo.svg",
+    footerText: [
+        {
+            text: 'Copyright 2025 by Nilex Industrial',
+            link: ' ',
+        },
+        {
+            text: 'Privacy Statement',
+            link: ' ',
+        },
+        {
+            text: 'Designed & Developed By Alex Khachadoorian',
+            link: ' ',
+        },
+    ],
+    contactButtons: [
+        {
+            icon: {
+                // svg: WhitePhone,
+                altText: 'Phone icon'
+            },
+            fa_icon: "phone",
+            text: '(251) 458-9718',
+            link: 'tel:2514589718',
+            target: '',
+        },
+        {
+            icon: {
+                // svg: WhiteEmail,
+                altText: 'Email icon'
+            },
+            fa_icon: "envelope",
+            text: '',
+            link: 'mailto:mark@nilexindustrical.com',
+            target: '',
+        },
+        // {
+        //     icon: {
+        //         svg: WhitePen,
+        //         altText: 'Phone icon'
+        //     },
+        //     text: '',
+        //     link: '',
+        //     target: '',
+        // },
+    ],
+}
 
 export const heroContent = {
     eyebrow: "Small Business, Big Safety",

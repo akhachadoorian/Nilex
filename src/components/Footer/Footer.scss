@@ -1,0 +1,223 @@
+@use "../../styles/variables" as *;
+
+footer {
+    background-color: $orange-650;
+    padding: var(--space-600) var(--layout-column-margin) var(--space-400);
+
+    @include big {
+        padding: var(--space-700) var(--layout-column-margin) var(--space-400);
+    }
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+
+    @include big {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10.625vw;
+
+        max-width: $max-width;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+.footer_left {
+    @include big {
+        flex: 1 1 420px;
+    }
+    .logo-holder {
+        max-width: 250px;
+        margin: 0 auto;
+
+        @include big {
+            max-width: none;
+            margin: 0;
+        }
+    }
+}
+
+.footer_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-400);
+
+    @include big {
+        flex: 3 3 748px;
+    }
+
+    &-upper {
+    }
+
+    &-contact_text {
+        color: var(--stone-000);
+        text-transform: uppercase;
+        margin-bottom: var(--space-200);
+        text-align: center;
+
+        @include big {
+            text-align: left;
+        }
+    }
+
+    &-contact_links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-150);
+
+        @include big {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .contact_link {
+            flex: 1;
+            color: var(--stone-000);
+            text-decoration: underline transparent;
+            transition: $transition;
+
+            display: flex;
+            align-items: center;
+            gap: var(--space-100);
+
+            .hex_icon {
+                background-color: var(--orange-850);
+
+                flex: 0 0 clamp(32px, 2.361vw, 36px);
+                width: clamp(32px, 2.361vw, 36px);
+                height: clamp(32px, 2.361vw, 36px);
+                aspect-ratio: 1;
+
+                clip-path: polygon(
+                    50% 0,
+                    100% 25%,
+                    100% 75%,
+                    50% 100%,
+                    0 75%,
+                    0 25%
+                );
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &:hover {
+                text-decoration-color: var(--stone-000);
+            }
+        }
+    }
+
+    &-lower {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-150);
+
+        border-top: 1px solid var(--orange-300);
+        padding-top: var(--space-200, 16px);
+        color: var(--orange-100);
+
+        @include big {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        &-link {
+            color: var(--orange-100);
+            text-decoration: underline transparent;
+            //    text-underline-offset: 2px;
+            transition: $transition;
+
+            &:hover {
+                color: var(--stone-000);
+                text-decoration-color: var(--stone-000);
+            }
+        }
+    }
+}
+
+// .footer_upper {
+//     display: flex;
+//     flex-direction: column;
+
+//     @include big {
+//         flex-direction: row;
+//         // justify-content: space-between;
+//         gap: var(--space-600);
+
+// max-width: $max-width;
+// margin: 0 auto;
+// width: 100%;
+//     }
+
+//     &-left {
+//         @include big {
+//             flex: 1 1 350px;
+//         }
+
+//         .img-holder {
+//             width: 350px;
+//         }
+//     }
+
+//     &-right {
+//         color: var(--stone-000);
+
+//         @include big {
+//         }
+
+//     }
+
+//     &-contact-links {
+//         display: flex;
+//         flex-direction: column;
+//         gap: var(--space-200);
+
+//     }
+// }
+
+// .footer_lower {
+//     display: flex;
+//     flex-direction: column;
+
+//     color: var(--orange-300);
+//     border-top: 1px solid var(--orange-300);
+//     padding-top: var(--space-200);
+
+//     @include big {
+//         flex-direction: row;
+//         justify-content: space-between;
+//         gap: var(--space-400);
+
+//         max-width: $max-width;
+//         margin: 0 auto;
+//         width: 100%;
+//     }
+
+//     &-left {
+//         @include big {
+//         }
+//     }
+
+//     &-right {
+//         @include big {
+//         }
+
+//         a {
+//             color: var(--orange-300);
+//             text-underline-offset: 5px;
+//             transition: $transition;
+
+//             &:hover {
+//                 color: var(--stone-000);
+//             }
+//         }
+//     }
+// }
