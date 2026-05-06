@@ -35,14 +35,6 @@ function LandingPage({}) {
                 id="about"
                 aria-label="About Nilex"
             >
-                {/* <MediaWithCopy  
-                    eyebrow={aboutContent.eyebrow}
-                    header={aboutContent.header}
-                    body={aboutContent.bodyText}
-                    img={aboutContent.img}
-                    // subsections={aboutContent.subsections}
-                    mediaSide="left"
-                /> */}
                 <CopyOnly
                     styleOptions={{
                         headingSize: "h2",
