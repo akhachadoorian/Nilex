@@ -10,14 +10,14 @@ type CopyOnlyStyleProps = {
     variation: "left" | "center" | "columns";
     headingSize?: "h2" | "h3" | "h4";
     eyebrowColor?: ColorVariables;
-    textColor?: 'light' | 'dark';
+    textColor?: "light" | "dark";
 };
 
 const DEFAULT_STYLE = {
     variation: "left",
     headingSize: "h2",
     eyebrowColor: "--orange-600",
-    textColor: "dark"
+    textColor: "dark",
 } as CopyOnlyStyleProps;
 
 export type CopyOnlyProps = {
@@ -50,18 +50,24 @@ export default function CopyOnly({
         y: 24,
     });
 
-    const Heading = styleOptions.headingSize ?? 'h2';
+    const Heading = styleOptions.headingSize ?? "h2";
+    const hasHtmlTags = (body: string) => /<[a-z][\s\S]*>/i.test(body);
 
     if (styleOptions.variation === "columns") {
         return (
-            <div ref={ref} className={`copy copy-${styleOptions.textColor} ${className}`}>
+            <div
+                ref={ref}
+                className={`copy copy-${styleOptions.textColor} ${className}`}
+            >
                 <div className={`copy-inner copy-${styleOptions.variation}`}>
                     <div className="copy-left_col">
                         {eyebrow && (
                             <Eyebrow
                                 variation={eyebrowVariation ?? "left"}
                                 text={eyebrow}
-                                color={styleOptions.eyebrowColor ?? "--orange-600"}
+                                color={
+                                    styleOptions.eyebrowColor ?? "--orange-600"
+                                }
                                 className={"mwc-animate"}
                             />
                         )}
@@ -76,11 +82,18 @@ export default function CopyOnly({
                             <h5 className="subtitle mwc-animate">{subtitle}</h5>
                         )}
 
-                        <p
-                            className={`mwc-animate ${styleOptions.headingSize === "h2" ? "body-l" : "body"}`}
-                        >
-                            {body}
-                        </p>
+                        {body && hasHtmlTags(body) ? (
+                            <div
+                                className="body-l copy-body mwc-animate"
+                                dangerouslySetInnerHTML={{ __html: body }}
+                            />
+                        ) : (
+                            <p
+                                className={`mwc-animate ${styleOptions.headingSize === "h2" ? "body-l" : "body"}`}
+                            >
+                                {body}
+                            </p>
+                        )}
 
                         {buttons && buttons?.length != 0 && (
                             <ThreeButtons
@@ -95,15 +108,20 @@ export default function CopyOnly({
     }
 
     return (
-        <div ref={ref} className={`copy copy-${styleOptions.textColor} ${className}`}>
+        <div
+            ref={ref}
+            className={`copy copy-${styleOptions.textColor} ${className}`}
+        >
             <div className={`copy-inner copy-${styleOptions.variation}`}>
                 <div className="copy-text">
                     <div className="copy-upper">
                         {eyebrow && (
                             <Eyebrow
-                                variation={eyebrowVariation ?? 'left'}
+                                variation={eyebrowVariation ?? "left"}
                                 text={eyebrow}
-                                color={styleOptions.eyebrowColor ?? "--orange-600"}
+                                color={
+                                    styleOptions.eyebrowColor ?? "--orange-600"
+                                }
                                 className={"mwc-animate"}
                             />
                         )}
@@ -117,11 +135,18 @@ export default function CopyOnly({
                         <h5 className="subtitle mwc-animate">{subtitle}</h5>
                     )}
 
-                    <p
-                        className={`mwc-animate ${styleOptions.headingSize === "h2" ? "body-l" : "body"}`}
-                    >
-                        {body}
-                    </p>
+                    {body && hasHtmlTags(body) ? (
+                        <div
+                            className="body-l copy-body mwc-animate"
+                            dangerouslySetInnerHTML={{ __html: body }}
+                        />
+                    ) : (
+                        <p
+                            className={`mwc-animate ${styleOptions.headingSize === "h2" ? "body-l" : "body"}`}
+                        >
+                            {body}
+                        </p>
+                    )}
                 </div>
 
                 {buttons && buttons?.length != 0 && (

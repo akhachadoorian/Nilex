@@ -9,14 +9,7 @@ export const heroContent = {
     subtitle: "Industrial & Safety Supplies",
     body: 'As a family-run business, we take pride in keeping your workplace safe with reliable, high-quality safety and industrial supplies.',
     btns: [
-        {
-            btnText: 'Get in Touch',
-            link: '/#contact'
-        },
-        {
-            btnText: 'Get in Touch',
-            link: '/#contact'
-        }
+       
     ] satisfies TwoButtonsArray
 }
 
@@ -25,26 +18,28 @@ export const aboutContent = {
     header: "Trusted Safety and Industrial Solutions Since 2012",
     bodyText: "<p>Founded in 2012, Nilex Industrial and Safety Supplies is a proud woman-owned small business committed to providing top-quality industrial and safety products. As a family-run company, we prioritize reliability, exceptional service, and workplace safety, ensuring businesses have the essential supplies they need to protect their workforce.</p><p>At the heart of our company is Mark Khachadoorian, Owner and Vice-President of Sales, who leads our team with expertise and dedication to customer satisfaction.</p>",
     img: {
-        src: '/assets/Industrial.png',
-        alt: 'Guy using an electric saw or grinder on a piece of metal with sparks flying out',
+        src: '/assets/ValuesGraphic.svg',
+        alt: "Graphic that displays Nilex's values: Family Driven Values, Community & Small Business Commitment, and Building Lasting Partnerships.",
+        // src: '/assets/Industrial.png',
+        // alt: 'Guy using an electric saw or grinder on a piece of metal with sparks flying out',
     },
-    subsections: [
-        {
-            subheader: 'Family-Driven Values',
-            subtext: 'Built on a foundation of Family-Driven Values, we believe in treating our customers, employees, and partners with trust, respect, and integrity.',
-            icon: "users-three"
-        },
-        {
-            subheader: 'Community & Small Business Commitment',
-            subtext: 'We are deeply committed to supporting our local communities and fellow small businesses, fostering growth and collaboration in the industries we serve. ',
-            icon: "city"
-        },
-        {
-            subheader: 'Building Lasting Partnerships ',
-            subtext: 'At Nilex, building lasting partnerships is at the core of what we do. We go beyond transactions to cultivate strong, long-term relationships with our customers, offering personalized service, and unwavering reliability. ',
-            icon: "plant"
-        },
-    ]
+    // subsections: [
+    //     {
+    //         subheader: 'Family-Driven Values',
+    //         subtext: 'Built on a foundation of Family-Driven Values, we believe in treating our customers, employees, and partners with trust, respect, and integrity.',
+    //         icon: "users-three"
+    //     },
+    //     {
+    //         subheader: 'Community & Small Business Commitment',
+    //         subtext: 'We are deeply committed to supporting our local communities and fellow small businesses, fostering growth and collaboration in the industries we serve. ',
+    //         icon: "city"
+    //     },
+    //     {
+    //         subheader: 'Building Lasting Partnerships ',
+    //         subtext: 'At Nilex, building lasting partnerships is at the core of what we do. We go beyond transactions to cultivate strong, long-term relationships with our customers, offering personalized service, and unwavering reliability. ',
+    //         icon: "plant"
+    //     },
+    // ]
 }
 
 export const productCopyOnlyContent = {

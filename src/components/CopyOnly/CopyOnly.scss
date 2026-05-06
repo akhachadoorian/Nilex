@@ -21,6 +21,12 @@
         gap: var(--space-300);
     }
 
+    &-body {
+        & > p:not(:last-child) {
+            margin-bottom: var(--space-150);
+        }
+    }
+
     &-upper {
         display: flex;
         flex-direction: column;

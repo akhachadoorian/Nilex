@@ -24,7 +24,7 @@ section.base_section {
 
     @include big {
         max-width: var(--max-width);
-        width: 100%;
+        // width: 100%;
     }
 }
 

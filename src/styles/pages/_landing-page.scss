@@ -1,5 +1,11 @@
 @use "../../styles/variables" as *;
 
+#about {
+    .media_with_copy .img-holder img {
+        object-fit: contain;
+    }
+}
+
 #products {
     display: flex;
     flex-direction: column;
