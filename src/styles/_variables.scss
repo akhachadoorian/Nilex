@@ -1,0 +1,82 @@
+@forward 'mixins';
+@forward 'tokens/breakpoints';
+@forward 'tokens/spacing';
+@forward 'tokens/layout';
+@forward 'tokens/typography';
+
+// ── SCSS variables ────────────────────────────────────────────
+$max-width: 1600px;
+
+// ──── Fonts ───────────────────────────────────
+// $font-display: "Barlow Condensed", sans-serif;
+// $font-sans: "Barlow", sans-serif;
+$font-sans: 'Jost', sans-serif;
+// $font-body: "Inter", sans-serif;
+$font-body: 'Jost', sans-serif;
+// $font-mono: "JetBrains Mono", monospace;
+$font-mono: "Space Grotesk", monospace;
+
+// ──── Color primitives ────────────────────────
+// Orange
+$orange-100:  var(--orange-100);
+$orange-200:  var(--orange-200);
+$orange-300:  var(--orange-300);
+$orange-400:  var(--orange-400);
+$orange-450:  var(--orange-450);
+$orange-500:  var(--orange-500);
+$orange-600:  var(--orange-600);
+$orange-650:  var(--orange-650);
+$orange-700:  var(--orange-700);
+$orange-800:  var(--orange-800);
+$orange-850:  var(--orange-850);
+$orange-900:  var(--orange-900);
+$orange-1000: var(--orange-1000);
+ 
+// Oxblood
+$oxblood-100:  var(--oxblood-100);
+$oxblood-200:  var(--oxblood-200);
+$oxblood-300:  var(--oxblood-300);
+$oxblood-400:  var(--oxblood-400);
+$oxblood-500:  var(--oxblood-500);
+$oxblood-600:  var(--oxblood-600);
+$oxblood-650:  var(--oxblood-650);
+$oxblood-700:  var(--oxblood-700);
+$oxblood-800:  var(--oxblood-800);
+$oxblood-850:  var(--oxblood-850);
+$oxblood-900:  var(--oxblood-900);
+$oxblood-1000: var(--oxblood-1000);
+ 
+// Stone
+$stone-000:  var(--stone-000);
+$stone-100:  var(--stone-100);
+$stone-200:  var(--stone-200);
+$stone-300:  var(--stone-300);
+$stone-400:  var(--stone-400);
+$stone-500:  var(--stone-500);
+$stone-600:  var(--stone-600);
+$stone-700:  var(--stone-700);
+$stone-800:  var(--stone-800);
+$stone-850:  var(--stone-850);
+$stone-900:  var(--stone-900);
+$stone-950:  var(--stone-950);
+$stone-1000: var(--stone-1000);
+
+// ──── Semantic aliases ────────────────────────
+$orange:       $orange-500;
+// $orange-hover: $orange-600;
+$oxblood:      $oxblood-800;
+// $oxblood-bg:   $oxblood-1000;
+$stone:        $stone-000;
+$body-text:    $stone-900;
+
+// ──── Utility ─────────────────────────────────
+$overlay-bg:   rgba(#3d0f0f, 0.45);
+$default-br:   3px;
+$transition:   all ease-in-out 300ms;
+ 
+$hero-bg:      var(--oxblood-800);
+$hero-pattern: var(--orange-500);
+$nav-bg:       var(--oxblood-900);
+
+// ──── Other ─────────────────────────────────
+

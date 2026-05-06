@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+
+.values_grid {
+    &-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .img-holder {
+        aspect-ratio: 31/37;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    &-img1 {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        margin-bottom: -25%;
+    }
+
+    &-img2 {
+        grid-row: 2;
+        grid-column: 2 / 4;
+    }
+
+    &-img3 {
+        grid-row: 3;
+        grid-column: 1 / 3;
+        margin-top: -25%;
+    }
+}

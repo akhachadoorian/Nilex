@@ -1,0 +1,77 @@
+@use "./variables" as *;
+
+// ── Image Classes ───────────────────────
+.img {
+    &-wrapper {
+        position: relative;
+        z-index: 2;
+
+        .img-holder {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-holder {
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// ── Btns ───────────────────────
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-200);
+
+    @include big {
+        gap: var(--space-400);
+    }
+}
+
+// ── Hex Icon ───────────────────────
+.hex-icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: clamp(32px, 2.361vw, 36px);
+
+    width: clamp(32px, 2.361vw, 36px);
+    // height: clamp(32px, 2.361vw, 36px);
+    height: auto;
+    aspect-ratio: 59/70;
+
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// ── Breakpoint wrapper ───────────────────────
+
+.mobile_only {
+    @include small {
+        display: none;
+    }
+
+    @include big {
+        display: none;
+    }
+}
+
+.tablet_only {
+    @include big {
+        display: none;
+    }
+}
+
+.desktop_only {
+    @include small {
+        display: none;
+    }
+}

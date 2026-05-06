@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "nilex",
   "version": "0.1.0",
   "homepage": "https://nilexindustrial.com",
   "private": true,
@@ -7,31 +7,19 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^6.3.0",
-    "locomotive-scroll": "^4.1.4",
+    "@phosphor-icons/react": "^2.1.10",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.23",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-router-dom": "^7.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": {
     "production": [
@@ -44,5 +32,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.5.0",
+    "gh-pages": "^6.3.0",
+    "sass": "^1.99.0",
+    "typescript": "^6.0.3",
+    "vite": "^6.3.0",
+    "web-vitals": "^4.2.4"
   }
 }

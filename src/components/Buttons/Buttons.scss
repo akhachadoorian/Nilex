@@ -1,0 +1,184 @@
+@use "../../styles/variables" as *;
+@use "sass:map";
+
+$btnTB: 12px;
+$btnLR: 32px;
+$btnBorderWidth: 2px;
+
+// ── Solid Styles ──────────────────────────────────────────────
+
+$solid-btn-style: (
+    'white': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $orange-600
+    ),
+    'pale-orange': (
+        'bc': $orange-200,
+        'bg': $orange-200,
+        'tc': $orange-600
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'bg': $orange-650,
+        'tc': $stone-000
+    )
+);
+
+$solid-btn-style-hover: (
+    'white': (
+        'bc': $orange-200,
+        'bg': $orange-200,
+        'tc': $orange-600
+    ),
+    'pale-orange': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $orange-600
+    ),
+    'orange': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $orange-650
+    )
+);
+
+// ── Outline Styles ──────────────────────────────────────────────
+
+$outline-btn-style: (
+    'white': (
+        'bc': $stone-000,
+        'tc': $stone-000
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'tc': $orange-650
+    )
+);
+
+$outline-btn-style-hover: (
+    'white': (
+        'bc': $orange-200,
+        'bg': $orange-200,
+        'tc': $orange-600
+    ),
+    'orange': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $orange-650
+    )
+);
+
+// ── Arrow Styles  ──────────────────────────────────────────────
+
+$arrow-btn-style: (
+    'white': (
+        'bc': $stone-000,
+        'tc': $stone-000
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'tc': $orange-650
+    )
+);
+
+$arrow-btn-style-hover: (
+    'white': (
+        'bc': $stone-000,
+        'tc': $stone-000
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'tc': $orange-650
+    )
+);
+
+// ── Btn ──────────────────────────────────────────────
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-150);
+
+    width: fit-content;
+    text-decoration: none;
+    transition: $transition;
+
+    &-text {
+        font-family: $font-mono;
+        font-size: var(--text-s);
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    &-style-solid {
+        padding: $btnTB $btnLR;
+        border: $btnBorderWidth solid;
+
+        @each $theme, $c in $solid-btn-style {
+            &.btn-theme-#{$theme} {
+                border-color: map.get($c, 'bc');
+                background-color: map.get($c, 'bg');
+                color: map.get($c, 'tc');
+            }
+        }
+
+        &:hover {
+            @each $theme, $c in $solid-btn-style-hover {
+                &.btn-theme-#{$theme} {
+                    border-color: map.get($c, 'bc');
+                    background-color: map.get($c, 'bg');
+                    color: map.get($c, 'tc');
+                }
+            }
+        }
+    }
+
+    &-style-outline {
+        padding: $btnTB $btnLR;
+        border: $btnBorderWidth solid;
+
+        @each $theme, $c in $outline-btn-style {
+            &.btn-theme-#{$theme} {
+                border-color: map.get($c, 'bc');
+                color: map.get($c, 'tc');
+            }
+        }
+
+        &:hover {
+            @each $theme, $c in $outline-btn-style-hover {
+                &.btn-theme-#{$theme} {
+                    border-color: map.get($c, 'bc');
+                    background-color: map.get($c, 'bg');
+                    color: map.get($c, 'tc');
+                }
+            }
+        }
+
+    }
+
+    &-style-arrow {
+        @each $theme, $c in $arrow-btn-style {
+            &.btn-theme-#{$theme} {
+                border-color: map.get($c, 'bc');
+                color: map.get($c, 'tc');
+            }
+        }
+
+        &:hover {
+            gap: var(--space-200);
+
+            @each $theme, $c in $arrow-btn-style-hover {
+                &.btn-theme-#{$theme} {
+                    border-color: map.get($c, 'bc');
+                    // background-color: map.get($c, 'bg');
+                    color: map.get($c, 'tc');
+                }
+            }
+        }
+        
+    }
+}
+

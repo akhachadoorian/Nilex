@@ -1,0 +1,80 @@
+@use "../../styles/variables" as *;
+
+#about {
+    // .media_with_copy {
+    //     &-img {
+    //         @include big {
+    //             flex-grow: 0;
+    //         }
+
+    //         .img-holder {
+    //             @include big {
+    //                 max-height: 800px;
+    //             }
+
+    //             img {
+    //                 object-fit: contain;
+    //             }
+    //         }
+    //     }
+    // }
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-800);
+
+    @include big {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--layout-column-gutter);
+    }
+
+    .copy {
+        @include big {
+            flex: 1 1 754px;
+        }
+    }
+
+    .values_hex {
+        display: flex;
+        justify-content: flex-end;
+
+        @include big {
+            flex: 1 1 378px;
+        }
+    }
+
+    
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-800);
+
+    @include big {
+        gap: var(--space-1000);
+    }
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-800);
+
+    background-color: var(--stone-300);
+
+    @include big {
+        gap: var(--space-1000);
+    }
+
+    .section-inner {
+        // padding: var(--layout-section-padding) var(--layout-column-margin);
+        // margin: var(--layout-section-padding) auto;
+
+        @include big {
+            max-width: var(--max-width);
+            // width: 100%;
+        }
+    }
+}

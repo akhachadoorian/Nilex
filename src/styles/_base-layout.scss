@@ -1,0 +1,50 @@
+@use "./variables" as *;
+
+html {
+    font-size: 16px;// REM BASE
+}
+
+body {
+    max-width: 100dvw;
+    // overflow-x: clip;
+    background-color: var(--stone-000);
+    color: var(--orange-1000);
+    margin: 0;
+}
+
+main {
+    @include big {
+        margin: auto;
+    }
+}
+
+section.base_section {
+    padding: var(--layout-section-padding) var(--layout-column-margin);
+    // margin: var(--layout-section-padding) auto;
+    margin: 0 auto;
+
+    @include big {
+        max-width: var(--max-width);
+        // width: 100%;
+    }
+}
+
+section.full-width {
+    margin: var(--layout-section-padding) auto;
+    
+    & > .section-inner {
+        padding: var(--layout-section-padding) var(--layout-column-margin);
+        // margin: var(--layout-section-padding) auto;
+
+        // @include big {
+        //     max-width: var(--max-width);
+        // }
+
+        & > * {
+            @include big {
+                max-width: var(--max-width);
+                margin: auto;
+            }
+        }
+    }
+}
