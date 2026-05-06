@@ -34,14 +34,12 @@ export default function Hero({
     const mobileScreenSize = 750;
     const [screenWidth, setWidth] = useState(window.innerWidth < mobileScreenSize);
 
-
-
     useEffect(() => {
         const svg = svgRef.current;
         if (!svg) return;
 
-        const W = () => window.innerWidth;
-        const H = () => window.innerHeight;
+        const W = () => svg.clientWidth;
+        const H = () => svg.clientHeight;
 
         function hexPoints(cx: number, cy: number, r: number): string {
             const pts: string[] = [];
@@ -116,12 +114,15 @@ export default function Hero({
                 );
             });
         }
-        window.addEventListener("resize", repositionHexes, );
-
-        window.addEventListener('resize', (event) => {
-            repositionHexes;
-            setWidth(window.innerWidth < mobileScreenSize);
-        });
+        let widthDebounce: ReturnType<typeof setTimeout>;
+        const handleResize = () => {
+            repositionHexes();
+            clearTimeout(widthDebounce);
+            widthDebounce = setTimeout(() => {
+                setWidth(window.innerWidth < mobileScreenSize);
+            }, 200);
+        };
+        window.addEventListener("resize", handleResize);
 
         // Staggered entrance for hexagons
         gsap.set(hexEls, {
@@ -167,50 +168,34 @@ export default function Hero({
             }
         });
 
-        // Hero content entrance
-        gsap.set(
-            [
-                ".hero-eyebrow",
-                ".hero-title",
-                ".hero-subtitle",
-                ".hero-body",
-                ".hero-btns",
-            ],
-            {
-                opacity: 0,
-                y: 30,
-            },
-        );
+        // Hero content entrance — only target elements that are actually rendered
+        const contentSelectors = [
+            eyebrow ? ".hero-eyebrow" : null,
+            ".hero-title",
+            subtitle ? ".hero-subtitle" : null,
+            body ? ".hero-body" : null,
+            buttons?.length ? ".hero-btns" : null,
+        ].filter(Boolean) as string[];
+
+        gsap.set(contentSelectors, { opacity: 0, y: 30 });
+
         const tl = gsap.timeline({ delay: 0.3 });
-        tl.to(".hero-eyebrow", {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: "power2.out",
-        })
-            .to(
-                ".hero-title",
-                { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-                "-=0.4",
-            )
-            .to(
-                ".hero-subtitle",
-                { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-                "-=0.4",
-            )
-            .to(
-                ".hero-body",
-                { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-                "-=0.4",
-            )
-            .to(
-                ".hero-btns",
-                { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-                "-=0.35",
-            );
+        let isFirst = true;
+
+        const step = (sel: string, duration: number, overlap = "-=0.4") => {
+            tl.to(sel, { opacity: 1, y: 0, duration, ease: "power2.out" }, isFirst ? undefined : overlap);
+            isFirst = false;
+        };
+
+        if (eyebrow) step(".hero-eyebrow", 0.7);
+        step(".hero-title", 0.7);
+        if (subtitle) step(".hero-subtitle", 0.7);
+        if (body) step(".hero-body", 0.6);
+        if (buttons?.length) step(".hero-btns", 0.6, "-=0.35");
 
         return () => {
-            window.removeEventListener("resize", repositionHexes);
+            window.removeEventListener("resize", handleResize);
+            clearTimeout(widthDebounce);
             gsap.killTweensOf(hexEls);
             tl.kill();
             hexEls.forEach((el) => el.remove());

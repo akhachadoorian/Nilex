@@ -65,12 +65,13 @@
     &-title {
         color: $stone-000;
         // color: $orange-500;
+        font-size: typo.fluid(125, 200);
         font-weight: 500;
         text-transform: uppercase;
         line-height: 100%;
 
         @include big {
-            font-size: typo.fluid(100, 200); // FIXME: make responsive
+            font-size: typo.fluid(150, 200); // FIXME: make responsive
         }
     }
 

@@ -74,12 +74,12 @@ export const contactCopyOnlyContent = {
     body: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.',
     buttons: [
         {
-            btnText: "Give Us a Call",
+            btnText: contactItems[0].cta,
             link: contactItems[0].link,
             target: "_blank"
         },
         {
-            btnText: "Send an Email",
+            btnText: contactItems[1].cta,
             link: contactItems[1].link,
             target: "_blank"
         },

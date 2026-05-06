@@ -36,6 +36,13 @@ function Footer({}) {
                                           ? EnvelopeIcon
                                           : LinkIcon;
 
+                                let text =
+                                    c.kind === "phone"
+                                        ? c.phone
+                                        : c.kind === "email"
+                                          ? c.email
+                                          : c.link;
+
                                 return (
                                     <Link
                                         key={idx}
@@ -50,7 +57,7 @@ function Footer({}) {
                                             />
                                         </div>
 
-                                        <p className="">{c.text}</p>
+                                        <p className="">{text}</p>
                                     </Link>
                                 );
                             })}
