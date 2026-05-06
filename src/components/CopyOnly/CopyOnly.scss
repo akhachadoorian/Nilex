@@ -1,10 +1,7 @@
 @use "../../styles/variables" as *;
 
-.copy-wrapper {
-    @include big {
-    }
-
-    .copy-inner {
+.copy {
+    &-inner {
         display: flex;
         flex-direction: column;
         gap: var(--space-500);
@@ -16,87 +13,91 @@
         @media (min-width: $max-width) {
             max-width: 60.417vw;
         }
+    }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-300);
+    }
+
+    &-upper {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-200);
+    }
+
+    // ---- All Variations -------------------------------------------
+
+    &-left {
+        @include big {
+            max-width: 75.833vw;
+        }
+
+        @media (min-width: $max-width) {
+            max-width: 60.417vw;
+        }
+    }
+
+    &-center {
+        text-align: center;
+        align-items: center;
+
+        .copy-btns {
+            justify-content: center;
+        }
 
         .copy-text {
+            align-items: center;
+
+            .copy-upper {
+                align-items: center;
+            }
+        }
+
+        @include big {
+            max-width: 60.417vw;
+            margin: auto;
+        }
+    }
+
+    &-columns {
+        flex-direction: column;
+        gap: var(--layout-column-gutter);
+
+        @include big {
+            flex-direction: row;
+            align-items: center;
+            max-width: none;
+        }
+
+        .copy-left_col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-200);
+
+            @include big {
+                flex: 1 1 762px;
+            }
+        }
+
+        .copy-right_col {
             display: flex;
             flex-direction: column;
             gap: var(--space-300);
 
-            .copy-upper {
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-200);
-            }
-        }
-
-        .copy-btns {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: var(--space-400);
-        }
-
-        &.left {
             @include big {
-                max-width: 75.833vw;
-            }
-
-            @media (min-width: $max-width) {
-                max-width: 60.417vw;
+                flex: 1 1 528px;
             }
         }
+    }
 
-        &.center {
-            text-align: center;
-            align-items: center;
+    // ---- Text Colors -------------------------------------------
+    &-light {
+       color: var(--stone-000); 
+    }
 
-            .copy-btns {
-                justify-content: center;
-            }
-
-            .copy-text {
-                align-items: center;
-
-                .copy-upper {
-                    align-items: center;
-                }
-            }
-
-            @include big {
-                max-width: 60.417vw;
-                margin: auto;
-            }
-        }
-
-        &.columns {
-            flex-direction: column;
-            gap: var(--layout-column-gutter);
-
-            @include big {
-                flex-direction: row;
-                align-items: center;
-                max-width: none;
-            }
-
-            .copy-left {
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-200);
-
-                @include big {
-                    flex: 1 1 762px;
-                }
-            }
-
-            .copy-right {
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-300);
-
-                @include big {
-                    flex: 1 1 528px;
-                }
-            }
-        }
+    &-dark {
+       color: var(--stone-1000);  
     }
 }

@@ -1,6 +1,5 @@
 import react from "react";
 import Eyebrow from "../Eyebrow/Eyebrow";
-import Accordion from "../Accordion";
 import "./MediaWithCopy.scss";
 import { ImageProps } from "../../types/images";
 import IconNote from "../IconNote/IconNote";

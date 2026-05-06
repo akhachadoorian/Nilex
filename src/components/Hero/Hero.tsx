@@ -223,6 +223,7 @@ export default function Hero({
                 ref={svgRef}
                 xmlns="http://www.w3.org/2000/svg"
                 className="hex-canvas"
+                aria-hidden="true"
             />
             <div className="hero-content-wrapper">
                 <div className="hero-content">

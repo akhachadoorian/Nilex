@@ -24,10 +24,13 @@ section.base_section {
 
     @include big {
         max-width: var(--max-width);
+        width: 100%;
     }
 }
 
 section.full-width {
+    margin: var(--layout-section-padding) auto;
+    
     & > .section-inner {
         padding: var(--layout-section-padding) var(--layout-column-margin);
         // margin: var(--layout-section-padding) auto;

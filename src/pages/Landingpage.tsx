@@ -1,6 +1,6 @@
 import Hero from "../components/Hero/Hero";
 
-import { aboutContent, contactCopyOnly, heroContent, productCardsContent, productCopyOnlyContent } from "../data/text/landingpage"
+import { aboutContent, contactCopyOnlyContent, heroContent, productCardsContent, productCopyOnlyContent } from "../data/text/landingpage"
 import MediaWithCopy from '../components/MediaWithCopy/MediaWithCopy';
 import { useFadeIn } from "../hooks/useFadeIn.js";
 import CopyOnly from "../components/CopyOnly/CopyOnly.js";
@@ -21,7 +21,7 @@ function LandingPage({}) {
                 buttons={heroContent.btns ?? []}
             />
 
-            <section ref={aboutRef} className="base_section about-section" id="about">
+            <section ref={aboutRef} className="base_section about-section" id="about" aria-label="About Nilex">
                 <MediaWithCopy
                     eyebrow={aboutContent.eyebrow}
                     header={aboutContent.header}
@@ -32,65 +32,36 @@ function LandingPage({}) {
                 />
             </section>
 
-            <section ref={productRef} id='products'  className="base_section product-section">
+            <section ref={productRef} id='products' className="base_section product-section" aria-label="Products">
                 <CopyOnly 
                     eyebrow={productCopyOnlyContent.eyebrow}
                     header={productCopyOnlyContent.header}
-                    headingSize="h2"
                     body={productCopyOnlyContent.body}
-                    variation="center"
+                    styleOptions={{
+                        headingSize: "h2",
+                        variation: "center"
+                    }}
                 />
 
                 <ProductCards productCards={productCardsContent}/>
             </section> 
 
-            <section ref={contactRef} id='contact'  className="base_section contact-section">
+            <section ref={contactRef} id='contact' className="full-width contact-section" aria-label="Contact">
+                <div className="section-inner">
                 <CopyOnly 
-                    eyebrow={contactCopyOnly.eyebrow}
-                    header={contactCopyOnly.header}
-                    headingSize="h2"
-                    body={contactCopyOnly.body}
-                    variation="left"
+                    eyebrow={contactCopyOnlyContent.eyebrow}
+                    header={contactCopyOnlyContent.header}
+                    body={contactCopyOnlyContent.body}
+                    styleOptions={{
+                        headingSize: "h2",
+                        variation: "center",
+                    }}
                 />
 
-                {/* <div data-scroll data-scroll-speed="1" className='header'> */}
-                {/* <div className='header'>
-                    <Eyebrow text={contact.eyebrow} color={"var(--primary)"}/>
-                    <h2>{contact.header}</h2>
-                    <p>{contact.bodyText}</p>
-                </div>
-                <div className="buttons">
+                <div className="">
 
-                    {contact.methods.map((m) =>
-                        <Buttons 
-                            key={m.id}
-                            icon={m.icon.svg}
-                            iconAltText={m.icon.altText}
-                            btn_text={m.title}
-                            link={m.link}
-                            style={'main'}
-                        />
-                    )}
-                </div> */}
-                {/* <div data-scroll data-scroll-speed="3" className="hex-btns"> */}
-                {/* <div className="hex-btns">
-                    {contact.methods.map((m) =>
-                        <HexagonButton 
-                            key={m.id}
-                            icon={m.icon.svg}
-                            iconAltText={m.icon.altText}
-                            hoverIcon={m.iconHover.svg}
-                            hoverIconAltText={m.iconHover.altText}
-                            title={m.title}
-                            bodyText={m.bodyText}
-                            link={m.link}
-                            col={m.col}
-                            row={m.row}
-                            marginLeft={m.marginLeft}
-                        />
-                    )}
-                    
-                </div> */}
+                </div>
+                </div>
             </section>
         </>
     );

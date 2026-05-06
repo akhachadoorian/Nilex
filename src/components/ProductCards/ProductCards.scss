@@ -43,6 +43,11 @@ $pc-shadow-dark-oxblood: rgb(67, 17, 17);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            @include small {
+                width: clamp(40px, 12vw, 50px);
+                height: clamp(40px, 12vw, 50px);
+            }
         }
     }
 

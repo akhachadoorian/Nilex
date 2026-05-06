@@ -1,6 +1,7 @@
 import { ProductCardProps } from "../../components/ProductCards/ProductCards";
 import { TwoButtonsArray } from "../../types/buttons"
 import { NonEmptyArray } from "../../types/utility";
+import { contactItems } from "../contactItems";
 
 export const heroContent = {
     eyebrow: "Small Business, Big Safety",
@@ -62,7 +63,7 @@ export const productCardsContent = [
     },
     {
         theme: 'dark-oxblood',
-        icon: "hard-hat",
+        icon: "hardHat",
         title: "Safety",
         body: "Nilex Industrial carries a comprehensive range of safety equipment to support workplace protection and compliance. Their offerings include high-visibility apparel, eye and ear protection, respiratory gear, and fall protection products.",
         cta: "If you're outfitting a team or seeking specific PPE solutions, feel free to reach out—we're ready to assist."
@@ -76,99 +77,21 @@ export const productCardsContent = [
     },
 ] as NonEmptyArray<ProductCardProps>;
 
-
-export const contact = {
-    eyebrow: 'Contact Us',
-    header: 'Need Industrial Gear? Let’s Talk.',
-    bodyText: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.',
-    methods: [
-        {
-            id: 1,
-            icon: {
-                svg: "envelope",
-                altText: 'White envelope icon'
-            },
-            iconHover: {
-                // svg: LightMail,
-                altText: 'Light gray envelope icon'
-            },
-            title: 'Send an Email',
-            bodyText: 'For inquiries, quotes, or expert advice on our industrial and safety supplies, feel free to email us at mark@nilexindustrial.com.',
-            link: 'mailto:mark@nilexindustrial.com',
-            row: '1 / 2',
-            col: '1 / 1',
-            marginLeft: '0px'
-        },
-        {
-            id: 2,
-            icon: {
-                svg: "phone",
-                altText: 'White phone icon'
-            },
-            iconHover: {
-                // svg: LightPhone,
-                altText: 'Light gray phone icon'
-            },
-            title: 'Give Us a Call',
-            bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
-            link: 'tel:2514598718',
-            row: '2 / 3',
-            col: '2 / 2',
-            marginLeft: '0px'
-        },
-        // {
-        //     id: 3,
-        //     icon: {
-        //         svg: OrangePen,
-        //         altText: 'Orange pen with a square icon'
-        //     },
-        //     iconHover: {
-        //         svg: LightPen,
-        //         altText: 'Light gray pen with a square icon'
-        //     },
-        //     title: 'Fill Out a Form',
-        //     bodyText: 'Lorem ipsum dolor sit amet consectetur. Rhoncus vel consectetur aliquet non cras turpis. Dignissim aliquam feugiat elit ut. ',
-        //     link: '',
-        //     row: '3 / 4',
-        //     col: '1 / 1',
-        //     marginLeft: '0px'
-        // },
-    ]
-}
-
-export const contactCopyOnly = {
+export const contactCopyOnlyContent = {
    eyebrow: 'Contact Us',
     header: 'Need Industrial Gear? Let’s Talk.',
     body: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.', 
 }
 
-
-
-
-
-
-
-export const hex = {
-    width: "222px",
-    height: "289px",
-    mobileWidth: "167px",
-    mobileHeight: "188px",
-}
-
-export const hexagons = {
-    g1: {
-        // mobile: {
-        //     top: '',
-        //     bottom: '',
-        //     left: '',
-        //     right: ''
-        // },
-        desktop: {
-            // top: '-50px',
-            bottom: '50px',
-            // left: '',
-            right: '-100px'
-        } 
+export const contactCardsContent = [
+    {
+        title: 'Give Us a Call',
+        body: "Prefer to speak directly? Call us at (251) 458-9718. We're happy to talk through your needs and find the right solution.",
+        link: contactItems[0],
+    },
+    {
+        title: 'Send an Email',
+        body: 'For inquiries, quotes, or expert advice on our industrial and safety supplies, feel free to email us at mark@nilexindustrial.com.',
+        link: contactItems[1],
     }
-}
-
+]

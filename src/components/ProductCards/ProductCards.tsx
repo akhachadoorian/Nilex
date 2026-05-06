@@ -20,33 +20,56 @@ export type ProductCardProps = {
         | "dark-orange"
         | "bright-orange"
         | "dark-oxblood";
-    icon?: "hard-hat" | "lightbulb" | "hand";
+    icon?: "hardHat" | "lightbulb" | "hand";
     title: string;
     body: string;
     cta?: string;
     // TODO: add button?
 };
 
-const IconMap: Record<string, Icon> = {
-    "hard-hat": HardHatIcon,
-    lightbulb: LightbulbIcon,
-    hand: HandIcon,
-};
+// const IconMap: Record<string, Icon> = {
+//     hardHat: HardHatIcon,
+//     lightbulb: LightbulbIcon,
+//     hand: HandIcon,
+// };
+type IconMapEntry = { icon: Icon; altText: string };
 
-const IconThemeMap: Record<string, ColorVariables> = {
-    gray: "--stone-800",
-    orange: "--orange-850",
-    "dark-orange": "--orange-650",
-    "bright-orange": "--orange-850",
-    "dark-oxblood": "--oxblood-500",
-};
+const IconMap: Record<string, IconMapEntry> = {
+    hardHat: {
+        icon: HardHatIcon,
+        altText: "Hard Hat icon"
+    },
+    lightbulb: {
+        icon: LightbulbIcon,
+        altText: "Lightbulb icon"
+    },
+    hand: {
+        icon: HandIcon,
+        altText: "Hand icon"
+    },
+}
 
-const HexThemeMap: Record<string, ColorVariables> = {
-    gray: "--stone-500",
-    orange: "--orange-700",
-    "dark-orange": "--orange-900",
-    "bright-orange": "--orange-600",
-    "dark-oxblood": "--oxblood-700",
+const ThemeMap: Record<string, Record<string, ColorVariables>> = {
+    gray: {
+        iconColor: "--stone-800",
+        hexColor: "--stone-500",
+    },
+    orange: {
+        iconColor: "--orange-850",
+        hexColor: "--orange-700",
+    },
+    "dark-orange": {
+        iconColor: "--orange-650",
+        hexColor: "--orange-900",
+    },
+    "bright-orange": {
+        iconColor: "--orange-850",
+        hexColor: "--orange-600",
+    },
+    "dark-oxblood": {
+        iconColor: "--oxblood-500",
+        hexColor: "--oxblood-700",
+    },
 };
 
 export function ProductCard({
@@ -57,11 +80,20 @@ export function ProductCard({
     body,
     cta,
 }: ProductCardProps) {
-    const IconComponent = IconMap[icon];
-    const IconColor = IconThemeMap[theme];
-    const HexColor = HexThemeMap[theme];
+    // Determine the Icon Component to be rendered
+    const iconEntry = IconMap[icon] ?? IconMap["lightbulb"];
+    const IconComponent = iconEntry.icon;
+    const IconAltText = iconEntry.altText;
 
-    const HexSize = { size: { minSize: 95, desiredSize: 100, maxSize: 105 } };
+    // Determine the colors based on the theme
+    const themeEntry = ThemeMap[theme] ?? ThemeMap["gray"];
+    const IconColor = themeEntry.iconColor;
+    const HexColor = themeEntry.hexColor;
+
+    const HexSize = { 
+        size: { minSize: 95, desiredSize: 100, maxSize: 105 }, 
+        mobileSize: { minSize: 65, desiredSize: 70, maxSize: 75 }
+    };
 
     return (
         <div className={`product_card product_card-${theme} ${className}`}>
@@ -76,6 +108,7 @@ export function ProductCard({
                     className="pc-icon"
                     color={`var(${IconColor})`}
                     size={"clamp(70px, 5.208vw, 80px)"}
+                    alt={IconAltText  ?? "Icon"}
                 />
             </div>
 
@@ -98,7 +131,10 @@ export default function ProductCards({
     productCards,
 }: ProductCardsProps) {
     if (productCards === undefined || productCards?.length == 0) return;
-    const ref = useFadeInChildren<HTMLDivElement>(".mwc-animate", { stagger: 0.15, y: 24 });
+    const ref = useFadeInChildren<HTMLDivElement>(".mwc-animate", {
+        stagger: 0.15,
+        y: 24,
+    });
 
     return (
         <div ref={ref} className={`product_cards ${className}`}>

@@ -6,6 +6,28 @@
     gap: var(--space-800);
 
     @include big {
-       gap: var(--space-1000); 
+        gap: var(--space-1000);
+    }
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-800);
+
+    background-color: var(--stone-300);
+
+    @include big {
+        gap: var(--space-1000);
+    }
+
+    .section-inner {
+        // padding: var(--layout-section-padding) var(--layout-column-margin);
+        // margin: var(--layout-section-padding) auto;
+
+        @include big {
+            max-width: var(--max-width);
+            width: 100%;
+        }
     }
 }
