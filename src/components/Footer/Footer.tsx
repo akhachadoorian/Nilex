@@ -1,7 +1,6 @@
 import React from "react";
 
 import { contactItems } from "../../data/contactItems";
-import HexIconButton from "../HexIconButton";
 import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { EnvelopeIcon, LinkIcon, PhoneIcon } from "@phosphor-icons/react";
@@ -29,12 +28,6 @@ function Footer({}) {
                         </p>
                         <div className="footer_right-contact_links mwc-animate">
                             {contactItems.map((c, idx) => {
-                                let pre =
-                                    c.kind === "phone"
-                                        ? "tel:"
-                                        : c.kind === "email"
-                                          ? "mailto"
-                                          : "";
 
                                 let IconComponent =
                                     c.kind === "phone"
@@ -46,7 +39,7 @@ function Footer({}) {
                                 return (
                                     <Link
                                         key={idx}
-                                        to={`${pre ?? ""}${c.link}`}
+                                        to={c.link}
                                         className="contact_link"
                                     >
                                         {/* TODO: add icon */}

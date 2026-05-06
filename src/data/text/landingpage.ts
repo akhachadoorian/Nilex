@@ -1,5 +1,5 @@
 import { ProductCardProps } from "../../components/ProductCards/ProductCards";
-import { TwoButtonsArray } from "../../types/buttons"
+import { ThreeButtonsArray, TwoButtonsArray } from "../../types/buttons"
 import { NonEmptyArray } from "../../types/utility";
 import { contactItems } from "../contactItems";
 
@@ -18,28 +18,24 @@ export const aboutContent = {
     header: "Trusted Safety and Industrial Solutions Since 2012",
     bodyText: "<p>Founded in 2012, Nilex Industrial and Safety Supplies is a proud woman-owned small business committed to providing top-quality industrial and safety products. As a family-run company, we prioritize reliability, exceptional service, and workplace safety, ensuring businesses have the essential supplies they need to protect their workforce.</p><p>At the heart of our company is Mark Khachadoorian, Owner and Vice-President of Sales, who leads our team with expertise and dedication to customer satisfaction.</p>",
     img: {
-        src: '/assets/ValuesGraphic.svg',
+        src: '/assets/ValuesGraphicLong.svg',
         alt: "Graphic that displays Nilex's values: Family Driven Values, Community & Small Business Commitment, and Building Lasting Partnerships.",
-        // src: '/assets/Industrial.png',
-        // alt: 'Guy using an electric saw or grinder on a piece of metal with sparks flying out',
     },
-    // subsections: [
-    //     {
-    //         subheader: 'Family-Driven Values',
-    //         subtext: 'Built on a foundation of Family-Driven Values, we believe in treating our customers, employees, and partners with trust, respect, and integrity.',
-    //         icon: "users-three"
-    //     },
-    //     {
-    //         subheader: 'Community & Small Business Commitment',
-    //         subtext: 'We are deeply committed to supporting our local communities and fellow small businesses, fostering growth and collaboration in the industries we serve. ',
-    //         icon: "city"
-    //     },
-    //     {
-    //         subheader: 'Building Lasting Partnerships ',
-    //         subtext: 'At Nilex, building lasting partnerships is at the core of what we do. We go beyond transactions to cultivate strong, long-term relationships with our customers, offering personalized service, and unwavering reliability. ',
-    //         icon: "plant"
-    //     },
-    // ]
+}
+
+export const valuesContent = {
+    image1: {
+        src: "/assets/FamilyValues.svg",
+        alt: "'Built on a foundation of Family-Driven Values, we believe in treating our customers, employees, and partners with trust, respect, and integrity."
+    },
+    image2: {
+        src: "/assets/SmallBusinessValues.svg",
+        alt: "We are deeply committed to supporting our local communities and fellow small businesses, fostering growth and collaboration in the industries we serve."
+    },
+    image3: {
+        src: "/assets/PartnerValues.svg",
+        alt: "At Nilex, building lasting partnerships is at the core of what we do. We go beyond transactions to cultivate strong, long-term relationships with our customers, offering personalized service, and unwavering reliability."
+    },
 }
 
 export const productCopyOnlyContent = {
@@ -75,7 +71,19 @@ export const productCardsContent = [
 export const contactCopyOnlyContent = {
    eyebrow: 'Contact Us',
     header: 'Need Industrial Gear? Let’s Talk.',
-    body: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.', 
+    body: 'We’re here to help with all your industrial and safety supply needs! Whether you have questions about our products, need a custom solution, or want to place an order, our team is ready to assist you.',
+    buttons: [
+        {
+            btnText: "Give Us a Call",
+            link: contactItems[0].link,
+            target: "_blank"
+        },
+        {
+            btnText: "Send an Email",
+            link: contactItems[1].link,
+            target: "_blank"
+        },
+    ]  satisfies ThreeButtonsArray
 }
 
 export const contactCardsContent = [

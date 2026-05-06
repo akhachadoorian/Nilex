@@ -19,7 +19,7 @@ export type ButtonSettingProps = {
 // }
 
 export type BtnStyles = 'solid' | 'outline' | 'arrow';
-export type BtnThemes = 'white' | 'pale-orange';
+export type BtnThemes = 'white' | 'pale-orange' | 'orange';
 
 export type ButtonProps = {
     /** Extra CSS class added to the outer wrapper div */
@@ -39,6 +39,8 @@ export type TwoButtonsArray = MaxTwo<ButtonSettingProps>;
 
 export type TwoButtonsProps = {
     buttons: TwoButtonsArray;
+    customStyleMap?: Array<BtnStyles>;
+    customThemeMap?: Array<BtnThemes>;
     className?: string;
 }
 
@@ -50,5 +52,7 @@ export type ThreeButtonsArray = MaxThree<ButtonSettingProps>;
 
 export type ThreeButtonsProps = {
     buttons: ThreeButtonsArray;
+    customStyleMap?: Array<BtnStyles>;
+    customThemeMap?: Array<BtnThemes>;
     className?: string;
 }

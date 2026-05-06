@@ -1,9 +1,50 @@
 @use "../../styles/variables" as *;
 
 #about {
-    .media_with_copy .img-holder img {
-        object-fit: contain;
+    // .media_with_copy {
+    //     &-img {
+    //         @include big {
+    //             flex-grow: 0;
+    //         }
+
+    //         .img-holder {
+    //             @include big {
+    //                 max-height: 800px;
+    //             }
+
+    //             img {
+    //                 object-fit: contain;
+    //             }
+    //         }
+    //     }
+    // }
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-800);
+
+    @include big {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--layout-column-gutter);
     }
+
+    .copy {
+        @include big {
+            flex: 1 1 754px;
+        }
+    }
+
+    .values_hex {
+        display: flex;
+        justify-content: flex-end;
+
+        @include big {
+            flex: 1 1 378px;
+        }
+    }
+
+    
 }
 
 #products {
@@ -33,7 +74,7 @@
 
         @include big {
             max-width: var(--max-width);
-            width: 100%;
+            // width: 100%;
         }
     }
 }

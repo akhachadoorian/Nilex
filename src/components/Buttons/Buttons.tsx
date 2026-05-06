@@ -10,8 +10,6 @@ import {
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { ColorVariables } from "../../types/colors";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 export default function Buttons({
     className,
@@ -27,6 +25,7 @@ export default function Buttons({
 
     const arrowThemeMap: Record<string, ColorVariables> = {
         white: "--stone-000",
+        orange: "--orange-650",
     };
 
     const arrowTheme = (arrowThemeMap[theme] ??
@@ -66,28 +65,44 @@ export default function Buttons({
 //     )
 // }
 
-export function TwoButtons({ buttons, className }: TwoButtonsProps) {
+const DEFAULT_STYLE_MAP_TWO_BTNS: Array<BtnStyles> = [
+    "solid",
+    "arrow",
+];
+
+const DEFAULT_THEME_MAP_TWO_BTNS: Array<BtnThemes> = [
+    "orange",
+    "orange",
+];
+
+export function TwoButtons({
+    buttons,
+    customStyleMap,
+    customThemeMap,
+    className,
+}: TwoButtonsProps) {
     if (buttons === undefined || buttons?.length == 0) return;
-
-    const styleMap: Array<BtnStyles> = [
-        "solid",
-        "arrow", // FIXME:
-    ];
-
-    const themeMap: Array<BtnThemes> = [
-        "pale-orange",
-        "white", // FIXME:
-    ];
 
     return (
         <div className={`btns ${className}`}>
             {buttons?.map((btn, idx) => {
+                let style =
+                    customStyleMap && customStyleMap.length > idx
+                        ? customStyleMap[idx]
+                        : DEFAULT_STYLE_MAP_TWO_BTNS[idx];
+
+                let theme =
+                    customThemeMap && customThemeMap.length > idx
+                        ? customThemeMap[idx]
+                        : DEFAULT_THEME_MAP_TWO_BTNS[idx];
+
+
                 return (
                     <Buttons
                         key={idx}
                         className=""
-                        style={styleMap[idx]}
-                        theme={themeMap[idx]}
+                        style={style}
+                        theme={theme}
                         btnSettings={{
                             btnText: btn.btnText,
                             link: btn.link,
@@ -100,29 +115,45 @@ export function TwoButtons({ buttons, className }: TwoButtonsProps) {
     );
 }
 
-export function ThreeButtons({ buttons, className }: ThreeButtonsProps) {
+const DEFAULT_STYLE_MAP_THREE_BTNS: Array<BtnStyles> = [
+    "solid",
+    "outline",
+    "arrow",
+];
+
+const DEFAULT_THEME_MAP_THREE_BTNS: Array<BtnThemes> = [
+    "orange",
+    "orange",
+    "orange",
+];
+
+export function ThreeButtons({
+    buttons,
+    customStyleMap,
+    customThemeMap,
+    className,
+}: ThreeButtonsProps) {
     if (buttons === undefined || buttons?.length == 0) return;
-
-    const styleMap: Array<BtnStyles> = [
-        "solid",
-        "outline",
-        "arrow", // FIXME:
-    ];
-
-    const themeMap: Array<BtnThemes> = [
-        "white",
-        "white",
-        "white", // FIXME:
-    ];
 
     return (
         <div className={`btns ${className}`}>
             {buttons?.map((btn, idx) => {
+                let style =
+                    customStyleMap && customStyleMap.length > idx
+                        ? customStyleMap[idx]
+                        : DEFAULT_STYLE_MAP_THREE_BTNS[idx];
+
+                let theme =
+                    customThemeMap && customThemeMap.length > idx
+                        ? customThemeMap[idx]
+                        : DEFAULT_THEME_MAP_THREE_BTNS[idx];
+
                 return (
                     <Buttons
+                    key={idx}
                         className=""
-                        style={styleMap[idx]}
-                        theme={themeMap[idx]}
+                        style={style}
+                        theme={theme}
                         btnSettings={{
                             btnText: btn.btnText,
                             link: btn.link,

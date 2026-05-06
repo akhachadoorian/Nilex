@@ -17,6 +17,11 @@ $solid-btn-style: (
         'bc': $orange-200,
         'bg': $orange-200,
         'tc': $orange-600
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'bg': $orange-650,
+        'tc': $stone-000
     )
 );
 
@@ -30,6 +35,11 @@ $solid-btn-style-hover: (
         'bc': $stone-000,
         'bg': $stone-000,
         'tc': $orange-600
+    ),
+    'orange': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $orange-650
     )
 );
 
@@ -39,6 +49,10 @@ $outline-btn-style: (
     'white': (
         'bc': $stone-000,
         'tc': $orange-600
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'tc': $orange-650
     )
 );
 
@@ -47,6 +61,11 @@ $outline-btn-style-hover: (
         'bc': $orange-200,
         'bg': $orange-200,
         'tc': $orange-600
+    ),
+    'orange': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $orange-650
     )
 );
 
@@ -56,6 +75,10 @@ $arrow-btn-style: (
     'white': (
         'bc': $stone-000,
         'tc': $stone-000
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'tc': $orange-650
     )
 );
 
@@ -63,6 +86,10 @@ $arrow-btn-style-hover: (
     'white': (
         'bc': $stone-000,
         'tc': $stone-000
+    ),
+    'orange': (
+        'bc': $orange-650,
+        'tc': $orange-650
     )
 );
 
