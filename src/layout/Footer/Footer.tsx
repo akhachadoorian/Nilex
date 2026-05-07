@@ -47,12 +47,11 @@ function Footer({}) {
                                           : c.link;
 
                                 return (
-                                    <Link
+                                    <LenisLink
                                         key={idx}
                                         to={c.link}
                                         className="contact_link"
                                     >
-                                        {/* TODO: add icon */}
                                         <div className="hex_icon">
                                             <IconComponent
                                                 color="var(--stone-000)"
@@ -61,7 +60,7 @@ function Footer({}) {
                                         </div>
 
                                         <p className="">{text}</p>
-                                    </Link>
+                                    </LenisLink>
                                 );
                             })}
                         </div>
