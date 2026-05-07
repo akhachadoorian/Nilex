@@ -1,4 +1,4 @@
-import Hero from "../components/Hero/Hero";
+import HomeHero from "../layout/HomeHero/HomeHero.js";
 
 import {
     aboutContent,
@@ -21,7 +21,7 @@ function LandingPage({}) {
 
     return (
         <>
-            <Hero
+            <HomeHero
                 eyebrow={heroContent.eyebrow}
                 header={heroContent.header}
                 subtitle={heroContent.subtitle}

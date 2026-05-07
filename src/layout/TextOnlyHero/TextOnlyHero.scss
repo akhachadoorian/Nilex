@@ -1,0 +1,232 @@
+@use "../../styles/variables" as *;
+
+// Decorative hex shapes — matches landing page hex motif
+@mixin hex-shape(
+    $size,
+    $opacity,
+    $top,
+    $left: null,
+    $right: null,
+) {
+    position: absolute;
+    width: $size;
+    height: $size;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    opacity: $opacity;
+    top: $top;
+    @if $left {
+        left: $left;
+    }
+    @if $right {
+        right: $right;
+    }
+}
+
+.text_only_hero {
+    &-section {
+        position: relative;
+        min-height: 75dvh;
+
+        color: $stone-000;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &-content-wrapper {
+        position: relative;
+        z-index: 2;
+
+        padding: 0 var(--layout-column-margin);
+
+        @include big {
+            max-width: $max-width;
+            margin: 0 auto;
+            width: 100%;
+
+            padding: var(--space-1500) var(--layout-column-margin)
+                var(--space-1000);
+        }
+    }
+
+    &-body {
+        margin-top: var(--space-300);
+
+        .subnote {
+            margin-top: var(--space-200);
+
+            font-family: $font-mono;
+            font-size: var(--text-s);
+            font-weight: 600;
+
+            line-height: 110%;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+
+    &-btns {
+        margin-top: var(--space-500);
+    }
+
+    &-hexes {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        .hex {
+            transform-origin: center;
+            &-0 {
+                @include hex-shape(220px, 0.15, -3dvh, -3dvw);
+            }
+
+            &-1 {
+                @include hex-shape(140px, 0.08, 15dvh, null, 20vw);
+            }
+
+            &-2 {
+                @include hex-shape(80px, 0.3, 60dvh, 20dvw);
+            }
+
+            &-3 {
+                @include hex-shape(300px, 0.5, -3dvh, null, -2dvw);
+            }
+
+            &-4 {
+                @include hex-shape(60px, 0.50, 30dvh, null, 10dvw);
+            }
+
+            &-5 {
+                @include hex-shape(200px, 0.30, 45dvh, 6dvw);
+            }
+
+            &-6 {
+                @include hex-shape(150px, 0.7, 50dvh, 70dvw);
+            }
+
+            &-7 {
+                @include hex-shape(175px, 0.35, 15dvh, 15dvw);
+            }
+        }
+    }
+
+    // ---- Layout Variations -------------------------------------------
+    &-center {
+        .text_only_hero-content {
+            text-align: center;
+
+            @include big {
+                max-width: 60.417vw;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .eyebrow,
+            .btns {
+                justify-content: center;
+            }
+        }
+    }
+
+    &-left {
+        .text_only_hero-content {
+            @include big {
+                max-width: 75.833vw;
+            }
+
+            @media (min-width: $max-width) {
+                max-width: 60.417vw;
+            }
+        }
+    }
+
+    // ---- Layout Variations -------------------------------------------
+
+    &-dark-orange {
+        background-color: $orange-800;
+
+        .text_only_hero-body {
+            color: $orange-200;
+        }
+
+        .text_only_hero-subnote {
+            color: $orange-300;
+        }
+
+        .hex {
+            &-0 {
+                background: var(--orange-500);
+            }
+
+            &-1 {
+                background: var(--orange-300);
+            }
+
+            &-2 {
+                background: var(--orange-500);
+            }
+
+            &-3 {
+                background: var(--oxblood-700);
+                border: 2px solid rgba(241, 100, 37, 0.2);
+            }
+
+            &-4 {
+                background: var(--orange-600);
+            }
+
+            &-5 {
+                background: var(--orange-300);
+            }
+
+            &-6 {
+                background: var(--oxblood-700);
+                border: 2px solid rgba(241, 100, 37, 0.2);
+            }
+
+            &-7 {
+                background: var(--orange-900);
+            }
+        }
+    }
+
+    &-dark-oxblood {
+        background-color: $oxblood-900;
+
+        .text_only_hero-body {
+            color: $oxblood-200;
+        }
+
+        .text_only_hero-subnote {
+            color: $oxblood-300;
+        }
+
+        .hex {
+            &-0 {
+                background: var(--orange-500);
+            }
+
+            &-1 {
+                background: var(--orange-300);
+            }
+
+            &-2 {
+                background: var(--orange-500);
+            }
+
+            &-3 {
+                background: var(--oxblood-700);
+                border: 2px solid rgba(241, 100, 37, 0.2);
+            }
+
+            &-4 {
+                background: var(--orange-600);
+            }
+
+            &-5 {
+                background: var(--orange-300);
+            }
+        }
+    }
+}

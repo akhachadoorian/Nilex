@@ -22,7 +22,12 @@ $solid-btn-style: (
         'bc': $orange-650,
         'bg': $orange-650,
         'tc': $stone-000
-    )
+    ),
+    'oxblood': (
+        'bc': $oxblood-500,
+        'bg': $oxblood-500,
+        'tc': $stone-000
+    ),
 );
 
 $solid-btn-style-hover: (
@@ -40,7 +45,12 @@ $solid-btn-style-hover: (
         'bc': $stone-000,
         'bg': $stone-000,
         'tc': $orange-650
-    )
+    ),
+    'oxblood': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $oxblood-500
+    ),
 );
 
 // ── Outline Styles ──────────────────────────────────────────────
@@ -53,7 +63,11 @@ $outline-btn-style: (
     'orange': (
         'bc': $orange-650,
         'tc': $orange-650
-    )
+    ),
+    'oxblood': (
+        'bc': $oxblood-500,
+        'tc': $oxblood-500
+    ),
 );
 
 $outline-btn-style-hover: (
@@ -66,7 +80,12 @@ $outline-btn-style-hover: (
         'bc': $stone-000,
         'bg': $stone-000,
         'tc': $orange-650
-    )
+    ),
+    'oxblood': (
+        'bc': $stone-000,
+        'bg': $stone-000,
+        'tc': $oxblood-500
+    ),
 );
 
 // ── Arrow Styles  ──────────────────────────────────────────────
@@ -79,7 +98,11 @@ $arrow-btn-style: (
     'orange': (
         'bc': $orange-650,
         'tc': $orange-650
-    )
+    ),
+    'oxblood': (
+        'bc': $oxblood-500,
+        'tc': $oxblood-500
+    ),
 );
 
 $arrow-btn-style-hover: (
@@ -90,7 +113,11 @@ $arrow-btn-style-hover: (
     'orange': (
         'bc': $orange-650,
         'tc': $orange-650
-    )
+    ),
+    'oxblood': (
+        'bc': $oxblood-500,
+        'tc': $oxblood-500
+    ),
 );
 
 // ── Btn ──────────────────────────────────────────────

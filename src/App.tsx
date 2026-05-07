@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/Landingpage";
 import Navigation from "./components/Navigation/Navigation";
-import Footer from "./components/Footer/Footer.jsx";
+import Footer from "./layout/Footer/Footer.js";
 
 import { useEffect, useRef } from "react";
 
@@ -11,6 +11,7 @@ import "lenis/dist/lenis.css";
 import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import PrivacyPolicy from "./pages/PrivacyPolicy.js";
+
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,6 +1,12 @@
+// CopyOnly — text-only content block.
+// Supports three layout variations (left, center, columns) and two text-color themes.
 @use "../../styles/variables" as *;
 
 .copy {
+    // ---- Shared Structure -------------------------------------------
+
+    // Outer wrapper that stacks the text block and buttons vertically.
+    // Max-width caps line length on large viewports; overridden per variation below.
     &-inner {
         display: flex;
         flex-direction: column;
@@ -15,26 +21,36 @@
         }
     }
 
+    // Groups subtitle, body, and related copy with tighter spacing.
     &-text {
         display: flex;
         flex-direction: column;
         gap: var(--space-300);
     }
 
+    // Rich-text body: adds paragraph spacing when multiple <p> tags are present.
     &-body {
         & > p:not(:last-child) {
             margin-bottom: var(--space-150);
         }
+
+        a {
+            text-decoration: underline transparent;
+            transition: $transition;
+        }
     }
 
+    // Groups the eyebrow and heading together before the subtitle/body.
     &-upper {
         display: flex;
         flex-direction: column;
         gap: var(--space-200);
     }
 
-    // ---- All Variations -------------------------------------------
+    // ---- Layout Variations -------------------------------------------
 
+    // Left-aligned single-column layout (default).
+    // Shares the same max-width constraint as copy-inner.
     &-left {
         @include big {
             max-width: 75.833vw;
@@ -45,6 +61,7 @@
         }
     }
 
+    // Centered single-column layout; narrower max-width for optimal line length.
     &-center {
         text-align: center;
         align-items: center;
@@ -67,6 +84,8 @@
         }
     }
 
+    // Two-column layout: heading in left column, body/buttons in right column.
+    // Stacks vertically on mobile; switches to a row on large viewports.
     &-columns {
         flex-direction: column;
         gap: var(--layout-column-gutter);
@@ -74,9 +93,10 @@
         @include big {
             flex-direction: row;
             align-items: center;
-            max-width: none;
+            max-width: none; // Full-width so columns fill the container.
         }
 
+        // Heading column — wider flex basis to give the heading more room.
         .copy-left_col {
             display: flex;
             flex-direction: column;
@@ -87,6 +107,7 @@
             }
         }
 
+        // Body/buttons column — narrower flex basis to balance the two-column ratio.
         .copy-right_col {
             display: flex;
             flex-direction: column;
@@ -98,12 +119,29 @@
         }
     }
 
-    // ---- Text Colors -------------------------------------------
+    // ---- Text Color Themes -------------------------------------------
+
+    // For use on light backgrounds.
     &-light {
-       color: var(--stone-000); 
+        color: var(--stone-000);
+
+        a {
+            color: var(--orange-200);
+            &:hover {
+                text-decoration-color: var(--orange-200);
+            }
+        }
     }
 
+    // For use on dark backgrounds.
     &-dark {
-       color: var(--stone-1000);  
+        color: var(--stone-1000);
+
+        a {
+            color: var(--orange-650);
+            &:hover {
+                text-decoration-color: var(--orange-650);
+            }
+        }
     }
 }

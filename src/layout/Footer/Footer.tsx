@@ -4,13 +4,17 @@ import { contactItems } from "../../data/contactItems";
 import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { EnvelopeIcon, LinkIcon, PhoneIcon } from "@phosphor-icons/react";
-import { useFadeIn, useFadeInChildren } from "../../hooks/useFadeIn";
+import { useFadeInChildren } from "../../hooks/useFadeIn";
+import { LenisLink } from "../../hooks/LenisLink";
 
 function Footer({}) {
     const copyrightYear = new Date().getFullYear();
     // const ref = useFadeIn<HTMLDivElement>();
 
-    const ref = useFadeInChildren<HTMLDivElement>(".mwc-animate", { stagger: 0.15, y: 24 });
+    const ref = useFadeInChildren<HTMLDivElement>(".mwc-animate", {
+        stagger: 0.15,
+        y: 24,
+    });
 
     return (
         <footer ref={ref}>
@@ -28,7 +32,6 @@ function Footer({}) {
                         </p>
                         <div className="footer_right-contact_links mwc-animate">
                             {contactItems.map((c, idx) => {
-
                                 let IconComponent =
                                     c.kind === "phone"
                                         ? PhoneIcon
@@ -69,8 +72,15 @@ function Footer({}) {
                             Copyright {copyrightYear} by Nilex Industrial
                         </p>
 
-                        {/* FIXME: updated privacy statement */}
-                        <Link
+                        <LenisLink
+                            to={"/privacy-policy"}
+                            target="_self"
+                            className="footer_right-lower-link"
+                        >
+                            <p className="body-s">Privacy Policy</p>
+                        </LenisLink>
+
+                        <LenisLink
                             to={"https://akhachadoorian.github.io/Resume/"}
                             target="_blank"
                             className="footer_right-lower-link"
@@ -78,7 +88,7 @@ function Footer({}) {
                             <p className="body-s">
                                 Designed & Developed by Alex Khachadoorian
                             </p>
-                        </Link>
+                        </LenisLink>
                     </div>
                 </div>
             </div>
@@ -87,57 +97,3 @@ function Footer({}) {
 }
 
 export default Footer;
-
-// function Footer({}) {
-//     const copyrightYear = new Date().getFullYear();
-
-//     return (
-//         <footer>
-//             <div className="footer_upper">
-//                 <div className="footer_upper-left">
-//                     <div className="logo-holder img-holder">
-//                         <img src={"/assets/WhiteLogo.svg"} alt="Nilex Logo" />
-//                     </div>
-//                 </div>
-
-//                 <div className="footer_upper-right">
-//                   <p className="eyebrow">Get in Touch</p>
-//                   <div className="footer_upper-contact_links">
-//                     {contactItems.map((c, idx) => {
-//                       let pre = c.kind === 'phone' ? 'tel:' : c.kind === 'email' ? 'mailto' : '';
-
-//                       let IconComponent = c.kind === 'phone' ? PhoneIcon : c.kind === 'email' ? EnvelopeIcon : LinkIcon;
-
-//                       return (
-//                         <Link key={idx} to={`${pre ?? ''}${c.link}`} className="contact_link">
-//                           {/* TODO: add icon */}
-//                           <IconComponent color="var(--stone-000)" size={16}/>
-//                           <p className="">{c.text}</p>
-//                         </Link>
-//                       )
-//                     })}
-//                   </div>
-//                 </div>
-//             </div>
-
-//             <div className="footer_lower">
-//                 <div className="footer_lower-left">
-//                     <p className="body-s">
-//                         Copyright {copyrightYear} by Nilex Industrial
-//                     </p>
-//                 </div>
-//                 <div className="footer_lower-right">
-//                     {/* FIXME: updated privacy statement */}
-//                     <Link
-//                         to={"https://akhachadoorian.github.io/Resume/"}
-//                         target="_blank"
-//                     >
-//                         <p className="body-s">
-//                             Designed & Developed by Alex Khachadoorian
-//                         </p>
-//                     </Link>
-//                 </div>
-//             </div>
-//         </footer>
-//     );
-// }

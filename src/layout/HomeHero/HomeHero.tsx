@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import "./Hero.scss";
-import Eyebrow from "../Eyebrow/Eyebrow";
-import Buttons, { TwoButtons } from "../Buttons/Buttons";
+import "./HomeHero.scss";
+import Eyebrow from "../../components/Eyebrow/Eyebrow";
+import Buttons, { TwoButtons } from "../../components/Buttons/Buttons";
 import { ThreeButtonsArray, TwoButtonsArray } from "../../types/buttons";
 
-type HeroProps = {
+type HomeHeroProps = {
     eyebrow?: string;
     header: string;
     subtitle?: string;
@@ -21,13 +21,13 @@ const COLORS = {
     "oxblood-800": "67, 17, 17",
 }
 
-export default function Hero({
+export default function HomeHero({
     eyebrow,
     header,
     subtitle,
     body,
     buttons,
-}: HeroProps) {
+}: HomeHeroProps) {
     const svgRef = useRef<SVGSVGElement>(null);
 
     // Handles the number of hexagons 
@@ -170,11 +170,11 @@ export default function Hero({
 
         // Hero content entrance — only target elements that are actually rendered
         const contentSelectors = [
-            eyebrow ? ".hero-eyebrow" : null,
-            ".hero-title",
-            subtitle ? ".hero-subtitle" : null,
-            body ? ".hero-body" : null,
-            buttons?.length ? ".hero-btns" : null,
+            eyebrow ? ".home_hero-eyebrow" : null,
+            ".home_hero-title",
+            subtitle ? ".home_hero-subtitle" : null,
+            body ? ".home_hero-body" : null,
+            buttons?.length ? ".home_hero-btns" : null,
         ].filter(Boolean) as string[];
 
         gsap.set(contentSelectors, { opacity: 0, y: 30 });
@@ -187,11 +187,11 @@ export default function Hero({
             isFirst = false;
         };
 
-        if (eyebrow) step(".hero-eyebrow", 0.7);
-        step(".hero-title", 0.7);
-        if (subtitle) step(".hero-subtitle", 0.7);
-        if (body) step(".hero-body", 0.6);
-        if (buttons?.length) step(".hero-btns", 0.6, "-=0.35");
+        if (eyebrow) step(".home_hero-eyebrow", 0.7);
+        step(".home_hero-title", 0.7);
+        if (subtitle) step(".home_hero-subtitle", 0.7);
+        if (body) step(".home_hero-body", 0.6);
+        if (buttons?.length) step(".home_hero-btns", 0.6, "-=0.35");
 
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -203,34 +203,34 @@ export default function Hero({
     }, [screenWidth]);
 
     return (
-        <section className="hero-section hero-center">
+        <section className="home_hero-section home_hero-center">
             <svg
                 ref={svgRef}
                 xmlns="http://www.w3.org/2000/svg"
                 className="hex-canvas"
                 aria-hidden="true"
             />
-            <div className="hero-content-wrapper">
-                <div className="hero-content">
+            <div className="home_hero-content-wrapper">
+                <div className="home_hero-content">
                     {eyebrow && (
                         <Eyebrow
                             text={eyebrow}
-                            className={"hero-eyebrow"}
+                            className={"home_hero-eyebrow"}
                             color="--stone-300"
                         />
                     )}
 
-                    <h1 className="hero-title">{header}</h1>
+                    <h1 className="home_hero-title">{header}</h1>
 
                     {subtitle && (
-                        <h2 className="heading-xl hero-subtitle">{subtitle}</h2>
+                        <h2 className="heading-xl home_hero-subtitle">{subtitle}</h2>
                     )}
 
-                    {body && <p className="hero-body body-l">{body}</p>}
+                    {body && <p className="home_hero-body body-l">{body}</p>}
 
                     {buttons && buttons?.length != 0 && (
                         <TwoButtons
-                            className="hero-btns"
+                            className="home_hero-btns"
                             buttons={buttons ?? []}
                         />
                     )}
