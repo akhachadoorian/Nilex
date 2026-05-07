@@ -1,20 +1,18 @@
 import React from "react";
-import { heroContent } from "../data/text/landingpage";
-import { useFadeIn } from "../hooks/useFadeIn";
-import CopyOnly from "../components/CopyOnly/CopyOnly";
-import {
-    googleAnaContent,
-    privacyHeroContent,
-    privacyQuestionsContent,
-    rightsContent,
-} from "../data/text/privacyPage";
-import TextOnlyHero from "../layout/TextOnlyHero/TextOnlyHero";
-import SEO from "../seo/SEO";
-import { privacyPolicySEO } from "../seo/seoContent";
+import './PrivacyPolicy.scss';
+import { useFadeIn } from "../../hooks/useFadeIn";
+import CopyOnly from "../../components/CopyOnly/CopyOnly";
+import content from './content';
+
+import TextOnlyHero from "../../layout/TextOnlyHero/TextOnlyHero";
+import SEO from "../../utils/SEO";
+import { privacyPolicySEO } from "../../data/seoContent";
 
 export default function PrivacyPolicy({}) {
     const googleAnaRef = useFadeIn<HTMLDivElement>();
     const rightsRef = useFadeIn<HTMLDivElement>();
+    const questionsRef = useFadeIn<HTMLDivElement>();
+
     return (
         <>
             <SEO {...privacyPolicySEO} />
@@ -23,10 +21,7 @@ export default function PrivacyPolicy({}) {
                 styleOptions={{
                     variation: "center",
                 }}
-                eyebrow={privacyHeroContent.eyebrow}
-                header={privacyHeroContent.header}
-                body={privacyHeroContent.body}
-                buttons={privacyHeroContent.buttons}
+                {...content.hero}
             />
 
             <section
@@ -40,8 +35,7 @@ export default function PrivacyPolicy({}) {
                         headingSize: "h4",
                         variation: "center",
                     }}
-                    header={googleAnaContent.title}
-                    body={googleAnaContent.body}
+                    {...content.googleAnalytics}
                 />
             </section>
 
@@ -56,8 +50,7 @@ export default function PrivacyPolicy({}) {
                         headingSize: "h4",
                         variation: "center",
                     }}
-                    header={rightsContent.title}
-                    body={rightsContent.body}
+                    {...content.rights}
                 />
             </section>
 
@@ -70,21 +63,18 @@ export default function PrivacyPolicy({}) {
             ></section> */}
 
             <section
-                // ref={contactRef}
+                ref={questionsRef}
                 id="privacy_questions"
                 className="full-width privacy_questions-section"
                 aria-label="Questions about Privacy"
             >
                 <div className="section-inner">
                     <CopyOnly
-                        // eyebrow={contactCopyOnlyContent.eyebrow}
-                        header={privacyQuestionsContent.title}
-                        body={privacyQuestionsContent.body}
-                        buttons={privacyQuestionsContent.buttons}
                         styleOptions={{
                             headingSize: "h2",
                             variation: "center",
                         }}
+                        {...content.questions}
                     />
                 </div>
             </section>

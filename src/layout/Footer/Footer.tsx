@@ -5,7 +5,7 @@ import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { EnvelopeIcon, LinkIcon, PhoneIcon } from "@phosphor-icons/react";
 import { useFadeInChildren } from "../../hooks/useFadeIn";
-import { LenisLink } from "../../hooks/LenisLink";
+import { LenisLink } from "../../utils/LenisLink";
 
 function Footer({}) {
     const copyrightYear = new Date().getFullYear();

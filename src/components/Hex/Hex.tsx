@@ -2,7 +2,7 @@ import react from "react";
 import { ColorVariables } from "../../types/colors";
 import './Hex.scss'
 import { ResponsiveClampSize } from "../../types/size";
-import { CalculateClamp } from "../../hooks/calculateClamp";
+import { CalculateClamp } from "../../utils/calculateClamp";
 
 type HexSVGProps = {
     color?: ColorVariables

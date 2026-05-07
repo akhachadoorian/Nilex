@@ -3,7 +3,7 @@ import { NAV_ITEMS } from "../../data/navItems";
 import { Link } from "react-router-dom";
 import "./Navigation.scss";
 import { useFadeIn } from "../../hooks/useFadeIn";
-import { LenisLink } from "../../hooks/LenisLink";
+import { LenisLink } from "../../utils/LenisLink";
 import Buttons from "../Buttons/Buttons";
 import { contactItems } from "../../data/contactItems";
 // import Logo from '/assets/OrangeLogo.svg';

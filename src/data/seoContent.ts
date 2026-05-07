@@ -1,12 +1,4 @@
-import { SEOProps } from "./SEO";
-
-// export const SEO = {
-//     title: "",
-//     description: "",
-//     canonical: "",
-//     noIndex: 
-// } as SEOProps;
-
+import { SEOProps } from "../utils/SEO";
 
 export const homeSEO = {
     title: "Nilex Industrial | Safety & Industrial Supplies — Mobile, AL",
