@@ -9,12 +9,16 @@ import {
     rightsContent,
 } from "../data/text/privacyPage";
 import TextOnlyHero from "../layout/TextOnlyHero/TextOnlyHero";
+import SEO from "../seo/SEO";
+import { privacyPolicySEO } from "../seo/seoContent";
 
 export default function PrivacyPolicy({}) {
     const googleAnaRef = useFadeIn<HTMLDivElement>();
     const rightsRef = useFadeIn<HTMLDivElement>();
     return (
         <>
+            <SEO {...privacyPolicySEO} />
+
             <TextOnlyHero
                 styleOptions={{
                     variation: "center",
@@ -23,7 +27,6 @@ export default function PrivacyPolicy({}) {
                 header={privacyHeroContent.header}
                 body={privacyHeroContent.body}
                 buttons={privacyHeroContent.buttons}
-                // subnote={privacyHeroContent.subnote}
             />
 
             <section

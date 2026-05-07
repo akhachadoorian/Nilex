@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "./HomeHero.scss";
 import Eyebrow from "../../components/Eyebrow/Eyebrow";
-import Buttons, { TwoButtons } from "../../components/Buttons/Buttons";
-import { ThreeButtonsArray, TwoButtonsArray } from "../../types/buttons";
+import { TwoButtons } from "../../components/Buttons/Buttons";
+import { TwoButtonsArray } from "../../types/buttons";
 
 type HomeHeroProps = {
     eyebrow?: string;
@@ -19,7 +19,7 @@ const COLORS = {
     "orange-500": "241, 100, 37",
     "orange-900": "74, 26, 5",
     "oxblood-800": "67, 17, 17",
-}
+};
 
 export default function HomeHero({
     eyebrow,
@@ -30,9 +30,11 @@ export default function HomeHero({
 }: HomeHeroProps) {
     const svgRef = useRef<SVGSVGElement>(null);
 
-    // Handles the number of hexagons 
+    // Handles the number of hexagons
     const mobileScreenSize = 750;
-    const [screenWidth, setWidth] = useState(window.innerWidth < mobileScreenSize);
+    const [screenWidth, setWidth] = useState(
+        window.innerWidth < mobileScreenSize,
+    );
 
     useEffect(() => {
         const svg = svgRef.current;
@@ -53,16 +55,27 @@ export default function HomeHero({
         }
 
         const styles = [
-            { fill: `rgba(${COLORS['orange-400']}, 1.0)`, stroke: "none"},
-            { fill: `rgba(${COLORS['orange-900']}, 1.0)`, stroke: "none" }, 
-            { fill: `rgba(${COLORS['orange-900']}, .20)`, stroke: "none" }, 
-            { fill: `rgba(${COLORS['orange-400']}, 1.0)`, stroke: "none" }, 
-            { fill: "none", stroke: `rgba(${COLORS['orange-400']}, 1.0)`, sw: 2 }, 
-            { fill: "none", stroke: `rgba(${COLORS['orange-900']}, .20)`, sw: 2.5 }, 
-            { fill: `rgba(${COLORS['oxblood-800']}, 0.50)`, stroke: "none" }, 
-            { fill: "none", stroke: `rgba(${COLORS['oxblood-800']}, 0.50)`, sw: 2.5 },
-            { fill: `rgba(${COLORS['orange-900']}, .40)`, stroke: "none" }, 
-            
+            { fill: `rgba(${COLORS["orange-400"]}, 1.0)`, stroke: "none" },
+            { fill: `rgba(${COLORS["orange-900"]}, 1.0)`, stroke: "none" },
+            { fill: `rgba(${COLORS["orange-900"]}, .20)`, stroke: "none" },
+            { fill: `rgba(${COLORS["orange-400"]}, 1.0)`, stroke: "none" },
+            {
+                fill: "none",
+                stroke: `rgba(${COLORS["orange-400"]}, 1.0)`,
+                sw: 2,
+            },
+            {
+                fill: "none",
+                stroke: `rgba(${COLORS["orange-900"]}, .20)`,
+                sw: 2.5,
+            },
+            { fill: `rgba(${COLORS["oxblood-800"]}, 0.50)`, stroke: "none" },
+            {
+                fill: "none",
+                stroke: `rgba(${COLORS["oxblood-800"]}, 0.50)`,
+                sw: 2.5,
+            },
+            { fill: `rgba(${COLORS["orange-900"]}, .40)`, stroke: "none" },
         ];
 
         const hexDefs = [
@@ -84,7 +97,7 @@ export default function HomeHero({
             { x: 0.28, y: 0.35, r: 40, style: 3 },
             { x: 0.65, y: 0.15, r: 35, style: 4, mobile: false },
             { x: 0.5, y: 0.6, r: 45, style: 5, sw: 1.5 },
-        ].filter(def => !screenWidth || def.mobile !== false);
+        ].filter((def) => !screenWidth || def.mobile !== false);
 
         const hexEls = hexDefs.map((def) => {
             const s = styles[def.style];
@@ -183,7 +196,11 @@ export default function HomeHero({
         let isFirst = true;
 
         const step = (sel: string, duration: number, overlap = "-=0.4") => {
-            tl.to(sel, { opacity: 1, y: 0, duration, ease: "power2.out" }, isFirst ? undefined : overlap);
+            tl.to(
+                sel,
+                { opacity: 1, y: 0, duration, ease: "power2.out" },
+                isFirst ? undefined : overlap,
+            );
             isFirst = false;
         };
 
@@ -223,7 +240,9 @@ export default function HomeHero({
                     <h1 className="home_hero-title">{header}</h1>
 
                     {subtitle && (
-                        <h2 className="heading-xl home_hero-subtitle">{subtitle}</h2>
+                        <h2 className="heading-xl home_hero-subtitle">
+                            {subtitle}
+                        </h2>
                     )}
 
                     {body && <p className="home_hero-body body-l">{body}</p>}

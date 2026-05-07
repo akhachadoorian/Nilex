@@ -13,6 +13,8 @@ import { useFadeIn } from "../hooks/useFadeIn.js";
 import CopyOnly from "../components/CopyOnly/CopyOnly.js";
 import ProductCards from "../components/ProductCards/ProductCards.js";
 import ValuesGrid from "../components/ValuesGrid/ValuesGrid.js";
+import { homeSEO } from "../seo/seoContent.js";
+import SEO from "../seo/SEO.js";
 
 function LandingPage({}) {
     const aboutRef = useFadeIn<HTMLDivElement>();
@@ -21,6 +23,7 @@ function LandingPage({}) {
 
     return (
         <>
+            <SEO {...homeSEO} />
             <HomeHero
                 eyebrow={heroContent.eyebrow}
                 header={heroContent.header}
