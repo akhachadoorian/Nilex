@@ -10,6 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "lenis/dist/lenis.css";
 import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
+import PrivacyPolicy from "./pages/PrivacyPolicy.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,6 +45,7 @@ function App() {
                 <Navigation />
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 </Routes>
                 <Footer />
             </Router>
