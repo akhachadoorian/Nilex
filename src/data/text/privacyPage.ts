@@ -19,7 +19,7 @@ export const privacyHeroContent = {
 
 export const googleAnaContent = {
     title: "Google Analytics",
-    body: "<p>We use Google Analytics to understand how visitors find and use our website — things like pages visited and general traffic regions. This data is anonymous and can't be used to identify you personally. Google Analytics uses cookies to collect this information. You can opt out at any time using the <a href='https://tools.google.com/dlpage/gaoptout' target='_blank'>Google Analytics Opt-out Browser Add-on</a></p>",
+    body: "<p>We use Google Analytics to understand how visitors find and use our website — things like pages visited and general traffic regions. This data is anonymous and can't be used to identify you personally. Google Analytics uses cookies to collect this information. You can opt out at any time using the <a href='https://tools.google.com/dlpage/gaoptout' target='_blank'>Google Analytics Opt-out Browser Add-on</a>.</p>",
 };
 
 export const rightsContent = {
